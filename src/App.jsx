@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -8,26 +6,26 @@ function App() {
 
   return (
     <>
+      <h1>Hedi Belhassine</h1>
+      
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h2>What I built</h2>
+
+        <h3>2024 Paris Olympics API</h3>
+        <p>A REST-based API for the 2024 Paris Olympics resource, a tool providing
+          access to various resources (athletes, coaches, venues…) with thorough 
+          pagination, robust validation, & exception handling.</p>
+        
+        <br />
+
+        <h3>IoT Smart-Home Simulation</h3>
+        <p>A smart-home sim. that runs on a RPi. Using a breadboard & various 
+          components it simulates a home environment, and using an online dashboard,
+          the user can remotely monitor & the control the state of its components. </p>
+      
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
   )
 }
