@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <h1>Hedi Belhassine</h1>
-      
       <Projects />
 
       
