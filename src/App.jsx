@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import Projects from './Projects'
+import Projects, {BioCard} from './Cards'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hedi Belhassine</h1>
+      
+      <BioCard />
       <Projects />
 
       

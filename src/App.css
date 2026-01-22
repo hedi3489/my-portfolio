@@ -35,7 +35,7 @@ p {
   color: rgb(112, 112, 112);
 }
 
-.projects {
+.projects-card {
   margin:20px;
   padding: 10px 0px 0px 0px;
   background-color: rgb(40, 40, 41);
@@ -47,20 +47,22 @@ p {
   min-height: 300px; */
 }
 
-.projects > div {
-  /* padding: 0.5px 0px; */
+.project-card {
   margin: 10px;
   padding: 15px 20px;
   background-color: rgb(47, 47, 52);
   border: 1px solid rgb(70, 70, 70);
   border-radius: 10px;
 
+  transform-origin: center;
+  will-change: transform;
+
   transition:
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.projects > :hover {
-  transform: scale(1.04);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+.project-card:hover {
+  transform: scale(1.035);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.14);
 }
