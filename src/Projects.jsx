@@ -19,7 +19,7 @@ function Projects(){
 
         <div>
             <h3>Black-box Pen-test</h3>
-            <p>Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and mitigation recommendations.</p>
+            <p>Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and recommendations.</p>
         </div>
 
     </div>;
