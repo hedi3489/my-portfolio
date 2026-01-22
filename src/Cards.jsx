@@ -4,28 +4,24 @@ import './App.css'
 
 function BioCard(){
     return <div className='bio-card'>
-        <h1>Hedi Belhassine</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+        <p>Hedi Belhassine Building backend APIs and clean web interfaces Focused on correctness, clarity, and maintainability</p>
+        <p>Interested in correctness, data modeling, and systems that don’t surprise users.</p>
       </div>
 }
 
 
 function Projects(){
 
-    return <div className='projects-card'>
+    return <div className='projects'>
         <h2>What I built</h2>
-
         <ProjectCard
             title="2024 Paris Olympics API"
             description="REST-based API with thorough pagination validation, and exception handling."
         />
-
         <ProjectCard
             title="IoT Smart-Home Simulation"
             description="Raspberry Pi project simulating a smart home, controllable and monitorable remotely via an online dashboard."
         />
-
         <ProjectCard
             title="Black-box Pen-test"
             description="Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and recommendations."
@@ -43,5 +39,18 @@ function ProjectCard({ title, description }) {
   )
 }
 
+function Footer(){
+    return <div className='bio-card'>
+        <p>Contact Details</p>
+        <h3><i>belhassinehedi308@gmail.com</i></h3>
+        <h3><i>Canada</i></h3>
+        <br />
+        <p>Socials</p>
+        <h3>LinkedIn</h3>
+        <h3>Github</h3>
+        <h3>Discord</h3>
+      </div>
+}
+
 export default Projects;
-export { BioCard, ProjectCard };
+export { BioCard, ProjectCard, Footer };

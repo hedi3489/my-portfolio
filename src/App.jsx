@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Projects, {BioCard} from './Cards'
+import Projects, {BioCard, Footer} from './Cards'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +10,7 @@ function App() {
       
       <BioCard />
       <Projects />
+      <Footer />
 
       
     </>
