@@ -64,22 +64,25 @@ p {
 
 .projects {
   /* margin:20px; */
-  padding: 10px 0px 0px 0px;
+  /* padding: 10px 0px 0px 0px; */
   background-color: rgb(40, 40, 41);
   border: 1px solid rgb(53, 53, 53);
   border-radius: 10px;
-  /* width: 285px;
-  min-width: 250px; */
-  /* height: 400px;
-  min-height: 300px; */
+
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card {
-  margin: 10px;
+  /* margin: 10px 0px; */
   padding: 15px 20px;
   background-color: rgb(47, 47, 52);
   border: 1px solid rgb(70, 70, 70);
   border-radius: 10px;
+  height: 50px;
+  
+  /* width: 130px; */
 
   transform-origin: center;
   will-change: transform;

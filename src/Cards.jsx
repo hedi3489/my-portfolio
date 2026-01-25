@@ -14,7 +14,7 @@ function BioCard(){
 function Projects(){
 
     return <div className='projects'>
-        <h2>What I built</h2>
+        {/* <h2>What I built</h2> */}
         <ProjectCard
             title="2024 Paris Olympics API"
             // description="REST-based API with thorough pagination validation, and exception handling."
