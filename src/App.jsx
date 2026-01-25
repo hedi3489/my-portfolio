@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import './App.css'
-import Projects, {MainContent, SideBar, BioCard} from './Cards'
+import './App.css' 
+// import './Containers.css'
+import { MainContent, SideBar } from './Containers'
 
 function App() {
   const [count, setCount] = useState(0)

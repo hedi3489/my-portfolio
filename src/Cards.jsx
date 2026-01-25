@@ -1,28 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './App.css'
-
-function MainContent(){
-    return <div className='main-content'>
-        <BioCard />
-        <Showcase />
-    </div>
-}
-
-function Showcase(){
-    return <div className='showcase'>
-          <ContactCard />
-          <Projects />
-          <Projects />
-        </div>
-}
-
-function SideBar(){
-    return <div className='side-bar'>
-        <AboutCard />
-        <LittleFooter />
-    </div>
-}
+import './Containers.css'
 
 function BioCard(){
     return <div className='bio-card'>
@@ -91,10 +70,7 @@ function LittleFooter(){
 }
 
 export default Projects;
-export { 
-    MainContent,
-    SideBar,
-
+export {
     BioCard, 
     ProjectCard, 
     ContactCard, 
