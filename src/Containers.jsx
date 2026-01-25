@@ -1,6 +1,6 @@
 import './App.css'
 import './Containers.css'
-import {BioCard, ContactCard, Projects} from './Cards.jsx'
+import {BioCard, ContactCard, Projects, AboutCard, LittleFooter} from './Cards.jsx'
 
 function MainContent(){
     return <div className='main-content'>

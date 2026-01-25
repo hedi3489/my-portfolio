@@ -41,15 +41,21 @@ function ProjectCard({ title, description }) {
 }
 
 function ContactCard(){
+    const h3Style = (fontSize = '12px', italic = false) => ({
+        fontSize,
+        color: 'white',
+        fontStyle: italic ? 'italic' : 'normal'
+    })
+
     return <div className='contact-card'>
         <p>Contact Details</p>
-        <h3><i>belhassinehedi308@gmail.com</i></h3>
-        <h3><i>Canada</i></h3>
+        <h3 style={h3Style('9px', true)}>belhassinehedi308@gmail.com</h3>
+        <h3 style={h3Style('12px', true)}>Canada</h3>
         <br />
         <p>Socials</p>
-        <h3>LinkedIn</h3>
-        <h3>Github</h3>
-        <h3>Discord</h3>
+        <h3 style={h3Style()}>LinkedIn</h3>
+        <h3 style={h3Style()}>Github</h3>
+        <h3 style={h3Style()}>Discord</h3>
       </div>
 }
 
@@ -71,6 +77,7 @@ function LittleFooter(){
 
 export default Projects;
 export {
+    Projects,
     BioCard, 
     ProjectCard, 
     ContactCard, 

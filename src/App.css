@@ -57,10 +57,10 @@ p {
   background-color: rgb(40, 40, 41);
   border: 1px solid rgb(53, 53, 53);
   border-radius: 10px;
-  /* height: 320px; */
-  /* min-width: 150px; */
-  max-width: 150px;
+  min-height: 260px;               
+  
 }
+
 
 .projects {
   /* margin:20px; */
