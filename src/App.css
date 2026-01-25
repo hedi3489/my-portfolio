@@ -20,7 +20,7 @@ h2 {
 
 h3 {
   margin: 0px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
 }
 
@@ -31,14 +31,78 @@ p {
   color: rgb(112, 112, 112);
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.main-content {
+  border: 2px solid white;
+  height: 640px;
+  width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;          /* space between items */
+  align-items: center; /* horizontal alignment of children */
+}
+
+.side-bar {
+  border: 2px solid white;
+  height: 640px;
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;          /* space between items */
+  align-items: center; /* horizontal alignment of children */
+}
+
+.about-card {
+  border: 1px solid white;
+  height: 500px;
+  width: 190px;
+}
+
+.little-footer {
+  border: 1px solid white;
+  height: 200px;
+  width: 190px;
+}
+
+.showcase {
+  border: 1px solid white;
+  display: flex;
+  gap: 1rem;
+  align-items: center;        /* vertical alignment */
+  justify-content: center;    /* horizontal distribution */
+}
+
+.contact-card {
+  /* margin:20px; */
+  padding: 20px;
+  background-color: rgb(40, 40, 41);
+  border: 1px solid rgb(53, 53, 53);
+  border-radius: 10px;
+  /* height: 320px; */
+  /* min-width: 150px; */
+  max-width: 150px;
+}
+
 .projects {
-  margin:20px;
+  /* margin:20px; */
   padding: 10px 0px 0px 0px;
   background-color: rgb(40, 40, 41);
   border: 1px solid rgb(53, 53, 53);
   border-radius: 10px;
-  width: 285px;
-  min-width: 250px;
+  /* width: 285px;
+  min-width: 250px; */
   /* height: 400px;
   min-height: 300px; */
 }
@@ -69,6 +133,8 @@ p {
   background-color: rgb(40, 40, 41);
   border: 1px solid rgb(53, 53, 53);
   border-radius: 10px;
+  height: 300px;
+  min-width: 200px;
   max-width: 1000px;
 }
 

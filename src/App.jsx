@@ -1,18 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-import Projects, {BioCard, Footer} from './Cards'
+import Projects, {MainContent, SideBar, BioCard} from './Cards'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      
-      <BioCard />
-      <Projects />
-      <Footer />
-
-      
+      <div className='container'>
+        <MainContent />
+        <SideBar />
+      </div>
     </>
   )
 }
