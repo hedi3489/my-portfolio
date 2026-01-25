@@ -16,15 +16,15 @@ function Projects(){
     return <div className='projects'>
         {/* <h2>What I built</h2> */}
         <ProjectCard
-            title="2024 Paris Olympics API"
+            title="Olympics API"
             // description="REST-based API with thorough pagination validation, and exception handling."
         />
         <ProjectCard
-            title="IoT Smart-Home Simulation"
+            title="IoT Home Simulation"
             // description="Raspberry Pi project simulating a smart home, controllable and monitorable remotely via an online dashboard."
         />
         <ProjectCard
-            title="Black-box Pen-test"
+            title="BlackBox Pentest"
             // description="Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and recommendations."
         />
     </div>;

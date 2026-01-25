@@ -13,7 +13,7 @@
 .main-content {
   border: 2px solid white;
   height: 640px;
-  width: 600px;
+  width: 605px;
 
   display: flex;
   flex-direction: column;
@@ -21,8 +21,13 @@
 }
 
 .showcase {
-    padding: 0px 20px ;
-    gap: 1rem; 
+    /* padding: 0px 20px ; */
+    /* border: 1px solid white; */
+    display: flex;
+    gap: 1rem;
+    /* align-items: center; */
+    justify-content: center;    /* horizontal distribution */
+    height: 40%;
 }
 
 .side-bar {

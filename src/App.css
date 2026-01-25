@@ -31,11 +31,17 @@ p {
   color: rgb(112, 112, 112);
 }
 
+
+
+/* =============== ABOUT CARD =============== */
+
 .about-card {
   border: 1px solid white;
   height: 500px;
   width: 190px;
 }
+
+/* =============== LITTLE FOOTER =============== */
 
 .little-footer {
   border: 1px solid white;
@@ -43,35 +49,24 @@ p {
   width: 190px;
 }
 
-.showcase {
-  border: 1px solid white;
-  display: flex;
-  gap: 1rem;
-  align-items: center;        /* vertical alignment */
-  justify-content: center;    /* horizontal distribution */
-}
+/* =============== CONTACT CARD =============== */
 
 .contact-card {
-  /* margin:20px; */
   padding: 20px;
   background-color: rgb(40, 40, 41);
   border: 1px solid rgb(53, 53, 53);
   border-radius: 10px;
-  min-height: 260px;               
+  /* min-height: 260px;                */
   
 }
 
+/* =============== PROJECTS CONTAINER =============== */
 
 .projects {
-  /* margin:20px; */
-  /* padding: 10px 0px 0px 0px; */
-  background-color: rgb(40, 40, 41);
-  border: 1px solid rgb(53, 53, 53);
-  border-radius: 10px;
-
   gap: 1rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .project-card {
@@ -81,6 +76,7 @@ p {
   border: 1px solid rgb(70, 70, 70);
   border-radius: 10px;
   height: 50px;
+  flex: 1;
   
   /* width: 130px; */
 
@@ -96,6 +92,9 @@ p {
   transform: scale(1.035);
   box-shadow: 0 10px 24px rgba(0,0,0,0.14);
 }
+
+
+/* =============== BIO CARD =============== */
 
 .bio-card {
   margin:20px;
