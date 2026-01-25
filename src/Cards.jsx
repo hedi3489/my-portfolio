@@ -11,34 +11,51 @@ function BioCard(){
       </div>
 }
 
-function Projects(){
+// function Projects(){
 
-    return <div className='projects'>
-        {/* <h2>What I built</h2> */}
-        <ProjectCard
-            title="Olympics API"
-            // description="REST-based API with thorough pagination validation, and exception handling."
-        />
-        <ProjectCard
-            title="IoT Home Simulation"
-            // description="Raspberry Pi project simulating a smart home, controllable and monitorable remotely via an online dashboard."
-        />
-        <ProjectCard
-            title="BlackBox Pentest"
-            // description="Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and recommendations."
-        />
-    </div>;
+//     return <div className='projects'>
+//         {/* <h2>What I built</h2> */}
+//         <ProjectCard
+//             title="Olympics API"
+//             // description="REST-based API with thorough pagination validation, and exception handling."
+//         />
+//         <ProjectCard
+//             title="IoT Home Simulation"
+//             // description="Raspberry Pi project simulating a smart home, controllable and monitorable remotely via an online dashboard."
+//         />
+//         <ProjectCard
+//             title="BlackBox Pentest"
+//             // description="Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and recommendations."
+//         />
+//     </div>;
 
+// }
+
+function Projects({ projects = [] }) {
+  return (
+    <div className="projects">
+      {projects.map((project, index) => (
+        <ProjectCard
+          key={index}
+          title={project.title}
+          description={project.description}
+        />
+      ))}
+    </div>
+  )
 }
+
+
 
 function ProjectCard({ title, description }) {
   return (
     <div className="project-card">
       <h3>{title}</h3>
-      <p>{description}</p>
+      {description && <p>{description}</p>}
     </div>
   )
 }
+
 
 function ContactCard(){
     const h3Style = (fontSize = '12px', italic = false) => ({
