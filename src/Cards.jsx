@@ -79,10 +79,13 @@ function ContactCard(){
 function AboutCard(){
     return <div className='about-card'>
         <h3>About me</h3>
-        <ul>tool</ul>
-        <ul>tool</ul>
-        <ul>tool</ul>
-        <ul>tool</ul>
+        <ul>
+          <li>Tool</li>
+          <li>Tool</li>
+          <li>Tool</li>
+          <li>Tool</li>
+        </ul>
+        
     </div>
 }
 
