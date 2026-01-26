@@ -5,7 +5,11 @@
   flex-direction: row;
   gap: 1rem;
 
-  height: 90vh;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 5vh 5vw; /* replaces the visual effect of 90vh / 90vw */
+  box-sizing: border-box;
 }
 
 /* =============== MAIN CONTENT =============== */
