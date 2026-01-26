@@ -31,7 +31,7 @@ const funProjects = [
     description: ""
   },
   {
-    title: "Currently",
+    title: "Colors",
     description: ""
   }
 ]

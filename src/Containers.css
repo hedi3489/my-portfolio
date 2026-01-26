@@ -1,33 +1,35 @@
 
+/* =============== MAIN CONTAINER =============== */
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem;
-
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  align-items: flex-start;
+  width: 100vh;
+  height: 90vh;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
+/* =============== MAIN CONTENT =============== */
 .main-content {
-  border: 2px solid white;
-  height: 640px;
-  width: 605px;
-
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* horizontal alignment of children */
+  align-items: center;
+  gap: 1rem;
+  min-height: 0;      /* allows children to shrink */
+  min-width: 80%;
 }
 
-.showcase {
-    /* padding: 0px 20px ; */
-    /* border: 1px solid white; */
-    display: flex;
-    gap: 1rem;
-    /* align-items: center; */
-    justify-content: center;    /* horizontal distribution */
-    height: 40%;
+/* =============== SIDE BAR =============== */
+.side-bar {
+  border: 2px solid white;
+  height: 640px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
 
 .side-bar {
@@ -37,6 +39,33 @@
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;          /* space between items */
-  align-items: center; /* horizontal alignment of children */
+  gap: 1rem;
+  align-items: center;
 }
+
+
+
+
+
+/* =============== SHOWCASE / PROJECTS  CONTAINERS =============== */
+.showcase {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex: 1;            /* fills remaining space */
+  min-height: 0;
+  min-width: 100%;
+}
+
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;            /* allow projects to stretch equally */
+  min-height: 0;
+}
+
+/* .showcase > :last-child {
+    margin-left: auto;
+} */
