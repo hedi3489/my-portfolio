@@ -20,7 +20,11 @@
   width: 100%;
 }
 
-.projects { flex: 6; }
+.showcase > * {
+  flex: 1;
+}
+
+/* .projects { flex: 6; } */
 
 /* =============== SIDE BAR =============== */
 .side-bar { flex: 3; }

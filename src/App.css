@@ -1,10 +1,10 @@
 /* =============== GLOBAL =============== */
-html, body {
+html, body, #root {
   height: 100%;
+  width: 100%;
   margin: 0;
   font-size: 14px;
 }
-
 *,
 *::before,
 *::after {
@@ -14,7 +14,7 @@ html, body {
 body {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 0rem 2rem;
 }
 
 /* =============== GENERAL CARD =============== */
@@ -46,22 +46,19 @@ p {
   color: rgb(112, 112, 112);
 }
 
-
-
 /* =============== BIO CARD =============== */
-.bio-card { flex: 5; }
+.bio-card { 
+  min-width:100%;
+  flex: 5; 
+}
 
 .bio-card h1 {
   font-size: xx-large;
   margin: 5px 0;
 }
 
-
-
 /* =============== CONTACT CARD =============== */
 .contact-card { flex: 4; }
-
-
 
 /* =============== PROJECT CARDS =============== */
 
@@ -69,7 +66,7 @@ p {
   padding: 15px 20px;
 
   flex: 1;
-  width: 200px;
+  min-width: 80px;
   min-height: 50px;
 
   transform-origin: center;
