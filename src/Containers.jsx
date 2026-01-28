@@ -38,7 +38,7 @@ const funProjects = [
 
 
 function MainContent(){
-    return <div className='main-content'>
+    return <div className='flex flex-col flex-center main-content'>
         <BioCard />
         <Showcase />
     </div>
@@ -46,7 +46,7 @@ function MainContent(){
 
 function Showcase(){
     console.log(funProjects);
-    return <div className='showcase'>
+    return <div className='flex showcase'>
           <ContactCard />
           <Projects projects={techProjects} />
           <Projects projects={funProjects} />
@@ -54,7 +54,7 @@ function Showcase(){
 }
 
 function SideBar(){
-    return <div className='side-bar'>
+    return <div className='flex flex-col felx-center side-bar'>
         <AboutCard />
         <LittleFooter />
     </div>

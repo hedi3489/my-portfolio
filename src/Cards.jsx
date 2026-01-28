@@ -4,36 +4,16 @@ import './App.css'
 import './Containers.css'
 
 function BioCard(){
-    return <div className='bio-card'>
+    return <div className='card bio-card'>
         <p>welcome</p>
         <p>Hi, I'm <b>Hedi Belhassine</b>, I build backend APIs and clean web interfaces focused on correctness, clarity, and maintainability</p>
         <p>Interested in correctness, data modeling, and systems that don’t surprise users.</p>
       </div>
 }
 
-// function Projects(){
-
-//     return <div className='projects'>
-//         {/* <h2>What I built</h2> */}
-//         <ProjectCard
-//             title="Olympics API"
-//             // description="REST-based API with thorough pagination validation, and exception handling."
-//         />
-//         <ProjectCard
-//             title="IoT Home Simulation"
-//             // description="Raspberry Pi project simulating a smart home, controllable and monitorable remotely via an online dashboard."
-//         />
-//         <ProjectCard
-//             title="BlackBox Pentest"
-//             // description="Conducted a full black-box security assessment using Kali Linux, from recon to exploitation, with documented findings and recommendations."
-//         />
-//     </div>;
-
-// }
-
 function Projects({ projects = [] }) {
   return (
-    <div className="projects">
+    <div className="flex flex-col projects">
       {projects.map((project, index) => (
         <ProjectCard
           key={index}
@@ -49,7 +29,7 @@ function Projects({ projects = [] }) {
 
 function ProjectCard({ title, description }) {
   return (
-    <div className="project-card">
+    <div className="card project-card">
       <h3>{title}</h3>
       {description && <p>{description}</p>}
     </div>
@@ -64,7 +44,7 @@ function ContactCard(){
         fontStyle: italic ? 'italic' : 'normal'
     })
 
-    return <div className='contact-card'>
+    return <div className='card contact-card'>
         <p>Contact Details</p>
         <h3 style={h3Style('9px', true)}>belhassinehedi308@gmail.com</h3>
         <h3 style={h3Style('12px', true)}>Canada</h3>
@@ -77,7 +57,7 @@ function ContactCard(){
 }
 
 function AboutCard(){
-    return <div className='about-card'>
+    return <div className='card card about-card'>
         <h3>About me</h3>
         <ul>
           <li>Tool</li>
@@ -90,7 +70,7 @@ function AboutCard(){
 }
 
 function LittleFooter(){
-    return <div className='little-footer'>
+    return <div className='card little-footer'>
         <p>text... text...</p>
     </div>
 }

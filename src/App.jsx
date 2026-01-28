@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import './App.css' 
-// import './Containers.css'
 import { MainContent, SideBar } from './Containers'
+import './App.css' 
+import './General.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='container'>
+      <div className='flex container'>
         <MainContent />
         <SideBar />
       </div>
