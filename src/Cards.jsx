@@ -38,22 +38,31 @@ function ProjectCard({ title, description }) {
 
 
 function ContactCard(){
-    const h3Style = (fontSize = '12px', italic = false) => ({
-        fontSize,
-        color: 'white',
-        fontStyle: italic ? 'italic' : 'normal'
-    })
+  const h2Style = (color = 'white', fontSize = '18px', italic = false) => ({
+    color: color,
+    fontSize: fontSize,
+    fontWeight: 'normal',
+    fontStyle: italic ? 'italic' : 'normal',
+  })
 
-    return <div className='card contact-card'>
-        <p>Contact Details</p>
-        <h3 style={h3Style('9px', true)}>belhassinehedi308@gmail.com</h3>
-        <h3 style={h3Style('12px', true)}>Canada</h3>
-        <br />
-        <p>Socials</p>
-        <h3 style={h3Style()}>LinkedIn</h3>
-        <h3 style={h3Style()}>Github</h3>
-        <h3 style={h3Style()}>Discord</h3>
-      </div>
+  const h3Style = (fontSize = '16px', italic = false) => ({
+      color: 'white',
+      fontSize: fontSize,
+      fontStyle: italic ? 'italic' : 'normal'
+  })
+
+  return <div className='card contact-card'>
+    <h2 style={h2Style()}>Let's start working together! </h2>
+    <br />
+    <h2 style={h2Style('#6d6d6d', '16px', true)}>Contact Details</h2>
+    <h3 style={h3Style('14px', true)}>belhassinehedi308@gmail.com</h3>
+    <h3 style={h3Style('14px', true)}>Canada</h3>
+    <br />
+    <h2 style={h2Style('#6d6d6d', '16px',)}>Socials</h2>
+    <h3 style={h3Style()}>LinkedIn</h3>
+    <h3 style={h3Style()}>Github</h3>
+    <h3 style={h3Style()}>Discord</h3>
+  </div>
 }
 
 function AboutCard(){
