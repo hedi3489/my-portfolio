@@ -13,7 +13,7 @@ function BioCard(){
 
 function Projects({ projects = [] }) {
   return (
-    <div className="flex flex-col projects">
+    <div className="flex flex-col">
       {projects.map((project, index) => (
         <ProjectCard
           key={index}
@@ -28,9 +28,14 @@ function Projects({ projects = [] }) {
 
 
 function ProjectCard({ title, description }) {
+  const h3Style = (fontSize = '20px') => ({
+      fontSize: fontSize,
+      fontWeight: 'normal',
+  })
+  
   return (
     <div className="card project-card">
-      <h3>{title}</h3>
+      <h3 style={h3Style()}>{title}</h3>
       {description && <p>{description}</p>}
     </div>
   )
@@ -38,7 +43,7 @@ function ProjectCard({ title, description }) {
 
 
 function ContactCard(){
-  const h2Style = (color = 'white', fontSize = '18px', italic = false) => ({
+  const h2Style = (color = 'white', fontSize = '20px', italic = false) => ({
     color: color,
     fontSize: fontSize,
     fontWeight: 'normal',
