@@ -5,7 +5,7 @@
 
   width: 100%;
   min-height: 100vh;
-  padding: 7vh 7vw;
+  padding: 9vh 9vw;
 }
 
 /* =============== MAIN CONTENT =============== */
@@ -27,4 +27,4 @@
 /* .projects { flex: 6; } */
 
 /* =============== SIDE BAR =============== */
-.side-bar { flex: 3; }
+.side-bar { flex: 2; }

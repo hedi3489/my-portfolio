@@ -73,12 +73,19 @@ function ContactCard(){
 function AboutCard(){
     return <div className='card card about-card'>
         <h3>About me</h3>
+        <p>I'm a full stack software developer (frontend-focused) from Canada. </p>
+        <br />
+        <p>My primary tools of choice include:</p>
         <ul>
-          <li>Tool</li>
-          <li>Tool</li>
-          <li>Tool</li>
-          <li>Tool</li>
+          <li>Javascript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Python</li>
+          <li>PHP</li>
+          <li>Slim</li>
         </ul>
+
+        <p>Beyond coding, I'm passionate about design, illustration, animation and 3D modelling and traveling. An unusual hobby of mine is collecting vintage passports, they're interesting pieces of history to me.</p>
         
     </div>
 }

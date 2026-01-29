@@ -3,7 +3,8 @@ html, body, #root {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 0.875rem;
 }
 *,
 *::before,
@@ -20,7 +21,7 @@ body {
 /* =============== GENERAL CARD =============== */
 
 .card {
-  padding: 20px;
+  padding: 24px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--radius);
@@ -62,7 +63,7 @@ p {
 /* =============== PROJECT CARDS =============== */
 
 .project-card {
-  padding-left: 25x;
+  /* padding-left: 25x; */
   align-content: center;
 
   flex: 1;
