@@ -1,0 +1,56 @@
+/* =============== BASE =============== */
+.card {
+  padding: 24px;
+  background-color: var(--bg-card-primary);
+  border: 1px solid var(--border-card-primary);
+  border-radius: var(--radius);
+}
+
+/* =============== BIO-CARD =============== */
+.bio-card { 
+  min-width:100%;
+  flex: 5; 
+}
+.bio-card h1 {
+  font-size: xx-large;
+  margin: 5px 0;
+}
+
+/* =============== CONTACT-CARD =============== */
+.contact-card { flex: 4; }
+
+/* =============== PROJECT-CARDS =============== */
+.project-card {
+  align-content: center;
+
+  flex: 1;
+  min-width: 80px;
+  min-height: 50px;
+
+  transform-origin: center;
+  will-change: transform;
+  transition:
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card:hover {
+  transform: scale(1.035);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+  z-index: 1;
+}
+
+/* =============== ABOUT-CARD =============== */
+.about-card {
+  width: 100%;
+  flex: 7.5;
+}
+.about-card > ul {
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+/* =============== LITTLE-FOOTER =============== */
+.little-footer {
+  width: 100%;
+  flex: 2.5
+}

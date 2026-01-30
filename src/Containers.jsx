@@ -1,4 +1,4 @@
-import './App.css'
+import './Cards.css'
 import './Containers.css'
 import {BioCard, ContactCard, Projects, AboutCard, LittleFooter} from './Cards.jsx'
 

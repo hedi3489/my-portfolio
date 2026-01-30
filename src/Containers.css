@@ -14,17 +14,12 @@
   min-height: 0;  
 }
 
-/* =============== SHOWCASE CONTAINERS =============== */
+/* =============== SHOWCASE CONTAINER =============== */
 .showcase {
   flex: 5;
   width: 100%;
 }
-
-.showcase > * {
-  flex: 1;
-}
-
-/* .projects { flex: 6; } */
+.showcase > * { flex: 1; }
 
 /* =============== SIDE BAR =============== */
 .side-bar { flex: 2; }

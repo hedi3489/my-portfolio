@@ -5,12 +5,19 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #141414;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-card-primary: rgb(40, 40, 41);
+  --bg-card-secondary: rgb(47, 47, 52);
+  --border-card-primary: rgb(53, 53, 53);
+  --border-card-secondary: rgb(70, 70, 70);
+  --radius: 10px;
+  --gap: 1rem;
 }
 
 a {
@@ -33,6 +40,20 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+}
+h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+p {
+  margin: 0;
+  color: gray;
 }
 
 button {
@@ -65,4 +86,38 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* =============== FLEX UTILITIES =============== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 0rem 2rem;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* =============== FLEX UTILITIES =============== */
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
 }
