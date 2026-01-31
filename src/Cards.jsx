@@ -7,6 +7,10 @@ function BioCard(){
         <p>welcome</p>
         <p>Hi, I'm <b>Hedi Belhassine</b>, I build backend APIs and clean web interfaces focused on correctness, clarity, and maintainability</p>
         <p>Interested in correctness, data modeling, and systems that don’t surprise users.</p>
+        <h1>H1 Text</h1>
+        <h2>H2 Text</h2>
+        <h3>H3 Text</h3>
+        <h4>H4 Text</h4>
       </div>
 }
 
@@ -24,14 +28,11 @@ function Projects({ projects = [] }) {
   )
 }
 
-
-
 function ProjectCard({ title, description }) {
   const h3Style = (fontSize = '20px') => ({
       fontSize: fontSize,
       fontWeight: 'normal',
   })
-  
   return (
     <div className="card project-card">
       <h3 style={h3Style()}>{title}</h3>
@@ -41,33 +42,38 @@ function ProjectCard({ title, description }) {
 }
 
 
-function ContactCard(){
-  const h2Style = (color = 'white', fontSize = '20px', italic = false) => ({
-    color: color,
-    fontSize: fontSize,
-    fontWeight: 'normal',
+function ContactCard() {
+  const headingStyle = (color = 'white', italic = false) => ({
+    color,
     fontStyle: italic ? 'italic' : 'normal',
-  })
+    fontWeight: 'normal',
+  });
 
-  const h3Style = (fontSize = '16px', italic = false) => ({
-      color: 'white',
-      fontSize: fontSize,
-      fontStyle: italic ? 'italic' : 'normal'
-  })
+  const subHeadingStyle = (color = 'white', italic = false) => ({
+    color,
+    fontStyle: italic ? 'italic' : 'normal',
+  });
 
-  return <div className='card contact-card'>
-    <h2 style={h2Style()}>Let's start working together! </h2>
-    <br />
-    <h2 style={h2Style('#6d6d6d', '16px', true)}>Contact Details</h2>
-    <h3 style={h3Style('14px', true)}>belhassinehedi308@gmail.com</h3>
-    <h3 style={h3Style('14px', true)}>Canada</h3>
-    <br />
-    <h2 style={h2Style('#6d6d6d', '16px',)}>Socials</h2>
-    <h3 style={h3Style()}>LinkedIn</h3>
-    <h3 style={h3Style()}>Github</h3>
-    <h3 style={h3Style()}>Discord</h3>
-  </div>
+  return (
+    <div className="card contact-card">
+
+      <h3 style={headingStyle()}><b>Let's start working together!</b></h3>
+      <br />
+
+      <h4 style={headingStyle('#6d6d6d', true)}>Contact Details</h4>
+      <h4 style={subHeadingStyle('white', true)}>belhassinehedi308@gmail.com</h4>
+      <h4 style={subHeadingStyle('white', true)}>Canada</h4>
+      <br />
+
+      <h4 style={headingStyle('#6d6d6d')}>Socials</h4>
+      <h4 style={subHeadingStyle()}>LinkedIn</h4>
+      <h4 style={subHeadingStyle()}>Github</h4>
+      <h4 style={subHeadingStyle()}>Discord</h4>
+
+    </div>
+  );
 }
+
 
 function AboutCard(){
     return <div className='card card about-card'>

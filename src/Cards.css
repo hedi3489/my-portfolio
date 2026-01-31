@@ -11,10 +11,6 @@
   min-width:100%;
   flex: 5; 
 }
-.bio-card h1 {
-  font-size: xx-large;
-  margin: 5px 0;
-}
 
 /* =============== CONTACT-CARD =============== */
 .contact-card { flex: 4; }

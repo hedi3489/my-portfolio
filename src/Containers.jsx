@@ -16,7 +16,6 @@ const techProjects = [
     description: "A pentest report" // assessment from reconnaissance to exploitation."
   }
 ]
-
 const funProjects = [
   {
     title: "Sketches",
@@ -35,7 +34,6 @@ const funProjects = [
     description: ""
   }
 ]
-
 
 function MainContent(){
     return <div className='flex flex-col flex-center main-content'>
