@@ -42,7 +42,13 @@
   min-width: 80px;
   min-height: 50px;
 }
-/* =============== THEME-CARDS =============== */
+/* =========== AVAILABILITY-CARD ============ */
+.availability-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* =============== THEME-CARD =============== */
 .theme-card {
   gap: 0.75rem;
   padding: 0px 0.3rem;

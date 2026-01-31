@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 
 function BioCard() {
-  // const textStyle = () => ({
-  //   margin: '5px 0px',
-  //   padding: '3px 0px',
-  //   fontSize: 'clamp(0.95rem, 1.7vw, 1.2em)',
-  //   gap: '1rem'
-  // });
-
   return <div className='flex card bio-card'>
     <div className="bio-text">
       <p>Welcome</p>
@@ -59,8 +52,36 @@ function LittleCard({ title, description }) {
   )
 }
 
+function AvailabilityCard() {
+  const available = true;
+  var availabilityText = "";
+  const textStyle = (fontSize) => ({
+    margin : "2px 0px",
+    fontSize
+  });
+
+  if(available==true){
+    availabilityText = "Open to collaborate";
+  }else{
+    availabilityText = "Currently working full-time";
+  }
+  
+  return (
+    <div className="card little-card availability-card">
+        <h2 style={textStyle('1.35em')}>Now</h2>
+        <p style={textStyle('0.9em')}>{availabilityText}</p>
+    </div>
+  );
+}
+
 function ThemeCard() {
-  const colors = ['#dfa19e', '#ffddba', '#a3c1bc', '#71758b', '#6a5874' ]
+  const colors = [
+    '#dfa19e', 
+    '#ffddba', 
+    '#a3c1bc', 
+    '#71758b', 
+    '#6a5874' 
+  ]
   
   // State for the selected color
   const [selectedColor, setSelectedColor] = useState(colors[0]);
@@ -118,6 +139,7 @@ function LittleFooter() {
 export {
   BioCard,
   LittleCard,
+  AvailabilityCard,
   ThemeCard,
   ContactCard,
   AboutCard,

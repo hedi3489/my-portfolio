@@ -1,6 +1,6 @@
 import './Cards.css'
 import './Containers.css'
-import { BioCard, ContactCard, LittleCard, ThemeCard, AboutCard, LittleFooter } from './Cards.jsx'
+import { BioCard, ContactCard, LittleCard, AvailabilityCard, ThemeCard, AboutCard, LittleFooter } from './Cards.jsx'
 
 const projectCards = [
   { type: 'project', title: 'Olympics API', description: 'REST-based API' },
@@ -17,7 +17,7 @@ const CARD_MAP = {
   project: LittleCard,
   sketches: LittleCard,
   artworks: LittleCard,
-  availability: LittleCard,
+  availability: AvailabilityCard,
   theme: ThemeCard,
 }
 
