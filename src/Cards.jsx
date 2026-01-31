@@ -68,8 +68,9 @@ function AvailabilityCard() {
   
   return (
     <div className="card little-card availability-card">
-        <h2 style={textStyle('1.35em')}>Now</h2>
-        <p style={textStyle('0.9em')}>{availabilityText}</p>
+      <span className="status-dot" aria-hidden="true" />
+      <h2 style={textStyle('1.35em')}>Now</h2>
+      <p style={textStyle('0.9em')}>{availabilityText}</p>
     </div>
   );
 }
