@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 5vh 10vw;
+  padding: 5vh 8vw;
 }
 /* =============== MAIN CONTENT =============== */
 .main-content {
@@ -22,4 +22,4 @@
   min-width: 0;
 }
 /* =============== SIDE BAR =============== */
-.side-bar { flex: 2; }
+.side-bar { flex: 2.7; }

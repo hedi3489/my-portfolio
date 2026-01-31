@@ -76,14 +76,23 @@
 /* =============== ABOUT-CARD =============== */
 .about-card {
   width: 100%;
-  flex: 12;
+  flex: 7;
 }
+.about-card > p {
+  padding: 5px 0px;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
 .about-card > ul {
   padding-left: 15px;
-  margin-top: 5px;
+  margin-top: 0px;
+  font-size: clamp(0.95rem, 1.7vw, 1.15em);
+  line-height: 1.5;
+  font-weight: 300;
 }
 /* =============== LITTLE-FOOTER =============== */
 .little-footer {
   width: 100%;
-  flex: 2.5
+  flex: 3.05;
 }

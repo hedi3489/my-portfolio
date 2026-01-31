@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 
 function BioCard() {
+  // const textStyle = () => ({
+  //   margin: '5px 0px',
+  //   padding: '3px 0px',
+  //   fontSize: 'clamp(0.95rem, 1.7vw, 1.2em)',
+  //   gap: '1rem'
+  // });
+
   return <div className='flex card bio-card'>
     <div className="bio-text">
       <p>Welcome</p>
@@ -29,15 +36,15 @@ function ContactCard() {
       <br />
 
       <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
-      <h4><i>belhassinehedi308@gmail.com</i></h4>
-      <h4><i>Canada</i></h4>
+      <p><i>belhassinehedi308@gmail.com</i></p>
+      <p><i>Canada</i></p>
       <br />
 
       <h4 style={headingStyle('#6d6d6d', false, '3px')}>Socials</h4>
-      <h4>LinkedIn</h4>
-      <h4>Github</h4>
-      <h4>Discord</h4>
-      <h4>Cara</h4>
+      <p>LinkedIn</p>
+      <p>Github</p>
+      <p>Discord</p>
+      <p>Cara</p>
 
     </div>
   );
@@ -83,8 +90,9 @@ function ThemeCard() {
 function AboutCard() {
   return <div className='card card about-card'>
     <h3>About me</h3>
-    <p>I'm a full stack software developer (frontend-focused) from Canada. </p>
-    <br />
+    <p>
+      Junior dev interested in frontend & backend, Internet of Things, & passion projects.
+    </p>
     <p>My primary tools of choice include:</p>
     <ul>
       <li>Javascript</li>
@@ -94,8 +102,9 @@ function AboutCard() {
       <li>PHP</li>
       <li>Slim</li>
     </ul>
-
-    <p>Beyond coding, I'm passionate about design, illustration, animation and 3D modelling and traveling. An unusual hobby of mine is collecting vintage passports, they're interesting pieces of history to me.</p>
+    <p>
+      Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).
+    </p>
 
   </div>
 }
