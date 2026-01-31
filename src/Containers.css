@@ -10,16 +10,22 @@
 
 /* =============== MAIN CONTENT =============== */
 .main-content {
-  flex: 7;
+  flex: 7.5;
   min-height: 100%;
 }
 
-/* =============== SHOWCASE CONTAINER =============== */
+/* =============== SHOWCASE CONTAINER ===============*/
 .showcase {
-  flex: 5;
+  flex: 6;
   width: 100%;
+
+  display: flex;
+  gap: var(--gap);
 }
-.showcase > * { flex: 1; }
+.showcase > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
 
 /* =============== SIDE BAR =============== */
-.side-bar { flex: 2; }
+.side-bar { flex: 2.5; }
