@@ -17,8 +17,24 @@
 /* =============== BIO-CARD =============== */
 .bio-card { 
   min-width:100%;
-  flex: 5; 
+  flex: 5.5; 
 }
+.bio-text {
+  /* border: 1px solid rgb(68, 68, 68); */
+  width: 65%;
+  height: 50%;
+}
+.bio-text > p {
+  margin: 5px 0px;
+  padding: 3px 0px; 
+  font-size: clamp(0.95rem, 1.7vw, 1.2em);
+  gap: 1rem;
+}
+.bio-text > p > b {
+  font-weight: 600;
+  color: var(--border-card-secondary);
+}
+
 /* =============== LITTLE-CARDS =============== */
 .little-card {
   align-content: center;
@@ -39,7 +55,7 @@
   justify-content: center;
 }
 .theme-dot {
-  width: clamp(24px, 5vw, 40px);
+  width: clamp(24px, 5vw, 37px);
   aspect-ratio: 1 / 1;
   padding: 0;
   border-radius: 50%;

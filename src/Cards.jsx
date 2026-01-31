@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 
 function BioCard() {
-  return <div className='card bio-card'>
-    <p>welcome</p>
-    <p>Hi, I'm <b>Hedi Belhassine</b>, I build backend APIs and clean web interfaces focused on correctness, clarity, and maintainability</p>
-    <p>Interested in correctness, data modeling, and systems that don’t surprise users.</p>
-    <h1>H1 Text</h1>
-    <h2>H2 Text</h2>
-    <h3>H3 Text</h3>
-    <h4>H4 Text</h4>
+  return <div className='flex card bio-card'>
+    <div className="bio-text">
+      <p>Welcome</p>
+      <p>
+        I'm <b>Hedi</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.
+      </p>
+      <p>
+        I enjoy turning ideas into working products, whether that means designing intuitive user interfaces or building APIs and databases behind the scenes.
+      </p>
+    </div>
   </div>
 }
 

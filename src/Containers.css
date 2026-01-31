@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 5vh 15vw;
+  padding: 5vh 10vw;
 }
 /* =============== MAIN CONTENT =============== */
 .main-content {
@@ -12,7 +12,7 @@
 }
 /* =============== SHOWCASE CONTAINER ===============*/
 .showcase {
-  flex: 6;
+  flex: 5;
   width: 100%;
   display: flex;
   gap: var(--gap);
@@ -22,4 +22,4 @@
   min-width: 0;
 }
 /* =============== SIDE BAR =============== */
-.side-bar { flex: 2.5; }
+.side-bar { flex: 2; }
