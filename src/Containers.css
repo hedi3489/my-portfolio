@@ -1,24 +1,19 @@
 
 /* =============== PARENT CONTAINER =============== */
 .container {
-  flex-direction: row;
-
   width: 100%;
   min-height: 100vh;
   padding: 5vh 15vw;
 }
-
 /* =============== MAIN CONTENT =============== */
 .main-content {
   flex: 7.5;
   min-height: 100%;
 }
-
 /* =============== SHOWCASE CONTAINER ===============*/
 .showcase {
   flex: 6;
   width: 100%;
-
   display: flex;
   gap: var(--gap);
 }
@@ -26,6 +21,5 @@
   flex: 1 1 0;
   min-width: 0;
 }
-
 /* =============== SIDE BAR =============== */
 .side-bar { flex: 2.5; }
