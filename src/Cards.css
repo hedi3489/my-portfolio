@@ -9,11 +9,8 @@
 /* =============== BIO-CARD =============== */
 .bio-card { 
   min-width:100%;
-  flex: 5; 
+  flex: 6; 
 }
-
-/* =============== CONTACT-CARD =============== */
-.contact-card { flex: 4; }
 
 /* =============== PROJECT-CARDS =============== */
 .project-card {
@@ -38,7 +35,7 @@
 /* =============== ABOUT-CARD =============== */
 .about-card {
   width: 100%;
-  flex: 7.5;
+  flex: 12;
 }
 .about-card > ul {
   padding-left: 15px;

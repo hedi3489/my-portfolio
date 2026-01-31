@@ -30,7 +30,7 @@ function Projects({ projects = [] }) {
 
 function ProjectCard({ title, description }) {
   const h3Style = (fontSize = '20px') => ({
-      fontSize: fontSize,
+      // fontSize: fontSize,
       fontWeight: 'normal',
   })
   return (

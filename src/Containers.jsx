@@ -5,15 +5,15 @@ import {BioCard, ContactCard, Projects, AboutCard, LittleFooter} from './Cards.j
 const techProjects = [
   {
     title: "Olympics API",
-    description: "A REST-based API" // with pagination, validation, and exception handling."
+    // description: "A REST-based API" // with pagination, validation, and exception handling."
   },
   {
     title: "RPi Smart Home",
-    description: "An IoT smart home simulation" // simulation with remote monitoring and control."
+    // description: "An IoT smart home simulation" // simulation with remote monitoring and control."
   },
   {
     title: "Blackbox Pentest",
-    description: "A pentest report" // assessment from reconnaissance to exploitation."
+    // description: "A pentest report" // assessment from reconnaissance to exploitation."
   }
 ]
 const funProjects = [

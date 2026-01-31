@@ -5,18 +5,18 @@
 
   width: 100%;
   min-height: 100vh;
-  padding: 9vh 9vw;
+  padding: 5vh 15vw;
 }
 
 /* =============== MAIN CONTENT =============== */
 .main-content {
   flex: 7;
-  min-height: 0;  
+  min-height: 100%;
 }
 
 /* =============== SHOWCASE CONTAINER =============== */
 .showcase {
-  flex: 5;
+  flex: 4;
   width: 100%;
 }
 .showcase > * { flex: 1; }
