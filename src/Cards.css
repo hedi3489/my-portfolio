@@ -48,9 +48,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  transition: border-color 0.3s ease;
 }
 .theme-dot:hover {
   border-color: var(--bg-color-secondary);
+}
+.theme-dot.selected {
+  border-color: var(--border-card-secondary);
 }
 /* =============== ABOUT-CARD =============== */
 .about-card {

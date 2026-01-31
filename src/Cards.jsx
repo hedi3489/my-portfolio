@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 function BioCard() {
   return <div className='card bio-card'>
     <p>welcome</p>
@@ -49,13 +51,15 @@ function LittleCard({ title, description }) {
 }
 
 function ThemeCard() {
-  const colors = [
-    '#c5668c',
-    '#544b95',
-    '#549792',
-    '#a7c26f',
-    '#c5b874'
-  ]
+  const colors = ['#dfa19e', '#ffddba', '#a3c1bc', '#71758b', '#6a5874' ]
+  
+  // State for the selected color
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
+  
+  // Update CSS variable whenever selectedColor changes
+  useEffect(() => {
+    document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
+  }, [selectedColor]);
 
   return (
     <div className="card little-card theme-card">
@@ -63,14 +67,15 @@ function ThemeCard() {
         {colors.map((color, i) => (
           <button
             key={i}
-            className="theme-dot"
+            className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
             style={{ backgroundColor: color }}
             aria-label={`Select theme color ${i + 1}`}
+            onClick={() => setSelectedColor(color)}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function AboutCard() {
