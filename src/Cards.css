@@ -9,28 +9,66 @@
 /* =============== BIO-CARD =============== */
 .bio-card { 
   min-width:100%;
-  flex: 6; 
+  flex: 5; 
 }
 
-/* =============== PROJECT-CARDS =============== */
-.project-card {
+/* =============== LITTLE-CARDS =============== */
+.little-card {
   align-content: center;
 
   flex: 1;
   min-width: 80px;
   min-height: 50px;
-
-  transform-origin: center;
+}
+  /* transform-origin: center;
   will-change: transform;
   transition:
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.project-card:hover {
+    box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1); */
+
+/* .little-card:hover {
   transform: scale(1.035);
   box-shadow: 0 10px 24px rgba(0,0,0,0.14);
   z-index: 1;
+} */
+
+/* =============== THEME-CARDS =============== */
+.theme-card {
+  gap: 0.75rem;
+  padding: 0px 0.5rem;
+  height: 100%;
+  flex: 3;
 }
+
+.theme-colors {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  /* justify-content: space-evenly; */
+}
+
+.theme-dot {
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-card-secondary);
+  background-clip: padding-box;
+  cursor: pointer;
+
+  display: inline-flex; /* optional but safe */
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.theme-dot:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
 
 /* =============== ABOUT-CARD =============== */
 .about-card {

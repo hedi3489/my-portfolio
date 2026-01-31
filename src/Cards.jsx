@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './Cards.css'
 
+
+/* =============== MAIN-CONTENT =============== */
 function BioCard(){
     return <div className='card bio-card'>
         <p>welcome</p>
@@ -13,34 +15,6 @@ function BioCard(){
         <h4>H4 Text</h4>
       </div>
 }
-
-function Projects({ projects = [] }) {
-  return (
-    <div className="flex flex-col">
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          title={project.title}
-          description={project.description}
-        />
-      ))}
-    </div>
-  )
-}
-
-function ProjectCard({ title, description }) {
-  const h3Style = (fontSize = '20px') => ({
-      // fontSize: fontSize,
-      fontWeight: 'normal',
-  })
-  return (
-    <div className="card project-card">
-      <h3 style={h3Style()}>{title}</h3>
-      {description && <p>{description}</p>}
-    </div>
-  )
-}
-
 
 function ContactCard() {
   const headingStyle = (color = 'white', italic = false) => ({
@@ -74,7 +48,41 @@ function ContactCard() {
   );
 }
 
+function LittleCard({ title }) {
+  return (
+    <div className="card little-card">
+      <h3>{title}</h3>
+    </div>
+  )
+}
 
+function ThemeCard() {
+  const colors = [
+    '#ce318f',
+    '#4c3ccb',
+    '#24a297',
+    '#a3f500',
+    '#f6d322'
+  ]
+
+  return (
+    <div className="card little-card theme-card">
+      {/* <h3>Theme</h3> */}
+
+      <div className="theme-colors">
+        {colors.map((color, i) => (
+          <button
+            key={i}
+            className="theme-dot"
+            style={{ backgroundColor: color }}
+            aria-label={`Select theme color ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+/* =============== SIDE-BAR =============== */
 function AboutCard(){
     return <div className='card card about-card'>
         <h3>About me</h3>
@@ -101,11 +109,11 @@ function LittleFooter(){
     </div>
 }
 
-export default Projects;
+// export default Deck;
 export {
-    Projects,
     BioCard, 
-    ProjectCard, 
+    LittleCard,
+    ThemeCard, 
     ContactCard, 
     AboutCard, 
     LittleFooter,

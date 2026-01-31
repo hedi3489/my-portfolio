@@ -1,39 +1,27 @@
 import './Cards.css'
 import './Containers.css'
-import {BioCard, ContactCard, Projects, AboutCard, LittleFooter} from './Cards.jsx'
+import {BioCard, ContactCard, LittleCard, ThemeCard, AboutCard, LittleFooter} from './Cards.jsx'
 
-const techProjects = [
-  {
-    title: "Olympics API",
-    // description: "A REST-based API" // with pagination, validation, and exception handling."
-  },
-  {
-    title: "RPi Smart Home",
-    // description: "An IoT smart home simulation" // simulation with remote monitoring and control."
-  },
-  {
-    title: "Blackbox Pentest",
-    // description: "A pentest report" // assessment from reconnaissance to exploitation."
-  }
+const projectCards = [
+  { type: 'project', title: 'Olympics API' },
+  { type: 'project', title: 'IoT Smart Home' },
+  { type: 'project', title: 'Blackbox Pentest' }
 ]
-const funProjects = [
-  {
-    title: "Sketches",
-    description: "" 
-  },
-  {
-    title: "Artworks",
-    description: ""
-  },
-  {
-    title: "Currently",
-    description: ""
-  },
-  {
-    title: "Colors",
-    description: ""
-  }
+
+const specialCards = [
+  { type: 'sketches', title: 'Sketches' },
+  { type: 'artworks', title: 'Artworks' },
+  { type: 'availability', title: 'Availability' },
+  { type: 'theme', title: 'Theme' }
 ]
+
+const CARD_MAP = {
+  project: LittleCard,
+  sketches: LittleCard,
+  artworks: LittleCard,
+  availability: LittleCard,
+  theme: ThemeCard,
+}
 
 function MainContent(){
     return <div className='flex flex-col flex-center main-content'>
@@ -43,12 +31,22 @@ function MainContent(){
 }
 
 function Showcase(){
-    console.log(funProjects);
     return <div className='flex showcase'>
           <ContactCard />
-          <Projects projects={techProjects} />
-          <Projects projects={funProjects} />
+          <Deck cards={projectCards} />
+          <Deck cards={specialCards} />
         </div>
+}
+
+function Deck({ cards = [] }) {
+  return (
+    <div className="flex flex-col">
+      {cards.map((item, i) => {
+        const Card = CARD_MAP[item.type] || LittleCard
+        return <Card key={i} {...item} />
+      })}
+    </div>
+  )
 }
 
 function SideBar(){
@@ -60,5 +58,6 @@ function SideBar(){
 
 export { 
     MainContent,
+    Deck,
     SideBar
 }

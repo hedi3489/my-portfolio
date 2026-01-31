@@ -16,7 +16,7 @@
 
 /* =============== SHOWCASE CONTAINER =============== */
 .showcase {
-  flex: 4;
+  flex: 5;
   width: 100%;
 }
 .showcase > * { flex: 1; }
