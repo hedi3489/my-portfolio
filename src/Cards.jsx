@@ -55,9 +55,10 @@ function LittleCard({ title, description }) {
 function AvailabilityCard() {
   const available = true;
   var availabilityText = "";
-  const textStyle = (fontSize) => ({
-    margin : "2px 0px",
-    fontSize
+  const textStyle = (fontSize, color = 'white') => ({
+    margin : "1px 0px",
+    fontSize,
+    color
   });
 
   if(available==true){
@@ -70,7 +71,7 @@ function AvailabilityCard() {
     <div className="card little-card availability-card">
       <span className="status-dot" aria-hidden="true" />
       <h2 style={textStyle('1.35em')}>Now</h2>
-      <p style={textStyle('0.9em')}>{availabilityText}</p>
+      <p style={textStyle('0.9em', 'gray')}>{availabilityText}</p>
     </div>
   );
 }
@@ -120,7 +121,6 @@ function AboutCard() {
       <li>Javascript</li>
       <li>React</li>
       <li>Node.js</li>
-      <li>Python</li>
       <li>PHP</li>
       <li>Slim</li>
     </ul>

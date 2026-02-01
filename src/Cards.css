@@ -90,19 +90,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =============== THEME-CARD =============== */
 .theme-card {
   gap: 0.75rem;
@@ -139,6 +126,11 @@
   width: 100%;
   flex: 7;
 }
+.about-card h3 {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
 .about-card > p {
   padding: 5px 0px;
   font-weight: 200;
