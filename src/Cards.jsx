@@ -23,22 +23,24 @@ function ContactCard() {
   });
 
   return (
-    <div className="card contact-card">
+    <div>
+      <div className="card">
 
-      <h3><b>Let's start working together!</b></h3>
-      <br />
+        <h3><b>Let's start working together!</b></h3>
+        <br />
 
-      <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
-      <p><i>belhassinehedi308@gmail.com</i></p>
-      <p><i>Canada</i></p>
-      <br />
+        <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
+        <p><i>belhassinehedi308@gmail.com</i></p>
+        <p><i>Canada</i></p>
+        <br />
 
-      <h4 style={headingStyle('#6d6d6d', false, '3px')}>Socials</h4>
-      <p>LinkedIn</p>
-      <p>Github</p>
-      <p>Discord</p>
-      <p>Cara</p>
+        <h4 style={headingStyle('#6d6d6d', false, '3px')}>Socials</h4>
+        <p>LinkedIn</p>
+        <p>Github</p>
+        <p>Discord</p>
+        <p>Cara</p>
 
+      </div>
     </div>
   );
 }

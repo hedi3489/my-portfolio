@@ -9,6 +9,7 @@
   word-wrap: break-word;
   overflow-wrap: anywhere;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .card:hover {
@@ -17,7 +18,7 @@
 /* =============== BIO-CARD =============== */
 .bio-card { 
   min-width:100%;
-  flex: 5.5; 
+  flex: 5; 
 }
 .bio-text {
   /* border: 1px solid rgb(68, 68, 68); */
