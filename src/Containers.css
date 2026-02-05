@@ -26,7 +26,7 @@
 
 .project-page-container {
   min-width: 90%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 5vh 8vw;
 }
 
