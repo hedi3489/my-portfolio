@@ -1,14 +1,16 @@
 import { BioCard, ContactCard, LittleCard, AvailabilityCard, ThemeCard, AboutCard, LittleFooter } from './Cards.jsx'
 
 const projectCards = [
-  { type: 'project', title: 'Olympics API', description: 'REST-based API' },
+  { type: 'project', title: 'Olympics API', description: 'REST-based API', 
+    to: '/projects/IoT-Smart-Home', },
   {
     type: 'project',
     title: 'IoT Smart Home',
     description: 'RPi smart home simulation',
     to: '/projects/IoT-Smart-Home',
   },
-  { type: 'project', title: 'Blackbox Pentest', description: 'Vuln. assessment report' }
+  { type: 'project', title: 'Blackbox Pentest', description: 'Vuln. assessment report',
+    to: '/projects/IoT-Smart-Home', }
 ]
 
 const specialCards = [
@@ -42,7 +44,7 @@ function Showcase() {
 
 function Deck({ cards = [] }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col deck">
       {cards.map((item, i) => {
         const Card = CARD_MAP[item.type] || LittleCard
         return <Card key={i} {...item} />

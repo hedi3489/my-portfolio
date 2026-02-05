@@ -107,7 +107,7 @@ function ThemeCard() {
   }, [selectedColor]);
 
   return (
-    <div className="card little-card theme-card">
+    <div className="card little-card">
       <div className="theme-colors">
         {colors.map((color, i) => (
           <button

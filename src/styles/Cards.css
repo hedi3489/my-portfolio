@@ -94,8 +94,6 @@
 /* =============== LITTLE-CARDS =============== */
 .little-card {
   align-content: center;
-  flex: 1;
-  min-width: 80px;
   min-height: 50px;
 }
 /* =========== AVAILABILITY-CARD ============ */
