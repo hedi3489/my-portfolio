@@ -4,9 +4,7 @@
   background-color: var(--bg-card-primary);
   border: 1px solid var(--border-card-primary);
   border-radius: var(--radius);
-  flex-shrink: 0;
   overflow: visible;
-  word-wrap: break-word;
   overflow-wrap: anywhere;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
