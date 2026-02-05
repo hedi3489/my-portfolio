@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { MainContent, SideBar } from './Containers'
+import { IoTProjectPage } from './IoTProjectPage.jsx'
 import './Cards.css'
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <Route
         path="/"
         element={
-          <div className="flex container">
+          <div className="flex home-page-container">
             <MainContent />
             <SideBar />
           </div>
@@ -18,10 +19,10 @@ function App() {
 
       {/* Dummy project route */}
       <Route
-        path="/projects/test"
+        path="/projects/IoT-Smart-Home"
         element={
-          <div className="flex container">
-            <h1>Test Project Page</h1>
+          <div className="flex project-page-container">
+            <IoTProjectPage />
           </div>
         }
       />

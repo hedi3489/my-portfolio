@@ -1,16 +1,15 @@
 
-/* =============== PARENT CONTAINER =============== */
-.container {
+.home-page-container {
   width: 100%;
   min-height: 100vh;
   padding: 5vh 8vw;
 }
-/* =============== MAIN CONTENT =============== */
+
 .main-content {
   flex: 7.5;
   min-height: 100%;
 }
-/* =============== SHOWCASE CONTAINER ===============*/
+
 .showcase {
   flex: 5;
   width: 100%;
@@ -21,5 +20,16 @@
   flex: 1 1 0;
   min-width: 0;
 }
-/* =============== SIDE BAR =============== */
+
 .side-bar { flex: 2.7; }
+
+
+.project-page-container {
+  min-width: 90%;
+  height: 100vh;
+  padding: 5vh 8vw;
+}
+
+.flex-1 {
+  flex: 1;
+}
