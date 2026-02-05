@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { MainContent, SideBar } from './Containers'
 import { IoTProjectPage } from './IoTProjectPage.jsx'
-import './Cards.css'
 
 function App() {
   return (

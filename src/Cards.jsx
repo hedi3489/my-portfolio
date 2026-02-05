@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 function BioCard() {
   return <div className='flex card bio-card'>
@@ -45,12 +46,22 @@ function ContactCard() {
   );
 }
 
-function LittleCard({ title, description }) {
-  return (
+function LittleCard({ title, description, to }) {
+  const content = (
     <div className="card little-card">
       <h2>{title}</h2>
       <h5>{description}</h5>
     </div>
+  )
+
+  // If no route, render normally
+  if (!to) return content
+
+  // If route exists, wrap in Link
+  return (
+    <Link to={to} className="card-link">
+      {content}
+    </Link>
   )
 }
 

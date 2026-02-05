@@ -1,12 +1,16 @@
-import './Cards.css'
-import './Containers.css'
 import { BioCard, ContactCard, LittleCard, AvailabilityCard, ThemeCard, AboutCard, LittleFooter } from './Cards.jsx'
 
 const projectCards = [
   { type: 'project', title: 'Olympics API', description: 'REST-based API' },
-  { type: 'project', title: 'IoT Smart Home', description: 'RPi smart home simulation' },
+  {
+    type: 'project',
+    title: 'IoT Smart Home',
+    description: 'RPi smart home simulation',
+    to: '/projects/IoT-Smart-Home',
+  },
   { type: 'project', title: 'Blackbox Pentest', description: 'Vuln. assessment report' }
 ]
+
 const specialCards = [
   { type: 'sketches', title: 'Sketches' },
   { type: 'artworks', title: 'Artworks' },
