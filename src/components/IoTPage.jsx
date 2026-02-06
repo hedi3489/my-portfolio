@@ -1,3 +1,5 @@
+import rpiImage from '../assets/rpi400.png'
+
 function IoTProjectPage() {
   return (
     <div className="flex project-page-container">
@@ -5,7 +7,7 @@ function IoTProjectPage() {
         <div className="prose">
           
           <h1>Smart Home IoT Dashboard</h1>
-          <h3>Smart home automation system using Raspberry Pi, sensors, user profiles, and a web dashboard.</h3>
+          <h3>Smart home automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
           <br />
 
           <TechStack
@@ -14,8 +16,7 @@ function IoTProjectPage() {
               'Raspberry Pi',
               'Python',
               'HTML / CSS / JavaScript',
-              'DHT11',
-              'RFID',
+              'DHT11 / RFID',
               'Hardware automation',
             ]}
           />
@@ -27,6 +28,10 @@ function IoTProjectPage() {
           <PageSection
             title="Hardware Setup"
             body="The system uses a Raspberry Pi 400 connected to a breadboard-based circuit. An LED simulates a light bulb, a DC motor simulates a fan, and sensors collect environmental data such as temperature, humidity, and ambient light. An RFID reader identifies household members and loads personalized settings. (Insert hardware photo here)"
+            image={{
+              src: rpiImage,
+              alt: 'Raspberry Pi 400'
+            }}
           />
           <PageSection
             title="Automation & User Logic"
@@ -46,16 +51,26 @@ function IoTProjectPage() {
   )
 }
 
-function PageSection({ title, body }) {
-  return <div className="card">
+function PageSection({ title, body, image }) {
+  return <div className="">
     <h2>{title}</h2>
     <p>{body}</p>
+
+    {image && (
+        <img
+          src={image.src}
+          alt={image.alt || ''}
+          className="section-image half-width"
+          loading="lazy"
+        />
+      )}
+    <br />
   </div>
 }
 
 function TechStack({ title, items }) {
   return (
-    <div className="card fit-content ">
+    <div className="fit-content ">
       <h2>{title}</h2>
       <ul>
         {items.map((item, index) => (

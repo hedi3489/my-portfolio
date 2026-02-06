@@ -12,9 +12,11 @@
   align-items: center;
 }
 
-.full-width {
-  width: 100%;
-}
+.full-width       { width: 100%; }
+.over-half-width  { width:  75%; }
+.half-width       { width:  50%; }
+.quarter-width    { width:  25%; }
+
 .fit-content {
   width: fit-content;
 }

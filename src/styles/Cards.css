@@ -11,13 +11,14 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
-.card:hover {
-  border-color: var(--border-card-secondary);
-}
 
 /* ---------------------------
    HOME PAGE CONTAINERS
 ---------------------------- */
+
+.home-page-container .card:hover {
+  border-color: var(--border-card-secondary);
+}
 .bio-card { 
   min-width:100%;
   flex: 5; 
@@ -126,4 +127,18 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+.project-page-container .card {
+  padding: 4rem;
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.section-image {
+  margin-top: 0.75rem;
+  max-width: 100%;
+  border-radius: var(--radius);
 }
