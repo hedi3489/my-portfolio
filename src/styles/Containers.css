@@ -1,30 +1,44 @@
+/*---------------------
+  FLEX UTILITIES
+---------------------*/
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-center {
+  align-items: center;
+}
+
+
+/*-----------------------
+  HOME PAGE CONTAINERS
+------------------------*/
 .home-page-container {
   width: 100%;
   min-height: 100vh;
   padding: 5vh 8vw;
 }
-
 .main-content {
   flex: 7.5;
   min-height: 100%;
 }
-
 .showcase {
   flex: 5;
   width: 100%;
 }
+.deck > * ,
 .showcase > * {
   flex: 1 1 0;
   min-width: 0;
 }
-
-.deck > * {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
 .side-bar { flex: 2.7; }
 
+/*-----------------------
+  PROJ PAGE CONTAINERS
+------------------------*/
 .project-page-container {
   max-width: 100%;
   min-height: 100vh;
