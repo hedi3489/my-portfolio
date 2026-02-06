@@ -1,4 +1,4 @@
-import rpiImage from '../assets/rpi400.png'
+import rpiImage from '../assets/rpi-top.png'
 
 function IoTProjectPage() {
   return (
@@ -54,16 +54,16 @@ function IoTProjectPage() {
 function PageSection({ title, body, image }) {
   return <div className="">
     <h2>{title}</h2>
-    <p>{body}</p>
+      <p>{body}</p>
 
-    {image && (
-        <img
-          src={image.src}
-          alt={image.alt || ''}
-          className="section-image half-width"
-          loading="lazy"
-        />
-      )}
+      {image && (
+          <img
+            src={image.src}
+            alt={image.alt || ''}
+            className="section-image"
+            loading="lazy"
+          />
+        )}
     <br />
   </div>
 }
@@ -80,5 +80,6 @@ function TechStack({ title, items }) {
     </div>
   )
 }
+
 
 export default IoTProjectPage;

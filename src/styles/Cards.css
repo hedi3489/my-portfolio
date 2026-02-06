@@ -138,7 +138,7 @@
   gap: 0.5rem;
 }
 .section-image {
-  margin-top: 0.75rem;
-  max-width: 100%;
+  max-width: 50%;
+  height: auto;
   border-radius: var(--radius);
 }
