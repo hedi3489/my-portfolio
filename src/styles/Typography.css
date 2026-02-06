@@ -1,7 +1,7 @@
 /* ---------------------------
    DEFAULT
 ---------------------------- */
-h1, h2, h3, h4, h5, p { margin: 0; }
+h1, h2, h3, h4, h5, p, ul { margin: 0; }
 
 
 /* ---------------------------
@@ -42,54 +42,72 @@ h1, h2, h3, h4, h5, p { margin: 0; }
   font-weight: 300;
   color: white;
 }
-
+/* BIO CARD TYPO */
+.bio-text > p {
+  margin: 5px 0px;
+  padding: 3px 0px; 
+  font-size: clamp(0.95rem, 1.7vw, 1.2em);
+  gap: 1rem;
+}
+.bio-text > p > b {
+  font-weight: 600;
+  color: var(--border-card-secondary);
+}
+/* ABOUT CARD TYPO */
+.about-card h3 {
+  margin-top: 5px;
+  font-weight: 600;
+}
+.about-card > p {
+  padding: 5px 0px;
+  font-weight: 200;
+  line-height: 1.6;
+}
+.about-card > ul {
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-size: clamp(0.95rem, 1.7vw, 1.15em);
+  line-height: 1.5;
+  font-weight: 300;
+}
 
 /* ---------------------------
    PROJECT PAGE TYPOGRAPHY
 ---------------------------- */
-.project-page-container h1 {
-  font-size: clamp(2rem, 3vw, 2.6em);
+.project-page-container .prose h1 {
+  font-size: clamp(2rem, 3vw, 3em);
   line-height: 1.15;
-  font-weight: 600;
+  font-weight: 650;
+  margin-top: 2rem;
 }
 
-.project-page-container h2 {
-  font-size: clamp(1.35rem, 2.2vw, 1.75em);
-  line-height: 1.25;
-  font-weight: 600;
-}
-
-.project-page-container h3 {
-  font-size: clamp(1.15rem, 1.8vw, 1.35em);
+.project-page-container .prose h2 {
+  font-size: clamp(1.15rem, 1.8vw, 1.45em);
   line-height: 1.35;
-  font-weight: 600;
-}
-
-.project-page-container h4 {
-  font-size: clamp(1.05rem, 1.6vw, 1.2em);
-  line-height: 1.4;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0.2rem 0rem;
 }
 
-.project-page-container h5 {
-  font-size: clamp(0.95rem, 1.3vw, 1.05em);
-  line-height: 1.4;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.72);
+.project-page-container .prose h3 {
+  font-size: clamp(1rem, 1.4vw, 1.2em);
+  line-height: 0.35;
+  font-weight: 200;
+  color: gray;
 }
 
-.project-page-container p {
-  font-size: clamp(1rem, 1.25vw, 1.12em);
-  line-height: 1.65;
-  font-weight: 300;
+.project-page-container .prose p,
+.project-page-container .prose li {
+  font-size: clamp(1rem, 1.25vw, 1.1em);
+  line-height: 1.5;
+  font-weight: 250;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.project-page-container ul {
+.project-page-container .prose ul {
   margin: 0;
-  padding-left: 1.2rem;
-}
-
-.project-page-container li {
-  line-height: 1.7;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }

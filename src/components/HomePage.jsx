@@ -1,4 +1,4 @@
-import * as Cards from '../Cards.jsx'
+import * as Cards from './Cards.jsx'
 
 const projectCards = [
     {

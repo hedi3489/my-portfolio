@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+.full-width {
+  width: 100%;
+}
+.fit-content {
+  width: fit-content;
+}
 
 /*-----------------------
   HOME PAGE CONTAINERS
@@ -43,4 +49,8 @@
   max-width: 100%;
   min-height: 100vh;
   padding: 5vh 8vw;
+}
+
+.project-page-container .prose {
+  min-width: 100%;
 }

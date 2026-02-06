@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './components/HomePage.jsx'
-import IoTProjectPage from './components/IoTProjectPage.jsx'
+import IoTProjectPage from './components/IoTPage.jsx'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         path="/projects/IoT-Smart-Home"
         element={<IoTProjectPage />}
       />
-      
+
     </Routes>
   )
 }

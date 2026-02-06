@@ -1,10 +1,12 @@
 function IoTProjectPage() {
   return (
     <div className="flex project-page-container">
-      <div className="flex flex-col card">
+      <div className="flex flex-col full-width card">
         <div className="prose">
+          
           <h1>Smart Home IoT Dashboard</h1>
-          <h2>Smart home automation system using Raspberry Pi, sensors, user profiles, and a web dashboard.</h2>
+          <h3>Smart home automation system using Raspberry Pi, sensors, user profiles, and a web dashboard.</h3>
+          <br />
 
           <TechStack
             title="Tech stack chips"
@@ -45,16 +47,16 @@ function IoTProjectPage() {
 }
 
 function PageSection({ title, body }) {
-  return <div>
-    <h3>{title}</h3>
+  return <div className="card">
+    <h2>{title}</h2>
     <p>{body}</p>
   </div>
 }
 
 function TechStack({ title, items }) {
   return (
-    <div>
-      <h3>{title}</h3>
+    <div className="card fit-content ">
+      <h2>{title}</h2>
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
