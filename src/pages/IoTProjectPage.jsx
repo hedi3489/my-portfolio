@@ -62,4 +62,4 @@ function TechStack({ title, items }) {
     )
 }
 
-export { IoTProjectPage };
+export default IoTProjectPage;

@@ -26,24 +26,38 @@ function ContactCard() {
   return (
     <div>
       <div className="card">
-
-        <h3><b>Let's start working together!</b></h3>
-        <br />
-
+        <h3><b>Let's start working together!</b></h3><br />
         <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
         <p><i>belhassinehedi308@gmail.com</i></p>
         <p><i>Canada</i></p>
         <br />
-
         <h4 style={headingStyle('#6d6d6d', false, '3px')}>Socials</h4>
         <p>LinkedIn</p>
         <p>Github</p>
         <p>Discord</p>
         <p>Cara</p>
-
       </div>
     </div>
   );
+}
+
+const CARD_MAP = {
+  project: LittleCard,
+  sketches: LittleCard,
+  artworks: LittleCard,
+  availability: AvailabilityCard,
+  theme: ThemeCard,
+}
+
+function Deck({ cards = [] }) {
+  return (
+    <div className="flex flex-col deck">
+      {cards.map((item, i) => {
+        const Card = CARD_MAP[item.type] || LittleCard
+        return <Card key={i} {...item} />
+      })}
+    </div>
+  )
 }
 
 function LittleCard({ title, description, to }) {
@@ -53,11 +67,7 @@ function LittleCard({ title, description, to }) {
       <h5>{description}</h5>
     </div>
   )
-
-  // If no route, render normally
   if (!to) return content
-
-  // If route exists, wrap in Link
   return (
     <Link to={to} className="card-link">
       {content}
@@ -97,11 +107,7 @@ function ThemeCard() {
     '#71758b', 
     '#6a5874' 
   ]
-  
-  // State for the selected color
   const [selectedColor, setSelectedColor] = useState(colors[0]);
-  
-  // Update CSS variable whenever selectedColor changes
   useEffect(() => {
     document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
   }, [selectedColor]);
@@ -126,9 +132,7 @@ function ThemeCard() {
 function AboutCard() {
   return <div className='card card about-card'>
     <h3>About me</h3>
-    <p>
-      Junior dev interested in frontend & backend, Internet of Things, & passion projects.
-    </p>
+    <p>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
     <p>My primary tools of choice include:</p>
     <ul>
       <li>Javascript</li>
@@ -137,10 +141,7 @@ function AboutCard() {
       <li>PHP</li>
       <li>Slim</li>
     </ul>
-    <p>
-      Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).
-    </p>
-
+    <p>Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).</p>
   </div>
 }
 
@@ -152,10 +153,7 @@ function LittleFooter() {
 
 export {
   BioCard,
-  LittleCard,
-  AvailabilityCard,
-  ThemeCard,
   ContactCard,
-  AboutCard,
-  LittleFooter,
+  Deck, LittleCard, AvailabilityCard, ThemeCard,
+  AboutCard, LittleFooter,
 };

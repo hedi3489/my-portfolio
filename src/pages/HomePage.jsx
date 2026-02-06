@@ -1,0 +1,42 @@
+import * as Cards from '../Cards.jsx'
+
+const projectCards = [
+    {
+        type: 'project', title: 'Olympics API', description: 'REST-based API',
+        to: '/projects/IoT-Smart-Home',
+    },
+    {
+        type: 'project',
+        title: 'IoT Smart Home',
+        description: 'RPi smart home simulation',
+        to: '/projects/IoT-Smart-Home',
+    },
+    {
+        type: 'project', title: 'Blackbox Pentest', description: 'Vuln. assessment report',
+        to: '/projects/IoT-Smart-Home',
+    }
+]
+const specialCards = [
+    { type: 'sketches', title: 'Sketches' },
+    { type: 'artworks', title: 'Artworks' },
+    { type: 'availability', title: 'Availability' },
+    { type: 'theme', title: 'Theme' }
+]
+
+function HomePage() {
+    return <div className="flex home-page-container">
+        <div className='flex flex-col flex-center main-content'>
+            <Cards.BioCard />
+            <div className='flex showcase'>
+                <Cards.ContactCard />
+                <Cards.Deck cards={projectCards} />
+                <Cards.Deck cards={specialCards} />
+            </div>
+        </div>
+        <div className='flex flex-col felx-center side-bar'>
+            <Cards.AboutCard />
+            <Cards.LittleFooter />
+        </div>
+    </div>;
+}
+export default HomePage;

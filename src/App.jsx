@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import { MainContent, SideBar } from './Containers'
-import { IoTProjectPage } from './IoTProjectPage.jsx'
+import HomePage from './pages/HomePage.jsx'
+import IoTProjectPage from './pages/IoTProjectPage.jsx'
 
 function App() {
   return (
@@ -8,12 +8,7 @@ function App() {
       {/* Home */}
       <Route
         path="/"
-        element={
-          <div className="flex home-page-container">
-            <MainContent />
-            <SideBar />
-          </div>
-        }
+        element={<HomePage />}
       />
 
       {/* Dummy project route */}
