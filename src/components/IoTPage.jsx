@@ -5,10 +5,9 @@ function IoTProjectPage() {
     <div className="flex project-page-container">
       <div className="flex flex-col full-width card">
         <div className="prose">
-          
+
           <h1>Smart Home IoT Dashboard</h1>
-          <h3>Smart home automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
-          <br />
+          <h3>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
 
           <TechStack
             title="Tech stack chips"
@@ -21,18 +20,22 @@ function IoTProjectPage() {
             ]}
           />
 
-          <PageSection
-            title="Overview"
-            body="A smart home automation simulation built with a Raspberry Pi 400 that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."
-          />
-          <PageSection
-            title="Hardware Setup"
-            body="The system uses a Raspberry Pi 400 connected to a breadboard-based circuit. An LED simulates a light bulb, a DC motor simulates a fan, and sensors collect environmental data such as temperature, humidity, and ambient light. An RFID reader identifies household members and loads personalized settings. (Insert hardware photo here)"
-            image={{
-              src: rpiImage,
-              alt: 'Raspberry Pi 400'
-            }}
-          />
+          <PageSection title="Overview">
+            <p>A smart home automation simulation built with a <b>Raspberry Pi</b> that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."</p>
+          </PageSection>
+          <PageSection title="Hardware Setup" image={{ src: rpiImage, alt: 'Raspberry Pi 400' }}>
+            {/* <ul> */}
+              <p>- Raspberry Pi 400 as the central controller</p>
+              <p>- ESP32 as a secondary microcontroller for peripheral sensing and input</p>
+              <p>- LED simulating a household light bulb</p>
+              <p>- DC motor simulating a fan, powered by a 9V battery</p>
+              <p>- DHT11 sensor connected to the RPi for temperature and humidity sensing</p>
+              <p>- Photoresistor connected to an ESP32 for ambient light sensing</p>
+              <p>- RFID reader connected to the ESP32 for household member identification</p>
+            {/* </ul> */}
+            <br />
+          </PageSection>
+
           <PageSection
             title="Automation & User Logic"
             body="Environmental thresholds are defined per user and loaded through RFID identification. When sensor readings fall outside acceptable ranges, the system automatically evaluates whether to activate devices and notifies the user via email. Users can approve or reject actions by responding directly to the email."
@@ -51,22 +54,24 @@ function IoTProjectPage() {
   )
 }
 
-function PageSection({ title, body, image }) {
-  return <div className="">
-    <h2>{title}</h2>
-      <p>{body}</p>
+function PageSection({ title, children, image }) {
+  return (
+    <div className="page-section">
+      <h2>{title}</h2>
+      {children}
 
       {image && (
-          <img
-            src={image.src}
-            alt={image.alt || ''}
-            className="section-image"
-            loading="lazy"
-          />
-        )}
-    <br />
-  </div>
+        <img
+          src={image.src}
+          alt={image.alt || ''}
+          className="section-image"
+        />
+      )}
+    </div>
+  )
 }
+
+
 
 function TechStack({ title, items }) {
   return (

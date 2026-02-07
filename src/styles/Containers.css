@@ -27,7 +27,7 @@
 .home-page-container {
   width: 100%;
   min-height: 100vh;
-  padding: 5vh 8vw;
+  padding: 5em 15em;
 }
 .main-content {
   flex: 7.5;
@@ -50,7 +50,7 @@
 .project-page-container {
   max-width: 100%;
   min-height: 100vh;
-  padding: 5vh 8vw;
+  padding: 5em 15em;
 }
 
 .project-page-container .prose {
