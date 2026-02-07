@@ -64,7 +64,7 @@ function IoTProjectPage() {
           <h1>Smart Home IoT Dashboard</h1>
           <h3>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
 
-          <TechStack
+          {/* <TechStack
             title="Tech stack chips"
             items={[
               'Raspberry Pi',
@@ -73,7 +73,19 @@ function IoTProjectPage() {
               'DHT11 / RFID',
               'Hardware automation',
             ]}
-          />
+          /> */}
+
+
+          {/* <h3 className="tech-stack-label">Tech stack</h3> */}
+          {/* <div className="tech-stack-inline flex">
+            <span>Raspberry Pi</span>
+            <span>ESP32</span>
+            <span>Python</span>
+            <span>HTML / CSS / JavaScript</span>
+            <span>DHT11</span>
+            <span>RFID</span>
+            <span>Hardware automation</span>
+          </div> */}
 
           <PageSection title="Overview">
             <p>A smart home automation simulation built with a <b>Raspberry Pi</b> that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."</p>
@@ -112,6 +124,7 @@ function TechStack({ title, items }) {
     </div>
   )
 }
+
 
 function PageSection({ title, children, image }) {
   return (

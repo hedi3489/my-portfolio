@@ -104,6 +104,36 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
   color: rgba(255, 255, 255, 0.9);
 }
 
+
+/* ---------------------------
+   SOFT LIST TYPOGRAPHY
+---------------------------- */
+.tech-stack-label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.project-page-container .prose .tech-stack-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.8rem;
+
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tech-stack-inline span {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+
+
+
 /* ---------------------------
    SOFT LIST TYPOGRAPHY
 ---------------------------- */
