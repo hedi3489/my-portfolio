@@ -15,28 +15,23 @@
 /* ---------------------------
    HOME PAGE CONTAINERS
 ---------------------------- */
-
 .home-page-container .card:hover {
   border-color: var(--border-card-secondary);
 }
+
 .bio-card { 
-  min-width:100%;
   flex: 5; 
 }
 .bio-text {
   width: 65%;
   height: 50%;
 }
+
 .little-card {
   align-content: center;
   min-height: 50px;
 }
-.availability-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
+
 .status-dot {
   position: absolute;
   top: 20px;
@@ -104,12 +99,12 @@
 .theme-dot.selected {
   border-color: var(--border-card-secondary);
 }
+
 .about-card {
-  width: 100%;
   flex: 7;
 }
+
 .little-footer {
-  width: 100%;
   flex: 3.05;
 }
 

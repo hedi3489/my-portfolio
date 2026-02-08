@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 
 function BioCard() {
-  return <div className='flex card bio-card'>
+  return <div className='flex full-width card bio-card'>
     <div className="bio-text">
       <p>Welcome</p>
       <p>
@@ -93,8 +93,10 @@ function AvailabilityCard() {
   return (
     <div className="card little-card availability-card">
       <span className="status-dot" aria-hidden="true" />
-      <h2 style={textStyle('1.35em')}>Now</h2>
-      <p style={textStyle('0.9em', 'gray')}>{availabilityText}</p>
+      <div>
+        <h2 style={textStyle('1.35em')}>Now</h2>
+        <p style={textStyle('0.9em', 'gray')}>{availabilityText}</p>
+      </div>
     </div>
   );
 }
@@ -113,7 +115,7 @@ function ThemeCard() {
   }, [selectedColor]);
 
   return (
-    <div className="card little-card">
+    <div className="card theme-card">
       <div className="theme-colors">
         {colors.map((color, i) => (
           <button
@@ -130,7 +132,7 @@ function ThemeCard() {
 }
 
 function AboutCard() {
-  return <div className='card card about-card'>
+  return <div className='full-width card about-card'>
     <h3>About me</h3>
     <p>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
     <p>My primary tools of choice include:</p>
@@ -146,7 +148,7 @@ function AboutCard() {
 }
 
 function LittleFooter() {
-  return <div className='card little-footer'>
+  return <div className='full-width card little-footer'>
     <p>text... text...</p>
   </div>
 }
