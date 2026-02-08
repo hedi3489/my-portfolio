@@ -1,10 +1,5 @@
 import rpiImage from '../assets/rpi-top.png'
-import {
-  FaMicrochip,
-  FaLightbulb,
-  FaFan,
-  FaIdCard,
-} from 'react-icons/fa'
+import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
 
@@ -63,29 +58,16 @@ function IoTProjectPage() {
 
           <h1>Smart Home IoT Dashboard</h1>
           <h3>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
-
-          {/* <TechStack
-            title="Tech stack chips"
-            items={[
-              'Raspberry Pi',
-              'Python',
-              'HTML / CSS / JavaScript',
-              'DHT11 / RFID',
-              'Hardware automation',
-            ]}
-          /> */}
-
-
-          {/* <h3 className="tech-stack-label">Tech stack</h3> */}
-          {/* <div className="tech-stack-inline flex">
+          <div className="tech-stack-inline flex">
             <span>Raspberry Pi</span>
             <span>ESP32</span>
+            <span>HTML / CSS / JS</span>
             <span>Python</span>
-            <span>HTML / CSS / JavaScript</span>
             <span>DHT11</span>
             <span>RFID</span>
             <span>Hardware automation</span>
-          </div> */}
+          </div>
+          <br />
 
           <PageSection title="Overview">
             <p>A smart home automation simulation built with a <b>Raspberry Pi</b> that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."</p>
@@ -97,7 +79,9 @@ function IoTProjectPage() {
           </PageSection>
 
           <PageSection title="Automation & User Logic">
-            <p>Environmental thresholds are defined per user and loaded through RFID identification. When sensor readings fall outside acceptable ranges, the system automatically evaluates whether to activate devices and notifies the user via email. Users can approve or reject actions by responding directly to the email.</p>
+            <p>Environmental thresholds for temperature and ambient light are defined per user and loaded dynamically through RFID identification. When sensor readings move outside a user’s thresholds, the system evaluates the appropriate response and notifies the user via email.</p>
+            <p>If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.</p>
+            <p>For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically. </p>
           </PageSection>
           <PageSection title="Dashboard Interface">
             <p>A web-based dashboard displays live sensor readings and the current state of devices. It allows users to manually control the system and monitor environmental conditions in real time. (Insert dashboard screenshots or short GIF)</p>
@@ -128,7 +112,7 @@ function TechStack({ title, items }) {
 
 function PageSection({ title, children, image }) {
   return (
-    <div className="page-section">
+    <div className="flex flex-col">
       <h2>{title}</h2>
       {children}
 

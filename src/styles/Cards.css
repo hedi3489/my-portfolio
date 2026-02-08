@@ -116,7 +116,6 @@
   flex: 3.05;
 }
 
-
 /* ---------------------------
    PROJECT PAGE CONTAINERS
 ---------------------------- */
@@ -126,20 +125,15 @@
   flex-direction: column;
   gap: 1rem;
 }
+
 .project-page-container .prose > div {
-  display: flex;
-  flex-direction: column;
   gap: 0.4rem;
 }
+
 .project-page-container .card {
   padding: 4rem 6rem;
 }
 
-.page-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
 .section-image {
   max-width: 50%;
   height: auto;

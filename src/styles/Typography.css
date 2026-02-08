@@ -114,19 +114,17 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
 }
 
 .project-page-container .prose .tech-stack-inline {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.6rem 0.8rem;
+  gap: 0.5rem;
 
   font-size: 0.95em;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .tech-stack-inline span {
-  padding: 0.25rem 0.6rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.06);
   white-space: nowrap;
 }
@@ -138,7 +136,7 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
    SOFT LIST TYPOGRAPHY
 ---------------------------- */
 .soft-list {
-  width: 82%;
+  width: 100%;
 }
 
 .soft-list-row {
