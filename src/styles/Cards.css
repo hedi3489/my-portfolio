@@ -71,18 +71,11 @@
 
 .theme-card {
   padding: 24px 10px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
 }
-
 .theme-colors {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
-  width: 100%;
-  min-width: 0;
 
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -90,17 +83,14 @@
 
   justify-content: center;
 
-  -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
 }
-
 .theme-colors::before,
 .theme-colors::after {
   content: "";
   flex: 1 0 0;
 }
-
 .theme-dot {
   flex: 0 0 auto;
   width: clamp(24px, 4vw, 34px);
@@ -111,7 +101,6 @@
   cursor: pointer;
   scroll-snap-align: center; 
 }
-
 .theme-dot:hover {
   border-color: var(--bg-color-secondary);
 }

@@ -27,7 +27,7 @@ function HomePage() {
     return <div className="flex home-page-container">
         <div className='flex flex-col flex-center main-content'>
             <Cards.BioCard />
-            <div className='flex showcase'>
+            <div className='flex full-width showcase'>
                 <Cards.ContactCard />
                 <Cards.Deck cards={projectCards} />
                 <Cards.Deck cards={specialCards} />
