@@ -91,7 +91,7 @@ function AvailabilityCard() {
   }
   
   return (
-    <div className="card little-card availability-card">
+    <div className="flex flex-center card little-card relative-pos">
       <span className="status-dot" aria-hidden="true" />
       <div>
         <h2 style={textStyle('1.35em')}>Now</h2>

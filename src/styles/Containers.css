@@ -46,10 +46,17 @@
   flex: 5;
   width: 100%;
 }
+.deck {
+  display: flex;
+  flex-direction: column;
+  height: 100%;          /* important if parent has a defined height */
+  min-height: 0;         /* allows children to shrink */
+}
 .deck > * ,
 .showcase > * {
   flex: 1 1 0;
   min-width: 0;
+  min-height: 0;
 }
 .side-bar { flex: 2.7; }
 

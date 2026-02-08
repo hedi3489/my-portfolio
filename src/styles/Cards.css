@@ -70,29 +70,48 @@
 }
 
 .theme-card {
-  gap: 0.75rem;
-  padding: 0px 0.3rem;
-  height: 100%;
-  flex: 3;
+  padding: 24px 10px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 }
+
 .theme-colors {
   display: flex;
-  gap: 0.4rem;
-  justify-content: center;
-}
-.theme-dot {
-  width: clamp(24px, 5vw, 37px);
-  aspect-ratio: 1 / 1;
-  padding: 0;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  cursor: pointer;
-  display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+
+  width: 100%;
+  min-width: 0;
+
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
   justify-content: center;
 
-  transition: border-color 0.3s ease;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
 }
+
+.theme-colors::before,
+.theme-colors::after {
+  content: "";
+  flex: 1 0 0;
+}
+
+.theme-dot {
+  flex: 0 0 auto;
+  width: clamp(24px, 4vw, 34px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid transparent;
+  cursor: pointer;
+  scroll-snap-align: center; 
+}
+
 .theme-dot:hover {
   border-color: var(--bg-color-secondary);
 }
