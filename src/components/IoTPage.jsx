@@ -74,13 +74,7 @@ function IoTProjectPage() {
 
           <TextSection
             title="Overview"
-            paragraphs={[
-              <>
-                A smart home automation simulation built with a <b>Raspberry Pi</b> that
-                integrates sensors, actuators, user identification, and a web dashboard.
-                The project models how real-world smart home systems monitor environments,
-                apply automation rules, and keep users in the loop.
-              </>,
+            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard.The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
             ]}
             className="text-section"
           />
@@ -90,20 +84,19 @@ function IoTProjectPage() {
             children={
               <>
                 <SoftList items={softlist} />
-
-                <h3>Breadboard Layout Diagram</h3>
-                <img
-                  src={iotSetup1}
+                <CaptionedImage 
+                  title="Breadboard Layout Diagram"
+                  image={iotSetup1}
                   alt="Smart home simulation setup diagram 1"
-                  className='section-image' />
-                  <h5>Physical breadboard implementation of the IoT prototype showing the Raspberry Pi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement</h5>
+                  caption='Physical breadboard implementation of the IoT prototype showing the Raspberry Pi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement'
+                />
 
-                <h3>Circuit Schematic</h3>
-                <img
-                  src={iotSetup2}
+                <CaptionedImage 
+                  title="Circuit Schematic"
+                  image={iotSetup2}
                   alt="Smart home simulation setup diagram 2"
-                  className='section-image' />
-                  <h5>Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format</h5>
+                  caption='Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format'
+                />
               </>
             }
             className="text-section"
@@ -182,6 +175,17 @@ function SoftList({ items }) {
       })}
     </dl>
   )
+}
+
+function CaptionedImage({ title='', image='', alt='', caption='' }) {
+  return <div>
+    <h3>{title}</h3>
+    <img
+      src={image}
+      alt={alt}
+      className='section-image' />
+    <h5>{caption}</h5>
+  </div>
 }
 
 
