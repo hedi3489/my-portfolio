@@ -80,11 +80,13 @@ function IoTProjectPage() {
                 apply automation rules, and keep users in the loop.
               </>,
             ]}
+            className = "text-section"
           />
 
           <TextSection
             title="Hardware Setup"
             children={<SoftList items={softlist} />}
+            className = "text-section"
           />
 
           <TextSection
@@ -94,6 +96,7 @@ function IoTProjectPage() {
               "If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.",
               "For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically.",
             ]}
+            className = "text-section in-section-gap"
           />
 
           <TextSection
@@ -101,6 +104,7 @@ function IoTProjectPage() {
             paragraphs={[
               "A web-based dashboard displays live sensor readings and the current state of devices. It allows users to manually control the system and monitor environmental conditions in real time. (Insert dashboard screenshots or short GIF)",
             ]}
+            className = "text-section"
           />
 
           <TextSection
@@ -108,14 +112,13 @@ function IoTProjectPage() {
             paragraphs={[
               "This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. It highlights experience with IoT concepts, backend logic, asynchronous events, and building interfaces that control physical systems.",
             ]}
+            className = "text-section"
           />
-
         </div>
       </div>
     </div>
   )
 }
-
 
 const TechStackInline = ({ items = [] }) => {
   return (
@@ -131,14 +134,15 @@ export function TextSection({ title, paragraphs = [], children, className = "" }
   return (
     <section className={className}>
       <h2>{title}</h2>
-      {paragraphs.map((text, i) => (
-        <p key={i}>{text}</p>
-      ))}
+      <div>
+        {paragraphs.map((text, i) => (
+          <p key={i}>{text}</p>
+        ))}
+      </div>
       {children}
     </section>
   );
 }
-
 
 function SoftList({ items }) {
   return (

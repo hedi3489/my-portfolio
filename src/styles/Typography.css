@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
 .project-page-container .prose p, 
 .project-page-container .prose .page-section li{
   font-size: 1.5em;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 250;
   color: rgba(255, 255, 255, 0.9);
 }
@@ -130,9 +130,6 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
   white-space: nowrap;
 }
 
-
-
-
 /* ---------------------------
    SOFT LIST TYPOGRAPHY
 ---------------------------- */
@@ -155,13 +152,11 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
   );
   
   border-radius: 6px;
-  /* padding: 0.4rem 0.75rem; */
 }
 .soft-list-row dt {
   position: relative;
   padding: 0.5rem 0.3rem;
   border-radius: 6px;
-  /* background-color: rgba(197, 26, 74, 0.18); */
   background: linear-gradient(
     to right,
     rgba(197, 26, 74, 0.4),

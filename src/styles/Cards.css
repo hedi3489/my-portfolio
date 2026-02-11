@@ -115,27 +115,3 @@
 .little-footer {
   flex: 3.05;
 }
-
-/* ---------------------------
-   PROJECT PAGE CONTAINERS
----------------------------- */
-.project-page-container .prose {
-  max-width: 72ch;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.project-page-container .prose > div {
-  gap: 0.4rem;
-}
-
-.project-page-container .card {
-  padding: 4rem 6rem;
-}
-
-.section-image {
-  max-width: 50%;
-  height: auto;
-  border-radius: var(--radius);
-}

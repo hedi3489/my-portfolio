@@ -33,7 +33,8 @@
 /*-----------------------
   HOME PAGE CONTAINERS
 ------------------------*/
-.home-page-container {
+.home-page-container, 
+.project-page-container {
   width: 100%;
   min-height: 100vh;
   padding: 5em 15em;
@@ -57,12 +58,30 @@
 /*-----------------------
   PROJ PAGE CONTAINERS
 ------------------------*/
-.project-page-container {
-  max-width: 100%;
-  min-height: 100vh;
-  padding: 5em 15em;
-}
-
 .project-page-container .prose {
   min-width: 100%;
+  max-width: 72ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.project-page-container .prose > div {
+  gap: 0.4rem;
+}
+
+.project-page-container .card {
+  padding: 4rem 6rem;
+}
+
+.in-section-gap div{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.section-image {
+  max-width: 50%;
+  height: auto;
+  border-radius: var(--radius);
 }
