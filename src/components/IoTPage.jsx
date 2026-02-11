@@ -58,74 +58,87 @@ function IoTProjectPage() {
 
           <h1>Smart Home IoT Dashboard</h1>
           <h3>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
-          <div className="tech-stack-inline flex">
-            <span>Raspberry Pi</span>
-            <span>ESP32</span>
-            <span>HTML / CSS / JS</span>
-            <span>Python</span>
-            <span>DHT11</span>
-            <span>RFID</span>
-            <span>Hardware automation</span>
-          </div>
-          <br />
+          <TechStackInline
+            items={[
+              "Raspberry Pi",
+              "ESP32",
+              "HTML / CSS / JS",
+              "Python",
+              "DHT11",
+              "RFID",
+              "Hardware automation",
+            ]}
+          />
 
-          <PageSection title="Overview">
-            <p>A smart home automation simulation built with a <b>Raspberry Pi</b> that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."</p>
-          </PageSection>
+          <TextSection
+            title="Overview"
+            paragraphs={[
+              <>
+                A smart home automation simulation built with a <b>Raspberry Pi</b> that
+                integrates sensors, actuators, user identification, and a web dashboard.
+                The project models how real-world smart home systems monitor environments,
+                apply automation rules, and keep users in the loop.
+              </>,
+            ]}
+          />
 
-          {/*image={{ src: rpiImage, alt: 'Raspberry Pi 400' }}*/}
-          <PageSection title="Hardware Setup">
-            <SoftList items={softlist} />
-          </PageSection>
+          <TextSection
+            title="Hardware Setup"
+            children={<SoftList items={softlist} />}
+          />
 
-          <PageSection title="Automation & User Logic">
-            <p>Environmental thresholds for temperature and ambient light are defined per user and loaded dynamically through RFID identification. When sensor readings move outside a user’s thresholds, the system evaluates the appropriate response and notifies the user via email.</p>
-            <p>If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.</p>
-            <p>For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically. </p>
-          </PageSection>
-          <PageSection title="Dashboard Interface">
-            <p>A web-based dashboard displays live sensor readings and the current state of devices. It allows users to manually control the system and monitor environmental conditions in real time. (Insert dashboard screenshots or short GIF)</p>
-          </PageSection>
+          <TextSection
+            title="Automation & User Logic"
+            paragraphs={[
+              "Environmental thresholds for temperature and ambient light are defined per user and loaded dynamically through RFID identification. When sensor readings move outside a user’s thresholds, the system evaluates the appropriate response and notifies the user via email.",
+              "If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.",
+              "For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically.",
+            ]}
+          />
 
-          <PageSection title="Key Takeaways">
-            <p>This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. It highlights experience with IoT concepts, backend logic, asynchronous events, and building interfaces that control physical systems."</p>
-          </PageSection>
+          <TextSection
+            title="Dashboard Interface"
+            paragraphs={[
+              "A web-based dashboard displays live sensor readings and the current state of devices. It allows users to manually control the system and monitor environmental conditions in real time. (Insert dashboard screenshots or short GIF)",
+            ]}
+          />
+
+          <TextSection
+            title="Key Takeaways"
+            paragraphs={[
+              "This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. It highlights experience with IoT concepts, backend logic, asynchronous events, and building interfaces that control physical systems.",
+            ]}
+          />
+
         </div>
       </div>
     </div>
   )
 }
 
-function TechStack({ title, items }) {
+
+const TechStackInline = ({ items = [] }) => {
   return (
-    <div className="fit-content ">
-      <h2>{title}</h2>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+    <div className="tech-stack-inline flex">
+      {items.map((item, index) => (
+        <span key={index}>{item}</span>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-
-function PageSection({ title, children, image }) {
+export function TextSection({ title, paragraphs = [], children, className = "" }) {
   return (
-    <div className="flex flex-col">
+    <section className={className}>
       <h2>{title}</h2>
+      {paragraphs.map((text, i) => (
+        <p key={i}>{text}</p>
+      ))}
       {children}
-
-      {image && (
-        <img
-          src={image.src}
-          alt={image.alt || ''}
-          className="section-image"
-        />
-      )}
-    </div>
-  )
+    </section>
+  );
 }
+
 
 function SoftList({ items }) {
   return (
