@@ -1,4 +1,6 @@
 import rpiImage from '../assets/rpi-top.png'
+import iotSetup1 from '../assets/iot-setup1.png'
+import iotSetup2 from '../assets/iot-setup2.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
@@ -57,7 +59,7 @@ function IoTProjectPage() {
         <div className="prose">
 
           <h1>Smart Home IoT Dashboard</h1>
-          <h3>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h3>
+          <h4>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h4>
           <TechStackInline
             items={[
               "Raspberry Pi",
@@ -80,13 +82,31 @@ function IoTProjectPage() {
                 apply automation rules, and keep users in the loop.
               </>,
             ]}
-            className = "text-section"
+            className="text-section"
           />
 
           <TextSection
             title="Hardware Setup"
-            children={<SoftList items={softlist} />}
-            className = "text-section"
+            children={
+              <>
+                <SoftList items={softlist} />
+
+                <h3>Breadboard Layout Diagram</h3>
+                <img
+                  src={iotSetup1}
+                  alt="Smart home simulation setup diagram 1"
+                  className='section-image' />
+                  <h5>Physical breadboard implementation of the IoT prototype showing the Raspberry Pi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement</h5>
+
+                <h3>Circuit Schematic</h3>
+                <img
+                  src={iotSetup2}
+                  alt="Smart home simulation setup diagram 2"
+                  className='section-image' />
+                  <h5>Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format</h5>
+              </>
+            }
+            className="text-section"
           />
 
           <TextSection
@@ -96,7 +116,7 @@ function IoTProjectPage() {
               "If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.",
               "For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically.",
             ]}
-            className = "text-section in-section-gap"
+            className="text-section in-section-gap"
           />
 
           <TextSection
@@ -104,7 +124,7 @@ function IoTProjectPage() {
             paragraphs={[
               "A web-based dashboard displays live sensor readings and the current state of devices. It allows users to manually control the system and monitor environmental conditions in real time. (Insert dashboard screenshots or short GIF)",
             ]}
-            className = "text-section"
+            className="text-section"
           />
 
           <TextSection
@@ -112,7 +132,7 @@ function IoTProjectPage() {
             paragraphs={[
               "This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. It highlights experience with IoT concepts, backend logic, asynchronous events, and building interfaces that control physical systems.",
             ]}
-            className = "text-section"
+            className="text-section"
           />
         </div>
       </div>
