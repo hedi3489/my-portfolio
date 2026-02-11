@@ -1,6 +1,7 @@
 import rpiImage from '../assets/rpi-top.png'
 import iotSetup1 from '../assets/iot-setup1.png'
 import iotSetup2 from '../assets/iot-setup2.png'
+import flowchart from '../assets/flowchart.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
@@ -96,16 +97,18 @@ function IoTProjectPage() {
               </>
             }
           />
-
-          <TextSection
-            title="Automation & User Logic"
-            paragraphs={[
-              "Environmental thresholds for temperature and ambient light are defined per user and loaded dynamically through RFID identification. When sensor readings move outside a user’s thresholds, the system evaluates the appropriate response and notifies the user via email.",
-              "If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.",
-              "For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically.",
-            ]}
-            className="text-section in-section-gap"
-          />
+          <div className='flex'>
+            <TextSection
+              title="Automation & User Logic"
+              paragraphs={[
+                "Environmental thresholds for temperature and ambient light are defined per user and loaded dynamically through RFID identification. When sensor readings move outside a user’s thresholds, the system evaluates the appropriate response and notifies the user via email.",
+                "If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.",
+                "For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically.",
+              ]}
+              className="text-section in-section-gap"
+            />
+            <img src={flowchart} alt="" className='image full-width'/>
+          </div>
 
           <TextSection
             title="Dashboard Interface"
