@@ -2,55 +2,52 @@ import rpiImage from '../assets/rpi-top.png'
 import iotSetup1 from '../assets/iot-setup1.png'
 import iotSetup2 from '../assets/iot-setup2.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
-import { MdSensors } from 'react-icons/md'
+import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
 
-const ICONS = {
-  rpi: BsCpu,
-  microcontroller: FaMicrochip,
-  led: FaLightbulb,
-  motor: FaFan,
-  dht11: MdSensors,
-  light: MdSensors,
-  rfid: FaIdCard,
-}
 const softlist = [
   {
-    icon: 'rpi',
+    icon: BsCpu,
     term: 'Raspberry Pi 400',
     description: 'Central controller for system and dashboard',
   },
   {
-    icon: 'microcontroller',
+    icon: FaMicrochip,
     term: 'ESP32',
     description: 'Secondary microcontroller for RFID and photoresistor',
+  }, 
+  {
+    icon: MdMemory,
+    term: 'Driver Module',
+    description: 'Interface to control DC motor',
   },
   {
-    icon: 'led',
+    icon: FaLightbulb,
     term: 'LED',
-    description: 'Simulats household light bulb',
+    description: 'Simulates household light bulb',
   },
   {
-    icon: 'motor',
+    icon: FaFan,
     term: 'DC Motor',
-    description: 'Simulates fan ( powered via a 9V battery )',
+    description: 'Simulates fan (powered via a 9V battery)',
   },
   {
-    icon: 'dht11',
+    icon: MdSensors,
     term: 'DHT11',
     description: 'Temperature and humidity sensing',
   },
   {
-    icon: 'light',
+    icon: MdSensors,
     term: 'Photoresistor',
     description: 'Ambient light sensing',
   },
   {
-    icon: 'rfid',
+    icon: FaIdCard,
     term: 'RFID Reader',
     description: 'Household member identification',
   }
 ]
+
 
 function IoTProjectPage() {
   return (
@@ -74,7 +71,7 @@ function IoTProjectPage() {
 
           <TextSection
             title="Overview"
-            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard.The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
+            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
             ]}
             className="text-section"
           />
@@ -88,18 +85,16 @@ function IoTProjectPage() {
                   title="Breadboard Layout Diagram"
                   image={iotSetup1}
                   alt="Smart home simulation setup diagram 1"
-                  caption='Physical breadboard implementation of the IoT prototype showing the Raspberry Pi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement'
+                  caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
                 />
-
                 <CaptionedImage 
                   title="Circuit Schematic"
                   image={iotSetup2}
                   alt="Smart home simulation setup diagram 2"
-                  caption='Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format'
+                  caption='Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format.'
                 />
               </>
             }
-            className="text-section"
           />
 
           <TextSection
@@ -161,10 +156,10 @@ function SoftList({ items }) {
   return (
     <dl className="soft-list">
       {items.map((item, index) => {
-        const Icon = item.icon ? ICONS[item.icon] : null
+        const Icon = item.icon
 
         return (
-          <div key={index} className="soft-list-row" style={{ '--accent': '#c51a4a', }}>
+          <div key={index} className="soft-list-row" style={{ '--accent': '#c51a4a' }}>
             <dt>
               {Icon && <Icon className="soft-list-icon" />}
               {item.term}
@@ -176,6 +171,7 @@ function SoftList({ items }) {
     </dl>
   )
 }
+
 
 function CaptionedImage({ title='', image='', alt='', caption='' }) {
   return <div>
