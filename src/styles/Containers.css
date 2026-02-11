@@ -80,7 +80,11 @@
   gap: 0.8rem;
 }
 
-.section-image {
+.captioned-image {
+  margin-left: 2rem;
+}
+
+.image {
   max-width: 50%;
   height: auto;
   border-radius: var(--radius);

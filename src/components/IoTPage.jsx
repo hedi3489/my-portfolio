@@ -15,7 +15,7 @@ const softlist = [
     icon: FaMicrochip,
     term: 'ESP32',
     description: 'Secondary microcontroller for RFID and photoresistor',
-  }, 
+  },
   {
     icon: MdMemory,
     term: 'Driver Module',
@@ -81,13 +81,13 @@ function IoTProjectPage() {
             children={
               <>
                 <SoftList items={softlist} />
-                <CaptionedImage 
+                <CaptionedImage
                   title="Breadboard Layout Diagram"
                   image={iotSetup1}
                   alt="Smart home simulation setup diagram 1"
                   caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
                 />
-                <CaptionedImage 
+                <CaptionedImage
                   title="Circuit Schematic"
                   image={iotSetup2}
                   alt="Smart home simulation setup diagram 2"
@@ -173,14 +173,16 @@ function SoftList({ items }) {
 }
 
 
-function CaptionedImage({ title='', image='', alt='', caption='' }) {
-  return <div>
+function CaptionedImage({ title = '', image = '', alt = '', caption = '' }) {
+  return <div className=''>
     <h3>{title}</h3>
-    <img
-      src={image}
-      alt={alt}
-      className='section-image' />
-    <h5>{caption}</h5>
+    <div className=''>
+      <img
+        src={image}
+        alt={alt}
+        className='image' />
+      <h5>{caption}</h5>
+    </div>
   </div>
 }
 
