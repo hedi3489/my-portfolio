@@ -82,10 +82,10 @@ function IoTProjectPage() {
             title="Breadboard Layout Diagram"
             children={
               <CaptionedImage
-                  image={iotSetup1}
-                  alt="Smart home simulation setup diagram 1"
-                  caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
-                />
+                image={iotSetup1}
+                alt="Smart home simulation setup diagram 1"
+                caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
+              />
             }
           />
 
@@ -93,25 +93,23 @@ function IoTProjectPage() {
             title="Circuit Schematic"
             children={
               <CaptionedImage
-                  image={iotSetup2}
-                  alt="Smart home simulation setup diagram 2"
-                  caption='Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format.'
-                />
+                image={iotSetup2}
+                alt="Smart home simulation setup diagram 2"
+                caption='Simplified circuit schematic illustrating the connections between the RPi, LED, DHT11, motor driver, DC motor, and 9V battery, and the ESP32, photoresistor, and RFID, in a clear and organized format.'
+              />
             }
           />
 
-          <div className='flex'>
             <TextSection
               title="Automation & User Logic"
               paragraphs={[
-                "Environmental thresholds for temperature and ambient light are defined per user and loaded dynamically through RFID identification. When sensor readings move outside a user’s thresholds, the system evaluates the appropriate response and notifies the user via email.",
-                "If the temperature exceeds the defined limit, the system sends an email prompting the user to approve or reject activating the fan. The system waits for a “Yes” or “No” response and updates the fan state accordingly.",
-                "For ambient light, the system applies immediate automation: when brightness falls below the threshold, the light is turned on automatically and the user is only notified. Once ambient brightness returns to acceptable levels, the light is switched off automatically.",
+                "Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.",
+                "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly.",
+                "As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
               ]}
               className="text-section in-section-gap"
             />
-            <img src={flowchart} alt="" className='image full-width' />
-          </div>
+            
           <TextSection
             title="Dashboard Interface"
             paragraphs={[
