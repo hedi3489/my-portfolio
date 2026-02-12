@@ -1,6 +1,5 @@
-import rpiImage from '../assets/rpi-top.png'
-import iotSetup1 from '../assets/iot-setup1.png'
-import iotSetup2 from '../assets/iot-setup2.png'
+import iotSetup1 from '../assets/iotDiagram1.png'
+import iotSetup2 from '../assets/iotDiagram2.png'
 import flowchart from '../assets/flowchart.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
@@ -49,7 +48,6 @@ const softlist = [
   }
 ]
 
-
 function IoTProjectPage() {
   return (
     <div className="flex project-page-container">
@@ -69,34 +67,39 @@ function IoTProjectPage() {
               "Hardware automation",
             ]}
           />
-
           <TextSection
             title="Overview"
             paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
             ]}
             className="text-section"
           />
-
           <TextSection
             title="Hardware Setup"
+            children={<SoftList items={softlist} />}
+          />
+
+          <TextSection
+            title="Breadboard Layout Diagram"
             children={
-              <>
-                <SoftList items={softlist} />
-                <CaptionedImage
-                  title="Breadboard Layout Diagram"
+              <CaptionedImage
                   image={iotSetup1}
                   alt="Smart home simulation setup diagram 1"
                   caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
                 />
-                <CaptionedImage
-                  title="Circuit Schematic"
+            }
+          />
+
+          <TextSection
+            title="Circuit Schematic"
+            children={
+              <CaptionedImage
                   image={iotSetup2}
                   alt="Smart home simulation setup diagram 2"
                   caption='Simplified circuit schematic illustrating the electrical connections between the Raspberry Pi 4, motor driver, sensors, LED, DC motor, and 9V power supply in a clear and organized format.'
                 />
-              </>
             }
           />
+
           <div className='flex'>
             <TextSection
               title="Automation & User Logic"
@@ -107,9 +110,8 @@ function IoTProjectPage() {
               ]}
               className="text-section in-section-gap"
             />
-            <img src={flowchart} alt="" className='image full-width'/>
+            <img src={flowchart} alt="" className='image full-width' />
           </div>
-
           <TextSection
             title="Dashboard Interface"
             paragraphs={[
@@ -117,7 +119,6 @@ function IoTProjectPage() {
             ]}
             className="text-section"
           />
-
           <TextSection
             title="Key Takeaways"
             paragraphs={[
@@ -175,11 +176,10 @@ function SoftList({ items }) {
   )
 }
 
-
 function CaptionedImage({ title = '', image = '', alt = '', caption = '' }) {
   return <div className=''>
-    <h3>{title}</h3>
-    <div className=''>
+    {/* <h3>{title}</h3> */}
+    <div className='flex flex-col flex-center captioned-image'>
       <img
         src={image}
         alt={alt}
@@ -188,6 +188,5 @@ function CaptionedImage({ title = '', image = '', alt = '', caption = '' }) {
     </div>
   </div>
 }
-
 
 export default IoTProjectPage;
