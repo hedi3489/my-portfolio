@@ -4,6 +4,7 @@ import flowchart from '../assets/flowchart.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
+import { TechStackInline, TextSection, SoftList, CaptionedImage, } from './ProjectPageComponents.jsx'
 
 const softlist = [
   {
@@ -100,16 +101,16 @@ function IoTProjectPage() {
             }
           />
 
-            <TextSection
-              title="Automation & User Logic"
-              paragraphs={[
-                "Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.",
-                "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly.",
-                "As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
-              ]}
-              className="text-section in-section-gap"
-            />
-            
+          <TextSection
+            title="Automation & User Logic"
+            paragraphs={[
+              "Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.",
+              "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly.",
+              "As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
+            ]}
+            className="text-section in-section-gap"
+          />
+
           <TextSection
             title="Dashboard Interface"
             paragraphs={[
@@ -128,63 +129,6 @@ function IoTProjectPage() {
       </div>
     </div>
   )
-}
-
-const TechStackInline = ({ items = [] }) => {
-  return (
-    <div className="tech-stack-inline flex">
-      {items.map((item, index) => (
-        <span key={index}>{item}</span>
-      ))}
-    </div>
-  );
-};
-
-export function TextSection({ title, paragraphs = [], children, className = "" }) {
-  return (
-    <section className={className}>
-      <h2>{title}</h2>
-      <div>
-        {paragraphs.map((text, i) => (
-          <p key={i}>{text}</p>
-        ))}
-      </div>
-      {children}
-    </section>
-  );
-}
-
-function SoftList({ items }) {
-  return (
-    <dl className="soft-list">
-      {items.map((item, index) => {
-        const Icon = item.icon
-
-        return (
-          <div key={index} className="soft-list-row" style={{ '--accent': '#c51a4a' }}>
-            <dt>
-              {Icon && <Icon className="soft-list-icon" />}
-              {item.term}
-            </dt>
-            <dd>{item.description}</dd>
-          </div>
-        )
-      })}
-    </dl>
-  )
-}
-
-function CaptionedImage({ title = '', image = '', alt = '', caption = '' }) {
-  return <div className=''>
-    {/* <h3>{title}</h3> */}
-    <div className='flex flex-col flex-center captioned-image'>
-      <img
-        src={image}
-        alt={alt}
-        className='image' />
-      <h5>{caption}</h5>
-    </div>
-  </div>
 }
 
 export default IoTProjectPage;

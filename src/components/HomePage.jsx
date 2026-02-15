@@ -2,18 +2,22 @@ import * as Cards from './Cards.jsx'
 
 const projectCards = [
     {
-        type: 'project', title: 'Olympics API', description: 'REST-based API',
-        to: '/projects/IoT-Smart-Home',
+        type: 'project',
+        title: 'Olympics API',
+        description: 'REST-based API',
+        to: '/projects/olympics-api',
     },
     {
         type: 'project',
         title: 'IoT Smart Home',
         description: 'RPi smart home simulation',
-        to: '/projects/IoT-Smart-Home',
+        to: '/projects/iot-home-simulation',
     },
     {
-        type: 'project', title: 'Blackbox Pentest', description: 'Vuln. assessment report',
-        to: '/projects/IoT-Smart-Home',
+        type: 'project',
+        title: 'Blackbox Pentest',
+        description: 'Vuln. assessment report',
+        to: '/projects/iot-home-simulation',
     }
 ]
 const specialCards = [
