@@ -7,23 +7,22 @@ function APIProjectPage() {
       <div className="flex flex-col full-width card">
         <div className="prose">
 
-          <h1>Smart Home IoT Dashboard</h1>
-          <h4>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h4>
+          <h1>2024 Paris Olympics API</h1>
+          <h4>A REST-based API providing resources and remote computing</h4>
           <TechStackInline
             items={[
-              "Raspberry Pi",
-              "ESP32",
-              "HTML / CSS / JS",
-              "Python",
-              "DHT11",
-              "RFID",
-              "Hardware automation",
+              "RESTful API",
+              "HTTPS",
+              "PHP",
+              "Validation",
+              "Pagination",
+              "Filtering",
+              "Exception handling",
             ]}
           />
           <TextSection
             title="Overview"
-            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
-            ]}
+            paragraphs={["RESTful API providing access to some 2024 Paris Olympics resources. It reveals information about athletes, coaches, venues, and events, and provides remote computing of Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on user input."]}
             className="text-section"
           />
         </div>
