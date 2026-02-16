@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
 }
 
 .project-page-container .prose p, 
-.project-page-container .prose .page-section li{
+.project-page-container .prose li {
   font-size: 1.5em;
   line-height: 1.7;
   font-weight: 300;
@@ -204,19 +204,10 @@ h1, h2, h3, h4, h5, p, ul { margin: 0; }
   line-height: 1.5;
 }
 
-
-
-.project-page-container .prose li {
-  font-size: 1.25em;
-  line-height: 1.3;
-  font-weight: 250;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.project-page-container .prose ul {
+/* .project-page-container .prose ul {
   margin: 0;
   padding-left: 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-}
+} */
