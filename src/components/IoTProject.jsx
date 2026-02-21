@@ -1,6 +1,5 @@
 import iotSetup1 from '../assets/iotDiagram1.png'
 import iotSetup2 from '../assets/iotDiagram2.png'
-import flowchart from '../assets/flowchart.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'

@@ -1,6 +1,6 @@
 
 import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList } from './ProjectPageComponents.jsx'
-
+import apiSS1 from '../assets/olympics-api-ss1.png'
 function APIProjectPage() {
     return (
         <div className="flex project-page-container">
@@ -34,43 +34,15 @@ function APIProjectPage() {
                         'Provides predictable REST endpoints'
                     ]}
                 />
-                <TextSection
-                    className="text-section"
-                    title="Root Resource"
-                    paragraphs={["The root endpoint (\"/\") provides a summary of the available resources, with detailed information on each resource, including URIs, available operations, filtering, sorting, and pagination options. The API is structured to offer endpoints for both querying and manipulating data."]}
-                />
-                <TextSection
-                    className="text-section"
-                    title="Global Options"
-                    children={<BulletList
-                        title={null}
-                        items={[
-                            "Pagination: current_page, page_size",
-                            "Ordering: asc, desc"
-                        ]}
-                    />}
+                <CaptionedImage 
+                    image={apiSS1}
                 />
 
-                <div className="text-section">
-                    <TextSection
-                        className="text-section"
-                        title="Available Resources"
-                    />
-                    <BulletList
-                        title="/athletees"
-                        items={[
-                            'Collection URI: localhost/olympics-api/athletes',
-                            'Singleton URI: localhost/olympics-api/athletes/{id}',
-                            'Methods: GET, POST, PUT, DELETE',
-                            'Filtering Options: country_id, gender, ethnicity',
-                            'Sorting Options: Any (validation not implemented)',
-                            'Ordering & Pagination: Implemented'
-                        ]}
-                    />
-                </div>
+                
             </div>
         </div>
     )
 }
 
 export default APIProjectPage
+
