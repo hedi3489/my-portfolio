@@ -9,19 +9,30 @@ function APIProjectPage() {
                 <h4>An API providing resources and remote computing over HTTPS</h4>
                 <TechStackInline
                     items={[
-                        "RESTful API",
-                        "HTTPS",
+                        "REST API",
                         "PHP",
-                        "Validation",
-                        "Pagination",
-                        "Filtering",
-                        "Exception handling",
+                        "Slim",
+                        "PDO",
+                        "MySQL",
+                        "Valitron",
+                        "MVC",
                     ]}
                 />
                 <TextSection
                     className="text-section"
                     title="Overview"
-                    paragraphs={["A REST-based API providing access to some 2024 Paris Olympics resources. It reveals information about athletes, coaches, venues, and events, and provides remote computing of Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on user input."]}
+                    paragraphs={["This API provides a structure way to store, retrieve, and manage Olympics-related resources such as atheletes, events, and results, and provides remote computing of Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on user input."]}
+                />
+                <BulletList
+                    title="What it does"
+                    items={[
+                        'Creates, retrieves, updates, and deletes athletes and events',
+                        'Returns structured JSON responses',
+                        'Offers filtering and pagination',
+                        'Validates incoming data before database operations',
+                        'Handles errors gracefully with appropriate HTTP status codes',
+                        'Provides predictable REST endpoints'
+                    ]}
                 />
                 <TextSection
                     className="text-section"
@@ -53,39 +64,6 @@ function APIProjectPage() {
                             'Methods: GET, POST, PUT, DELETE',
                             'Filtering Options: country_id, gender, ethnicity',
                             'Sorting Options: Any (validation not implemented)',
-                            'Ordering & Pagination: Implemented'
-                        ]}
-                    />
-                    <BulletList
-                        title="/coaches"
-                        items={[
-                            'Collection URI: localhost/olympics-api/coaches',
-                            'Singleton URI: localhost/olympics-api/coaches/{id}',
-                            'Methods: GET, POST, PUT, DELETE',
-                            'Filtering Options: gender, sport, been_in_olympics',
-                            'Sorting Options: Any (validation not implemented)',
-                            'Ordering & Pagination: Implemented'
-                        ]}
-                    />
-                    <BulletList
-                        title="/venues"
-                        items={[
-                            'Collection URI: localhost/olympics-api/venues',
-                            'Singleton URI: localhost/olympics-api/venues/{id}',
-                            'Methods: GET, POST, PUT, DELETE',
-                            'Filtering Options: venue_name, min_capacity, max_capacity, min_date_constructed, max_date_constructed',
-                            'Sorting Options: venue_id, venue_name, location, capacity, type, date_constructed, address',
-                            'Ordering & Pagination: Implemented'
-                        ]}
-                    />
-                    <BulletList
-                        title="/events"
-                        items={[
-                            'Collection URI: localhost/olympics-api/events',
-                            'Singleton URI: localhost/olympics-api/events/{id}',
-                            'Methods: GET, POST, PUT, DELETE',
-                            'Filtering Options: venue_name, min_capacity, max_capacity, min_date_constructed, max_date_constructed',
-                            'Sorting Options: event_id, event_name, event_sport, start_date, end_date, number_of_participants, is_paralympic, venue_id',
                             'Ordering & Pagination: Implemented'
                         ]}
                     />
