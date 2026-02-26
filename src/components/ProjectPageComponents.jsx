@@ -42,29 +42,6 @@ function SoftList({ items }) {
     )
 }
 
-// function CaptionedImage({ title = '', image = '', alt = '', caption = '', customWidth }) {
-//     const customStyle = { maxWidth: customWidth }
-//     return <div className=''>
-//         <div className='flex flex-col flex-center captioned-image'>
-//             {customWidth ?
-//                 <img
-//                     src={image}
-//                     alt={alt}
-//                     className='image'
-//                     style={customStyle}
-//                 />
-//                 :
-//                 <img
-//                     src={image}
-//                     alt={alt}
-//                     className='image'
-//                 />
-//             }
-//             <h5>{caption}</h5>
-//         </div>
-//     </div>
-// }
-
 function CaptionedImage({image = '', alt = '', caption = '', customWidth }) {
     return <div className=''>
         <div className='flex flex-col flex-center captioned-image'>
