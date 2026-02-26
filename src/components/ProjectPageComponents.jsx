@@ -11,7 +11,6 @@ function TechStackInline({ items = [] }) {
 function TextSection({ title, paragraphs = [], children, className = "" }) {
     return (
         <section className={className}>
-            {/* <h2>{title}</h2> */}
             {title ? <h2>{title}</h2> : null }
             <div>
                 {paragraphs.map((text, i) => (
