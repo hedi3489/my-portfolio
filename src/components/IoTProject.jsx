@@ -1,5 +1,6 @@
 import iotSetup1 from '../assets/iotDiagram1.png'
 import iotSetup2 from '../assets/iotDiagram2.png'
+import iotFlowchart from '../assets/iot-fc-w.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
@@ -108,6 +109,17 @@ function IoTProjectPage() {
               "As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
             ]}
             className="text-section in-section-gap"
+          />
+
+          <TextSection 
+            title=""
+            children={
+              <CaptionedImage 
+                image={iotFlowchart}
+                alt="Smart home simulation flowchart"
+                caption='Flowchart showing the algorith and communication between Raspberry Pi and ESP32'
+              />
+            }
           />
 
           <TextSection

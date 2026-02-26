@@ -9,7 +9,13 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #141414;
+  background: linear-gradient(
+    to bottom,
+    #1c1c1c 0%,
+    #141414 40%,
+    #0d0d0d 75%,
+    #070707 100%
+  );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,9 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --bg-card-primary: rgb(27, 27, 29);
-  --bg-card-secondary: rgb(34, 34, 35);
   --border-card-primary: rgb(67, 66, 66);
-  --border-card-secondary: rgb(184, 184, 184);
   --radius: 10px;
   --gap: 1.1rem;
 }
@@ -31,7 +35,7 @@
 }
 
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   margin: 0;
   font-size: 0.875rem;
