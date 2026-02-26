@@ -11,7 +11,7 @@ function TechStackInline({ items = [] }) {
 function TextSection({ title, paragraphs = [], children, className = "" }) {
     return (
         <section className={className}>
-            {title ? <h2>{title}</h2> : null }
+            {title ? <h2>{title}</h2> : null}
             <div>
                 {paragraphs.map((text, i) => (
                     <p key={i}>{text}</p>
@@ -42,13 +42,38 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ title = '', image = '', alt = '', caption = '' }) {
+// function CaptionedImage({ title = '', image = '', alt = '', caption = '', customWidth }) {
+//     const customStyle = { maxWidth: customWidth }
+//     return <div className=''>
+//         <div className='flex flex-col flex-center captioned-image'>
+//             {customWidth ?
+//                 <img
+//                     src={image}
+//                     alt={alt}
+//                     className='image'
+//                     style={customStyle}
+//                 />
+//                 :
+//                 <img
+//                     src={image}
+//                     alt={alt}
+//                     className='image'
+//                 />
+//             }
+//             <h5>{caption}</h5>
+//         </div>
+//     </div>
+// }
+
+function CaptionedImage({image = '', alt = '', caption = '', customWidth }) {
     return <div className=''>
         <div className='flex flex-col flex-center captioned-image'>
             <img
                 src={image}
                 alt={alt}
-                className='image' />
+                className='image'
+                style={customWidth ? { maxWidth: customWidth } : undefined}
+            />
             <h5>{caption}</h5>
         </div>
     </div>
@@ -56,8 +81,8 @@ function CaptionedImage({ title = '', image = '', alt = '', caption = '' }) {
 
 function BulletList({ title, items = [] }) {
     return <div>
-       
-        {title ? <h3>{title}</h3> : null }
+
+        {title ? <h3>{title}</h3> : null}
         <ul>
             {items.map((item, index) => (
                 <li key={index}>{item}</li>

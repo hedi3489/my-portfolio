@@ -1,6 +1,6 @@
 import iotSetup1 from '../assets/iotDiagram1.png'
 import iotSetup2 from '../assets/iotDiagram2.png'
-import iotFlowchart from '../assets/iot-fc-w.png'
+import iotFlowchart from '../assets/iot-fc-b.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
@@ -116,8 +116,9 @@ function IoTProjectPage() {
             children={
               <CaptionedImage 
                 image={iotFlowchart}
+                customWidth="85%"
                 alt="Smart home simulation flowchart"
-                caption='Flowchart showing the algorith and communication between Raspberry Pi and ESP32'
+                caption='Flowchart illustrating the algorith and the communication between Raspberry Pi and ESP32. (Dotted lines represent wireless communication.'
               />
             }
           />
