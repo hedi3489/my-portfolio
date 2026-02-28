@@ -65,10 +65,10 @@ function CaptionedImages({ imageList }) {
         setIndex(index + 1);
     }
 
-    let image = imageList[index % 2];
+    let image = imageList[index % imageList.length];
     return <>
         <div className="flex flex-col flex-center captioned-image">
-            <button onClick={handleClick}>Next</button>
+            {imageList.length > 1 ? <button onClick={handleClick}>Next</button> : null }
             <img
                 src={image.src}
                 alt={image.alt}
