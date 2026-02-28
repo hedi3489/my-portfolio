@@ -120,12 +120,12 @@ function IoTProjectPage() {
                   {
                     src: iotFlowchart_Basic,
                     alt: "Smart home simulation flowchart",
-                    caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32. (The dotted lines representing wireless communication)'
+                    caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
                   },
                   {
                     src: iotFlowchart_Colored,
                     alt: "Smart home simulation flowchart",
-                    caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32. (The dotted lines representing wireless communication)'
+                    caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
                   }
                 ]}
               />
