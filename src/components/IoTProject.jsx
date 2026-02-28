@@ -1,10 +1,11 @@
 import iotSetup1 from '../assets/iotDiagram1.png'
 import iotSetup2 from '../assets/iotDiagram2.png'
-import iotFlowchart from '../assets/iot-fc-b.png'
+import iotFlowchart_Basic from '../assets/iot-fc-b.png'
+import iotFlowchart_Colored from '../assets/iot-fc-brb.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
-import { TechStackInline, TextSection, SoftList, CaptionedImage, } from './ProjectPageComponents.jsx'
+import { TechStackInline, TextSection, SoftList, CaptionedImage, CaptionedImages } from './ProjectPageComponents.jsx'
 
 const softlist = [
   {
@@ -46,6 +47,18 @@ const softlist = [
     icon: FaIdCard,
     term: 'RFID Reader',
     description: 'Household member identification',
+  }
+]
+const imageList = [
+  {
+    src: iotFlowchart_Basic,
+    alt:"Smart home simulation flowchart",
+    caption:'Flowchart illustrating the algorith and the communication between Raspberry Pi and ESP32. (Dotted lines represent wireless communication.'
+  },
+  {
+    src: iotFlowchart_Colored,
+    alt:"Smart home simulation setup",
+    caption:'Flowchart illustrating the algorith and the communication between Raspberry Pi and ESP32. (Dotted lines represent wireless communication.'
   }
 ]
 
@@ -111,14 +124,17 @@ function IoTProjectPage() {
             className="text-section in-section-gap"
           />
 
-          <TextSection 
+          <TextSection
             title=""
             children={
-              <CaptionedImage 
-                image={iotFlowchart}
-                customWidth="85%"
-                alt="Smart home simulation flowchart"
-                caption='Flowchart illustrating the algorith and the communication between Raspberry Pi and ESP32. (Dotted lines represent wireless communication.'
+              // <CaptionedImage
+              //   image={iotFlowchart}
+              //   customWidth="85%"
+              //   alt="Smart home simulation flowchart"
+              //   caption='Flowchart illustrating the algorith and the communication between Raspberry Pi and ESP32. (Dotted lines represent wireless communication.'
+              // />
+              <CaptionedImages 
+                imageList={imageList}
               />
             }
           />

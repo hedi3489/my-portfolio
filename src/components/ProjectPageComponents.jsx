@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 function TechStackInline({ items = [] }) {
     return (
         <div className="tech-stack-inline flex">
@@ -42,7 +44,7 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({image = '', alt = '', caption = '', customWidth }) {
+function CaptionedImage({ image = '', alt = '', caption = '', customWidth }) {
     return <div className=''>
         <div className='flex flex-col flex-center captioned-image'>
             <img
@@ -54,6 +56,27 @@ function CaptionedImage({image = '', alt = '', caption = '', customWidth }) {
             <h5>{caption}</h5>
         </div>
     </div>
+}
+
+function CaptionedImages({ imageList }) {
+    const [index, setIndex] = useState(0);
+
+    function handleClick() {
+        setIndex(index + 1);
+    }
+
+    let image = imageList[index % 2];
+    return <>
+        <div className="flex flex-col flex-center captioned-image">
+            <button onClick={handleClick}>Next</button>
+            <img
+                src={image.src}
+                alt={image.alt}
+                className="image"
+            />
+            <h5>{image.caption}</h5>
+        </div>
+    </>
 }
 
 function BulletList({ title, items = [] }) {
@@ -73,5 +96,6 @@ export {
     TextSection,
     SoftList,
     CaptionedImage,
+    CaptionedImages,
     BulletList,
 }
