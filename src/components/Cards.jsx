@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 
 function BioCard() {
-  return <div className='flex full-width card bio-card'>
+  return <div className='flex full-width full-height card bio-card'>
     <div className="bio-text">
       <p>Welcome</p>
       <p>
@@ -25,7 +25,7 @@ function ContactCard() {
 
   return (
     <div>
-      <div className="card">
+      <div className="full-height card">
         <h3><b>Let's start working together!</b></h3><br />
         <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
         <p><i>belhassinehedi308@gmail.com</i></p>
@@ -51,7 +51,7 @@ const CARD_MAP = {
 
 function Deck({ cards = [] }) {
   return (
-    <div className="flex flex-col deck">
+    <div className="flex flex-col full-height deck">
       {cards.map((item, i) => {
         const Card = CARD_MAP[item.type] || LittleCard
         return <Card key={i} {...item} />
@@ -62,7 +62,7 @@ function Deck({ cards = [] }) {
 
 function LittleCard({ title, description, to }) {
   const content = (
-    <div className="card little-card">
+    <div className="full-height card little-card">
       <h2>{title}</h2>
       <h5>{description}</h5>
     </div>
@@ -91,7 +91,7 @@ function AvailabilityCard() {
   }
   
   return (
-    <div className="flex flex-center card little-card relative-pos">
+    <div className="flex flex-center card full-height little-card relative-pos">
       <span className="status-dot" aria-hidden="true" />
       <div>
         <h2 style={textStyle('1.35em')}>Now</h2>
@@ -115,7 +115,7 @@ function ThemeCard() {
   }, [selectedColor]);
 
   return (
-    <div className="flex flex-center card theme-card">
+    <div className="flex flex-center full-height card theme-card">
       <div className="full-width theme-colors">
         {colors.map((color, i) => (
           <button
@@ -132,7 +132,7 @@ function ThemeCard() {
 }
 
 function AboutCard() {
-  return <div className='full-width card about-card'>
+  return <div className='full-width full-height card about-card'>
     <h3>About me</h3>
     <p>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
     <p>My primary tools of choice include:</p>
@@ -148,7 +148,7 @@ function AboutCard() {
 }
 
 function LittleFooter() {
-  return <div className='full-width card little-footer'>
+  return <div className='full-width full-height  card little-footer'>
     <p>text... text...</p>
   </div>
 }

@@ -1,6 +1,7 @@
 @import './styles/Cards.css';
 @import './styles/Containers.css';
 @import './styles/Typography.css';
+@import './styles/Utilities.css';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

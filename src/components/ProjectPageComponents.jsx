@@ -11,9 +11,9 @@ function TechStackInline({ items = [] }) {
     );
 };
 
-function TextSection({ title, paragraphs = [], children, className = "" }) {
+function TextSection({ title, paragraphs = [], children }) {
     return (
-        <section className={className}>
+        <section>
             {title ? <h2>{title}</h2> : null}
             <div>
                 {paragraphs.map((text, i) => (
@@ -45,14 +45,13 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ image = '', alt = '', caption = '', customWidth }) {
+function CaptionedImage({ image = '', alt = '', caption = ''}) {
     return <div className=''>
         <div className='flex flex-col flex-center captioned-image'>
             <img
                 src={image}
                 alt={alt}
                 className='image'
-                style={customWidth ? { maxWidth: customWidth } : undefined}
             />
             <h5>{caption}</h5>
         </div>
@@ -75,8 +74,9 @@ function CaptionedImages({ imageList }) {
                     alt={image.alt}
                     className="image"
                 />
-                {/* <button onClick={handleClick} className="cycle-button">O</button> */}
                 <ThemeButtons />
+                <button onClick={handleClick} className="cycle-button">O</button>
+                
             </div>
             <h5>{image.caption}</h5>
         </div>
@@ -91,7 +91,7 @@ function ThemeButtons() {
     }, [selectedColor]);
 
     return (
-        <div className="flex flex-col flex-center theme-buttons">
+        <div className="flex flex-col flex-center card theme-buttons">
             {colors.map((color, i) => (
                 <button
                     key={i}

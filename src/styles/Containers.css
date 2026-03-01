@@ -1,59 +1,3 @@
-/*---------------------
-  FLEX UTILITIES
----------------------*/
-.flex {
-  display: flex;
-  gap: var(--gap);
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-center {
-  align-items: center;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.over-half-width {
-  width: 75%;
-}
-
-.half-width {
-  width: 50%;
-}
-
-.quarter-width {
-  width: 25%;
-}
-
-.full-height {
-  height: 100%;
-}
-
-.over-half-height {
-  height: 75%;
-}
-
-.half-height {
-  height: 50%;
-}
-
-.quarter-height {
-  height: 25%;
-}
-
-.fit-content {
-  width: fit-content;
-}
-
-.relative-pos {
-  position: relative;
-}
-
 /*-----------------------
   HOME PAGE CONTAINERS
 ------------------------*/
@@ -123,7 +67,7 @@
   gap: 0;
   text-align: center;
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .image {
@@ -143,13 +87,6 @@
 
 .theme-buttons {
   position: absolute;
-  background-color: var(--bg-card-primary);
-  border: 1px solid var(--border-card-primary);
-  border-radius: var(--radius);
-  overflow: visible;
-  overflow-wrap: anywhere;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
   margin-top: 0.7rem;
   width: 1em;
   padding: 1rem 1.5rem;
@@ -160,15 +97,11 @@
 
 .theme-dot {
   flex: 0 0 auto;
-  width: 25px;
+  width: 1.3rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   padding: 0;
   border: 2px solid transparent;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
   cursor: pointer;
   scroll-snap-align: center;
 }
