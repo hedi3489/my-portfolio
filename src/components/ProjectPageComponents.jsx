@@ -68,15 +68,13 @@ function CaptionedImages({ imageList }) {
     let image = imageList[index % imageList.length];
     return <>
         <div className="flex flex-col flex-center captioned-image">
-            <div>
+            <div className="flex flex-start justify-center">
                 <img
                     src={image.src}
                     alt={image.alt}
                     className="image"
                 />
                 <ThemeButtons />
-                <button onClick={handleClick} className="cycle-button">O</button>
-                
             </div>
             <h5>{image.caption}</h5>
         </div>

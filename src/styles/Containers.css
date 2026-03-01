@@ -71,33 +71,27 @@
 }
 
 .image {
-  max-width: 77%;
+  max-width: 75%;
   height: auto;
   border-radius: var(--radius);
   margin: 0.7rem;
   display: inline-block;
 }
 
-.cycle-button {
-  width: 50px;
-  padding: 10px;
-  position: absolute;
-  margin-top: 0.7rem;
+.captioned-image div .image {
+  margin-left: 4rem;
 }
 
-.theme-buttons {
-  position: absolute;
+.project-page-container .theme-buttons {
   margin-top: 0.7rem;
-  width: 1em;
-  padding: 1rem 1.5rem;
+  margin-left: -1rem;
+  padding: 0.9rem 0.6rem;
   gap: 0.5rem;
-  top: 0;
-  right: 0;
 }
 
 .theme-dot {
   flex: 0 0 auto;
-  width: 1.3rem;
+  width: 1.2rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   padding: 0;

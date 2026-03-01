@@ -1,56 +1,64 @@
 .flex {
-  display: flex;
-  gap: var(--gap);
+    display: flex;
+    gap: var(--gap);
 }
 
 .flex-col {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .flex-center {
-  align-items: center;
+    align-items: center;
 }
 
 .full-width {
-  width: 100%;
+    width: 100%;
 }
 
 .over-half-width {
-  width: 75%;
+    width: 75%;
 }
 
 .half-width {
-  width: 50%;
+    width: 50%;
 }
 
 .quarter-width {
-  width: 25%;
+    width: 25%;
 }
 
 .full-height {
-  height: 100%;
+    height: 100%;
 }
 
 .over-half-height {
-  height: 75%;
+    height: 75%;
 }
 
 .half-height {
-  height: 50%;
+    height: 50%;
 }
 
 .quarter-height {
-  height: 25%;
+    height: 25%;
 }
 
 .fit-content {
-  width: fit-content;
+    width: fit-content;
+}
+
+.flex-start {
+    align-items: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .relative-pos {
-  position: relative;
+    position: relative;
 }
 
 .absolute-pos {
-  position: absolute;
+    position: absolute;
 }
