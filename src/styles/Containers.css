@@ -5,22 +5,46 @@
   display: flex;
   gap: var(--gap);
 }
+
 .flex-col {
   flex-direction: column;
 }
+
 .flex-center {
   align-items: center;
 }
 
-.full-width       { width: 100%; }
-.over-half-width  { width:  75%; }
-.half-width       { width:  50%; }
-.quarter-width    { width:  25%; }
+.full-width {
+  width: 100%;
+}
 
-.full-height       { height: 100%; }
-.over-half-height  { height:  75%; }
-.half-height       { height:  50%; }
-.quarter-height    { height:  25%; }
+.over-half-width {
+  width: 75%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.quarter-width {
+  width: 25%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.over-half-height {
+  height: 75%;
+}
+
+.half-height {
+  height: 50%;
+}
+
+.quarter-height {
+  height: 25%;
+}
 
 .fit-content {
   width: fit-content;
@@ -33,27 +57,32 @@
 /*-----------------------
   HOME PAGE CONTAINERS
 ------------------------*/
-.home-page-container, 
+.home-page-container,
 .project-page-container {
   width: 100%;
   min-height: 100vh;
   padding: 5em 15em;
 }
+
 .main-content {
   flex: 7.5;
   min-height: 100%;
 }
+
 .showcase {
   flex: 5;
 }
 
-.deck > * ,
-.showcase > * {
+.deck>*,
+.showcase>* {
   flex: 1 1 0;
   min-width: 0;
   min-height: 0;
 }
-.side-bar { flex: 2.7; }
+
+.side-bar {
+  flex: 2.7;
+}
 
 /*-----------------------
   PROJ PAGE CONTAINERS
@@ -66,7 +95,7 @@
   gap: 0.8rem;
 }
 
-.project-page-container .prose > div {
+.project-page-container .prose>div {
   gap: 0.4rem;
 }
 
@@ -74,7 +103,7 @@
   padding: 4rem 6rem;
 }
 
-.in-section-gap div{
+.in-section-gap div {
   display: flex;
   flex-direction: column;
   gap: 0.9em;
@@ -90,4 +119,29 @@
   height: auto;
   border-radius: var(--radius);
   margin: 0.7rem;
+}
+
+.cycle-button {
+  width: 50px;
+  padding: 10px;
+  gap: 0.5rem;
+}
+
+.theme-buttons {
+  margin-top: 0.7rem;
+}
+
+.theme-dot {
+  flex: 0 0 auto;
+  width: 25px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  cursor: pointer;
+  scroll-snap-align: center;
 }

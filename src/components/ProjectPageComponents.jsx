@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ThemeCard } from "../components/Cards.jsx"
 
 function TechStackInline({ items = [] }) {
     return (
@@ -68,15 +69,40 @@ function CaptionedImages({ imageList }) {
     let image = imageList[index % imageList.length];
     return <>
         <div className="flex flex-col flex-center captioned-image">
-            {imageList.length > 1 ? <button onClick={handleClick} className="somebutton">Next</button> : null }
-            <img
-                src={image.src}
-                alt={image.alt}
-                className="image"
-            />
+            <div className="flex">
+                <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="image"
+                />
+                {/* {imageList.length > 1 ? <button onClick={handleClick} className="cycle-button">O</button> : null} */}
+                <ThemeButtons />
+            </div>
             <h5>{image.caption}</h5>
         </div>
     </>
+}
+
+function ThemeButtons() {
+    const colors = ["#ec8e81", "#53a8cd"]
+    const [selectedColor, setSelectedColor] = useState(colors[0]);
+    useEffect(() => {
+        document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
+    }, [selectedColor]);
+
+    return (
+        <div className="flex flex-col flex-center card theme-buttons">
+            {colors.map((color, i) => (
+                <button
+                    key={i}
+                    className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
+                    style={{ backgroundColor: color }}
+                    aria-label={`Select theme color ${i + 1}`}
+                    onClick={() => setSelectedColor(color)}
+                />
+            ))}
+        </div>
+    );
 }
 
 function BulletList({ title, items = [] }) {
