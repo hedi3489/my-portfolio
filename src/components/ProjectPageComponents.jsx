@@ -69,14 +69,14 @@ function CaptionedImages({ imageList }) {
     let image = imageList[index % imageList.length];
     return <>
         <div className="flex flex-col flex-center captioned-image">
-            <div className="">
+            <div>
                 <img
                     src={image.src}
                     alt={image.alt}
                     className="image"
                 />
-                {imageList.length > 1 ? <button onClick={handleClick} className="cycle-button">O</button> : null}
-                {/* <ThemeButtons /> */}
+                {/* <button onClick={handleClick} className="cycle-button">O</button> */}
+                <ThemeButtons />
             </div>
             <h5>{image.caption}</h5>
         </div>
@@ -91,7 +91,7 @@ function ThemeButtons() {
     }, [selectedColor]);
 
     return (
-        <div className="flex flex-col flex-center card theme-buttons">
+        <div className="flex flex-col flex-center theme-buttons">
             {colors.map((color, i) => (
                 <button
                     key={i}

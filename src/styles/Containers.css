@@ -122,13 +122,16 @@
 .captioned-image {
   gap: 0;
   text-align: center;
+  position: relative;
+  display: inline-block;
 }
 
 .image {
-  max-width: clamp(75%, 85vw, 90%);
+  max-width: 77%;
   height: auto;
   border-radius: var(--radius);
   margin: 0.7rem;
+  display: inline-block;
 }
 
 .cycle-button {
@@ -139,7 +142,20 @@
 }
 
 .theme-buttons {
+  position: absolute;
+  background-color: var(--bg-card-primary);
+  border: 1px solid var(--border-card-primary);
+  border-radius: var(--radius);
+  overflow: visible;
+  overflow-wrap: anywhere;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
   margin-top: 0.7rem;
+  width: 1em;
+  padding: 1rem 1.5rem;
+  gap: 0.5rem;
+  top: 0;
+  right: 0;
 }
 
 .theme-dot {
