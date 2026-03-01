@@ -12,6 +12,10 @@
   height: 100%;
 }
 
+.page-card {
+  width: min(70vw, 1200px);
+}
+
 /* ---------------------------
    HOME PAGE CONTAINERS
 ---------------------------- */
@@ -19,9 +23,10 @@
   border-color: var(--border-card-secondary);
 }
 
-.bio-card { 
-  flex: 5; 
+.bio-card {
+  flex: 5;
 }
+
 .bio-text {
   width: 65%;
   height: 50%;
@@ -46,23 +51,27 @@
 
   animation: statusPulse 1.8s ease-in-out infinite;
 }
+
 @keyframes statusPulse {
   0% {
     transform: scale(1);
     box-shadow: 0 0 0 0 var(--border-card-secondary);
     opacity: 0.8;
   }
+
   60% {
     transform: scale(1);
     box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
     opacity: 0.95;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   .status-dot {
     animation: none;
@@ -72,6 +81,7 @@
 .theme-card {
   padding: 24px 10px;
 }
+
 .theme-colors {
   display: flex;
   align-items: center;
@@ -86,11 +96,13 @@
   overscroll-behavior-x: contain;
   scrollbar-width: none;
 }
+
 .theme-colors::before,
 .theme-colors::after {
   content: "";
   flex: 1 0 0;
 }
+
 .theme-dot {
   flex: 0 0 auto;
   width: clamp(24px, 4vw, 34px);
@@ -99,11 +111,13 @@
   padding: 0;
   border: 2px solid transparent;
   cursor: pointer;
-  scroll-snap-align: center; 
+  scroll-snap-align: center;
 }
+
 .theme-dot:hover {
   border-color: var(--bg-color-secondary);
 }
+
 .theme-dot.selected {
   border-color: var(--border-card-secondary);
 }

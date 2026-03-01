@@ -57,11 +57,21 @@
 /*-----------------------
   HOME PAGE CONTAINERS
 ------------------------*/
-.home-page-container,
-.project-page-container {
+
+.home-page-container {
   width: 100%;
   min-height: 100vh;
-  padding: 5em 15em;
+  padding: clamp(2rem, 5vw, 5em) 
+           clamp(2rem, 10vw, 15em);
+}
+
+.project-page-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .main-content {

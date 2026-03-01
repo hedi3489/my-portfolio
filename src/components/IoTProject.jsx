@@ -53,7 +53,7 @@ const softlist = [
 function IoTProjectPage() {
   return (
     <div className="flex project-page-container">
-      <div className="flex flex-col full-width card">
+      <div className="flex flex-col card page-card">
         <div className="prose">
 
           <h1>Smart Home IoT Dashboard</h1>
