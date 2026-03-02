@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ThemeCard } from "../components/Cards.jsx"
 
 function TechStackInline({ items = [] }) {
     return (
@@ -30,7 +29,6 @@ function SoftList({ items }) {
         <dl className="soft-list">
             {items.map((item, index) => {
                 const Icon = item.icon
-
                 return (
                     <div key={index} className="soft-list-row" style={{ '--accent': '#c51a4a' }}>
                         <dt>
@@ -46,22 +44,16 @@ function SoftList({ items }) {
 }
 
 function CaptionedImage({ image = '', alt = '', caption = '' }) {
-    return <div className=''>
-        <div className='flex flex-col flex-center captioned-image'>
-            <img
-                src={image}
-                alt={alt}
-                className='image'
-            />
-            <h5>{caption}</h5>
-        </div>
+    return <div className='flex flex-col flex-center captioned-image'>
+        <img src={image} alt={alt} className='image' />
+        <h5>{caption}</h5>
     </div>
 }
 
 function CaptionedImages({ imageList }) {
     const [index, setIndex] = useState(0);
-
     let image = imageList[index % imageList.length];
+
     return <div className="flex flex-col flex-center captioned-image">
         <div className="flex flex-start justify-center">
             <img src={image.src} alt={image.alt} className="image" />
@@ -69,9 +61,7 @@ function CaptionedImages({ imageList }) {
                 colors={[
                     { primary: "white", secondary: "#2b2b2b" },
                     { primary: "#ec8e81", secondary: "#53a8cd" }
-                ]}
-                selectedIndex={index}
-                onSelectIndex={setIndex}
+                ]} selectedIndex={index} onSelectIndex={setIndex}
             />
         </div>
         <h5>{image.caption}</h5>
@@ -79,23 +69,13 @@ function CaptionedImages({ imageList }) {
 }
 
 function ThemeButtons({ colors, selectedIndex, onSelectIndex }) {
-    const [selectedColor, setSelectedColor] = useState(colors[0]);
-
-    useEffect(() => { document.documentElement.style.setProperty('--border-card-secondary', selectedColor); }, [selectedColor]);
-
     return (
         <div className="flex flex-col flex-center card theme-buttons">
             {colors.map((color, i) => (
-                <button
-                    key={i}
+                <button key={i}
                     className={`theme-dot ${selectedIndex === i ? 'selected' : ''}`}
-                    style={{
-                        '--dot-bg': color.secondary
-                            ? `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)`
-                            : color.primary
-                    }}
-                    // onClick={() => setSelectedColor(color)}
-                    onClick={() => (onSelectIndex(i), setSelectedColor(color))}
+                    style={{ '--dot-bg': color.secondary ? `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)` : color.primary }}
+                    onClick={() => onSelectIndex(i)}
                 />
             ))}
         </div>
