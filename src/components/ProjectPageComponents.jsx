@@ -65,8 +65,11 @@ function CaptionedImages({ imageList }) {
     return <div className="flex flex-col flex-center captioned-image">
         <div className="flex flex-start justify-center">
             <img src={image.src} alt={image.alt} className="image" />
-            <ThemeButtons 
-                colors={["#ec8e81", "#53a8cd"]}
+            <ThemeButtons
+                colors={[
+                    { primary: "white", secondary: "#2b2b2b" },
+                    { primary: "#ec8e81", secondary: "#53a8cd" }
+                ]}
                 selectedIndex={index}
                 onSelectIndex={setIndex}
             />
@@ -79,18 +82,20 @@ function ThemeButtons({ colors, selectedIndex, onSelectIndex }) {
     const [selectedColor, setSelectedColor] = useState(colors[0]);
 
     useEffect(() => { document.documentElement.style.setProperty('--border-card-secondary', selectedColor); }, [selectedColor]);
-    
-    
-    
+
     return (
         <div className="flex flex-col flex-center card theme-buttons">
             {colors.map((color, i) => (
                 <button
                     key={i}
                     className={`theme-dot ${selectedIndex === i ? 'selected' : ''}`}
-                    style={{ backgroundColor: color }}
+                    style={{
+                        '--dot-bg': color.secondary
+                            ? `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)`
+                            : color.primary
+                    }}
                     // onClick={() => setSelectedColor(color)}
-                    onClick={() => (onSelectIndex(i), setSelectedColor(color)) }
+                    onClick={() => (onSelectIndex(i), setSelectedColor(color))}
                 />
             ))}
         </div>

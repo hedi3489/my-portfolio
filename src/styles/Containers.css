@@ -89,5 +89,21 @@
 }
 
 .theme-buttons .theme-dot {
-  width: 1.2rem;
+  position: relative;
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid #6b7280;
+}
+
+.theme-buttons .theme-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--dot-bg);
+}
+
+.theme-dot.selected {
+  border-color: #e4e4e4;
 }
