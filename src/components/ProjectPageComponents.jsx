@@ -74,33 +74,35 @@ function CaptionedImages({ imageList }) {
                     alt={image.alt}
                     className="image"
                 />
-                <ThemeButtons />
+                <ThemeButtons 
+                    colors={["#ec8e81", "#53a8cd"]}
+                />
             </div>
             <h5>{image.caption}</h5>
         </div>
     </>
 }
 
-function ThemeButtons() {
-    const colors = ["#ec8e81", "#53a8cd"]
-    const [selectedColor, setSelectedColor] = useState(colors[0]);
-    useEffect(() => {
-        document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
-    }, [selectedColor]);
+function ThemeButtons({ colors }) {
+  const [selectedColor, setSelectedColor] = useState(colors[0] || "#000");
 
-    return (
-        <div className="flex flex-col flex-center card theme-buttons">
-            {colors.map((color, i) => (
-                <button
-                    key={i}
-                    className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
-                    style={{ backgroundColor: color }}
-                    aria-label={`Select theme color ${i + 1}`}
-                    onClick={() => setSelectedColor(color)}
-                />
-            ))}
-        </div>
-    );
+  useEffect(() => {
+    document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
+  }, [selectedColor]);
+
+  return (
+    <div className="flex flex-col flex-center card theme-buttons">
+      {colors.map((color, i) => (
+        <button
+          key={i}
+          className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
+          style={{ backgroundColor: color }}
+          aria-label={`Select theme color ${i + 1}`}
+          onClick={() => setSelectedColor(color)}
+        />
+      ))}
+    </div>
+  );
 }
 
 function BulletList({ title, items = [] }) {
