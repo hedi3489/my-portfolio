@@ -47,6 +47,10 @@
   gap: 0.8rem;
 }
 
+.page-card {
+  padding: 4rem 6rem;
+}
+
 .project-page-container .prose > div {
   gap: 0.4rem;
 }
