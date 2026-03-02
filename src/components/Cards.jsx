@@ -51,7 +51,7 @@ const CARD_MAP = {
 
 function Deck({ cards = [] }) {
   return (
-    <div className="flex flex-col full-height deck">
+    <div className="gap flex flex-col full-height deck">
       {cards.map((item, i) => {
         const Card = CARD_MAP[item.type] || LittleCard
         return <Card key={i} {...item} />

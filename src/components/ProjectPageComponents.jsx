@@ -55,7 +55,7 @@ function CaptionedImages({ imageList }) {
     let image = imageList[index % imageList.length];
 
     return <div className="flex flex-col flex-center captioned-image">
-        <div className="flex flex-start justify-center">
+        <div className="gap flex flex-start justify-center">
             <img src={image.src} alt={image.alt} className="image" />
             <ThemeButtons
                 colors={[

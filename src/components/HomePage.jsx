@@ -28,16 +28,16 @@ const specialCards = [
 ]
 
 function HomePage() {
-    return <div className="flex home-page-container">
-        <div className='flex flex-col flex-center main-content'>
+    return <div className="gap flex home-page-container">
+        <div className='gap flex flex-col flex-center main-content'>
             <Cards.BioCard />
-            <div className='flex full-width showcase'>
+            <div className='gap flex full-width showcase'>
                 <Cards.ContactCard />
                 <Cards.Deck cards={projectCards} />
                 <Cards.Deck cards={specialCards} />
             </div>
         </div>
-        <div className='flex flex-col felx-center side-bar'>
+        <div className='gap flex flex-col felx-center side-bar'>
             <Cards.AboutCard />
             <Cards.LittleFooter />
         </div>

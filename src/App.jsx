@@ -5,7 +5,6 @@ import IoTProjectPage from './components/IoTProject.jsx'
 
 function App() {
   return (
-    <div className='parallax'>
     <Routes>
 
       <Route
@@ -24,7 +23,6 @@ function App() {
       />
 
     </Routes>
-    </div>
   )
 }
 

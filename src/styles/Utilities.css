@@ -1,6 +1,9 @@
+.gap {
+    gap: var(--gap);
+}
+
 .flex {
     display: flex;
-    gap: var(--gap);
 }
 
 .flex-col {
