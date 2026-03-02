@@ -45,7 +45,7 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ image = '', alt = '', caption = ''}) {
+function CaptionedImage({ image = '', alt = '', caption = '' }) {
     return <div className=''>
         <div className='flex flex-col flex-center captioned-image'>
             <img
@@ -61,48 +61,40 @@ function CaptionedImage({ image = '', alt = '', caption = ''}) {
 function CaptionedImages({ imageList }) {
     const [index, setIndex] = useState(0);
 
-    function handleClick() {
-        setIndex(index + 1);
-    }
-
     let image = imageList[index % imageList.length];
-    return <>
-        <div className="flex flex-col flex-center captioned-image">
-            <div className="flex flex-start justify-center">
-                <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="image"
-                />
-                <ThemeButtons 
-                    colors={["#ec8e81", "#53a8cd"]}
-                />
-            </div>
-            <h5>{image.caption}</h5>
+    return <div className="flex flex-col flex-center captioned-image">
+        <div className="flex flex-start justify-center">
+            <img src={image.src} alt={image.alt} className="image" />
+            <ThemeButtons 
+                colors={["#ec8e81", "#53a8cd"]}
+                selectedIndex={index}
+                onSelectIndex={setIndex}
+            />
         </div>
-    </>
+        <h5>{image.caption}</h5>
+    </div>
 }
 
-function ThemeButtons({ colors }) {
-  const [selectedColor, setSelectedColor] = useState(colors[0] || "#000");
+function ThemeButtons({ colors, selectedIndex, onSelectIndex }) {
+    const [selectedColor, setSelectedColor] = useState(colors[0]);
 
-  useEffect(() => {
-    document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
-  }, [selectedColor]);
-
-  return (
-    <div className="flex flex-col flex-center card theme-buttons">
-      {colors.map((color, i) => (
-        <button
-          key={i}
-          className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
-          style={{ backgroundColor: color }}
-          aria-label={`Select theme color ${i + 1}`}
-          onClick={() => setSelectedColor(color)}
-        />
-      ))}
-    </div>
-  );
+    useEffect(() => { document.documentElement.style.setProperty('--border-card-secondary', selectedColor); }, [selectedColor]);
+    
+    
+    
+    return (
+        <div className="flex flex-col flex-center card theme-buttons">
+            {colors.map((color, i) => (
+                <button
+                    key={i}
+                    className={`theme-dot ${selectedIndex === i ? 'selected' : ''}`}
+                    style={{ backgroundColor: color }}
+                    // onClick={() => setSelectedColor(color)}
+                    onClick={() => (onSelectIndex(i), setSelectedColor(color)) }
+                />
+            ))}
+        </div>
+    );
 }
 
 function BulletList({ title, items = [] }) {
