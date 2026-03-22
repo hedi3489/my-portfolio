@@ -64,7 +64,7 @@
 }
 
 .image {
-  max-width: 75%;
+  max-width: 65%;
   height: auto;
   border-radius: var(--radius);
   margin: 0.7rem;

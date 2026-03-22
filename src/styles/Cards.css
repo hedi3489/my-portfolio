@@ -82,17 +82,9 @@
 }
 
 .theme-colors {
-  display: flex;
-  align-items: center;
   gap: 0.5rem;
-
-  flex-wrap: nowrap;
-  overflow-x: auto;
   overflow-y: hidden;
-
   justify-content: center;
-
-  overscroll-behavior-x: contain;
   scrollbar-width: none;
 }
 
@@ -104,13 +96,11 @@
 
 .theme-dot {
   flex: 0 0 auto;
-  width: clamp(24px, 4vw, 34px);
+  width: 3.2em;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  padding: 0;
   border: 2px solid transparent;
   cursor: pointer;
-  scroll-snap-align: center;
 }
 
 .theme-dot:hover {

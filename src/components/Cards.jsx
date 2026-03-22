@@ -28,7 +28,7 @@ function ContactCard() {
       <div className="full-height card">
         <h3><b>Let's start working together!</b></h3><br />
         <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
-        <p><i>belhassinehedi308@gmail.com</i></p>
+        <p style={{fontSize:"1.1em"}}><i>belhassinehedi308@gmail.com</i></p>
         <p><i>Canada</i></p>
         <br />
         <h4 style={headingStyle('#6d6d6d', false, '3px')}>Socials</h4>
@@ -116,7 +116,7 @@ function ThemeCard() {
 
   return (
     <div className="flex flex-center full-height card theme-card">
-      <div className="full-width theme-colors">
+      <div className="full-width flex flex-center theme-colors">
         {colors.map((color, i) => (
           <button
             key={i}

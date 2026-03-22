@@ -26,12 +26,12 @@ function TextSection({ title, paragraphs = [], children }) {
 
 function SoftList({ items }) {
     return (
-        <dl className="soft-list">
+        <dl className="full-width">
             {items.map((item, index) => {
                 const Icon = item.icon
                 return (
                     <div key={index} className="soft-list-row" style={{ '--accent': '#c51a4a' }}>
-                        <dt>
+                        <dt className="flex flex-center">
                             {Icon && <Icon className="soft-list-icon" />}
                             {item.term}
                         </dt>
@@ -50,13 +50,15 @@ function CaptionedImage({ image = '', alt = '', caption = '' }) {
     </div>
 }
 
-function CaptionedImages({ imageList }) {
+function CaptionedImages({ imageList, customWidth = null }) {
     const [index, setIndex] = useState(0);
     let image = imageList[index % imageList.length];
 
     return <div className="flex flex-col flex-center captioned-image">
         <div className="gap flex flex-start justify-center">
-            <img src={image.src} alt={image.alt} className="image" />
+            {customWidth ? <img src={image.src} alt={image.alt} className="image"
+                style={{ maxWidth: customWidth }} /> :
+                <img src={image.src} alt={image.alt} className="image" />}
             <ThemeButtons
                 colors={[
                     { primary: "white", secondary: "#2b2b2b" },

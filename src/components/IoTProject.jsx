@@ -106,8 +106,7 @@ function IoTProjectPage() {
             title="Automation & User Logic"
             paragraphs={[
               "Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.",
-              "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly.",
-              "As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
+              "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly. As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
             ]}
             className="text-section in-section-gap"
           />
@@ -128,6 +127,7 @@ function IoTProjectPage() {
                     caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
                   }
                 ]}
+                customWidth="83%"
               />
             }
           />
