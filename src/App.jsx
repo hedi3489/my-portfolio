@@ -5,24 +5,26 @@ import IoTProjectPage from './components/IoTProject.jsx'
 
 function App() {
   return (
-    <Routes>
+    <div className='parallax'>
+      <Routes>
 
-      <Route
-        path="/"
-        element={<HomePage />}
-      />
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
 
-      <Route
-        path="/projects/olympics-api"
-        element={<APIProjectPage />}
-      />
+        <Route
+          path="/projects/olympics-api"
+          element={<APIProjectPage />}
+        />
 
-      <Route
-        path="/projects/iot-home-simulation"
-        element={<IoTProjectPage />}
-      />
+        <Route
+          path="/projects/iot-home-simulation"
+          element={<IoTProjectPage />}
+        />
 
-    </Routes>
+      </Routes>
+    </div>
   )
 }
 

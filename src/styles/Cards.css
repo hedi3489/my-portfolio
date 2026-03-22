@@ -4,11 +4,12 @@
 .card {
   padding: 24px;
   background-color: var(--bg-card-primary);
-  border: 1px solid var(--border-card-primary);
+  border: 1.2px solid var(--border-card-primary);
   border-radius: var(--radius);
   overflow: visible;
   overflow-wrap: anywhere;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.25s ease;
+  
 }
 
 .page-card {

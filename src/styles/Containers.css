@@ -1,6 +1,16 @@
 /*-----------------------
   HOME PAGE CONTAINERS
 ------------------------*/
+.parallax {
+    background-image: url("/src/assets/gradient3.png");
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 
 .home-page-container {
   width: 100%;
@@ -85,10 +95,10 @@
 
 .theme-buttons .theme-dot {
   position: relative;
-  width: 1.5rem;
+  width: 0.8em;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 2px solid #6b7280;
+  border: 3px solid #6b7280;
 }
 
 .theme-buttons .theme-dot::before {
