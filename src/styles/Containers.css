@@ -88,14 +88,14 @@
 .project-page-container .theme-buttons {
   margin-top: 0.7rem;
   margin-left: -1rem;
-  padding: 0.9rem 0.6rem;
+  padding: 1rem 0.6rem;
   gap: 0.5rem;
   background-color: #19191c;
 }
 
 .theme-buttons .theme-dot {
   position: relative;
-  width: 0.8em;
+  font-size: 0.75em;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: 3px solid #6b7280;
