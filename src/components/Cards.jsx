@@ -103,11 +103,11 @@ function AvailabilityCard() {
 
 function ThemeCard() {
   const colors = [
-    '#dfa19e', 
-    '#ffddba', 
-    '#a3c1bc', 
-    '#71758b', 
-    '#6a5874' 
+    '#e6627c', 
+    '#efd1c2', 
+    '#70d3c4', 
+    '#0d8d84', 
+    '#8e59c0' 
   ]
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   useEffect(() => {
