@@ -74,11 +74,18 @@
 }
 
 .image {
-  max-width: 65%;
   height: auto;
   border-radius: var(--radius);
   margin: 0.7rem;
   display: inline-block;
+}
+
+.medium-image {
+  max-width: 65%;
+}
+
+.large-image {
+  max-width: 83%;
 }
 
 .captioned-image div .image {

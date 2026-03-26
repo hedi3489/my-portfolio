@@ -2,6 +2,7 @@ import iotDiagram1 from '../assets/iotDiagram1.png'
 import iotDiagram2 from '../assets/iotDiagram2.png'
 import iotFlowchart_Basic from '../assets/iotFlowchartBasic.png'
 import iotFlowchart_Colored from '../assets/iotFlowchartColoured.png'
+import iotDashboard from '../assets/iotDashboard.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
@@ -127,7 +128,7 @@ function IoTProjectPage() {
                     caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
                   }
                 ]}
-                customWidth="83%"
+                imageSizeClass="large-image"
               />
             }
           />
@@ -135,8 +136,16 @@ function IoTProjectPage() {
           <TextSection
             title="Dashboard Interface"
             paragraphs={[
-              "A web-based dashboard displays live sensor readings and the current state of devices. It allows users to manually control the system and monitor environmental conditions in real time. (Insert dashboard screenshots or short GIF)",
+              "A web-based dashboard displays live sensor readings and the current state of devices. Users can manually toggle the devices and monitor environmental conditions in real time.",
             ]}
+            children={
+              <CaptionedImage 
+                image={iotDashboard}
+                alt='Smart home dashboard'
+                caption='A quite *cough* basic smart home dashboard. Improvements have been made in HTML/CSS.'
+                imageSizeClass='large-image'
+              />
+            }
             className="text-section"
           />
           <TextSection

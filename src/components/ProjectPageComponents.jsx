@@ -43,22 +43,22 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ image = '', alt = '', caption = '' }) {
+function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = 'medium-image' }) {
+    const imageStyle = "image " + imageSizeClass
     return <div className='flex flex-col flex-center captioned-image'>
-        <img src={image} alt={alt} className='image' />
+        <img src={image} alt={alt} className={imageStyle} />
         <h5>{caption}</h5>
     </div>
 }
 
-function CaptionedImages({ imageList, customWidth = null }) {
+function CaptionedImages({ imageList, imageSizeClass = 'medium-image' }) {
     const [index, setIndex] = useState(0);
     let image = imageList[index % imageList.length];
+    const imageStyle = "image " + imageSizeClass
 
     return <div className="flex flex-col flex-center captioned-image">
         <div className="gap flex flex-start justify-center">
-            {customWidth ? <img src={image.src} alt={image.alt} className="image"
-                style={{ maxWidth: customWidth }} /> :
-                <img src={image.src} alt={image.alt} className="image" />}
+            <img src={image.src} alt={image.alt} className={imageStyle} />
             <ThemeButtons
                 colors={[
                     { primary: "white", secondary: "#2b2b2b" },
