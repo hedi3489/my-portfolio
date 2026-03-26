@@ -85,7 +85,11 @@
 }
 
 .large-image {
-  max-width: 83%;
+  max-width: 85%;
+}
+
+.larger-image {
+  max-width: 98%;
 }
 
 .captioned-image div .image {

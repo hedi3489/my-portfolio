@@ -1,7 +1,7 @@
 import iotDiagram1 from '../assets/iotDiagram1.png'
 import iotDiagram2 from '../assets/iotDiagram2.png'
-import iotFlowchart_Basic from '../assets/iotFlowchartBasic.png'
-import iotFlowchart_Colored from '../assets/iotFlowchartColoured.png'
+import iotFlowchart_Basic from '../assets/iotFlowchartBasic2.png'
+import iotFlowchart_Colored from '../assets/iotFlowchartColoured2.png'
 import iotDashboard from '../assets/iotDashboard.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
@@ -88,6 +88,7 @@ function IoTProjectPage() {
                 image={iotDiagram1}
                 alt="Smart home simulation setup diagram 1"
                 caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
+                // imageSizeClass='large-image'
               />
             }
           />
@@ -99,6 +100,7 @@ function IoTProjectPage() {
                 image={iotDiagram2}
                 alt="Smart home simulation setup diagram 2"
                 caption='Simplified circuit schematic illustrating the connections between the RPi, LED, DHT11, motor driver, DC motor, and 9V battery, and the ESP32, photoresistor, and RFID, in a clear and organized format.'
+                imageSizeClass='large-image'
               />
             }
           />
@@ -143,15 +145,15 @@ function IoTProjectPage() {
                 image={iotDashboard}
                 alt='Smart home dashboard'
                 caption='A quite *cough* basic smart home dashboard. Improvements have been made in HTML/CSS.'
-                imageSizeClass='large-image'
+                imageSizeClass='larger-image'
               />
             }
             className="text-section"
           />
           <TextSection
-            title="Key Takeaways"
+            title="Takeaways"
             paragraphs={[
-              "This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. It highlights experience with IoT concepts, backend logic, asynchronous events, and building interfaces that control physical systems.",
+              "This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. Although a bit rough around the edges, it highlights experience with IoT concepts, asynchronous events, and building interfaces that control physical systems.",
             ]}
             className="text-section"
           />
