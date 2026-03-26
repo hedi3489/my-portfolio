@@ -2,7 +2,7 @@
   HOME PAGE CONTAINERS
 ------------------------*/
 .parallax {
-    background-image: url("/src/assets/gradient3.png");
+    background-image: url("/src/assets/backgroundGradient.png");
 
   background-attachment: fixed;
   background-position: center;
