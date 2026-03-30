@@ -23,20 +23,20 @@ function APIProjectPage() {
                     <TextSection
                         className="text-section"
                         title="Overview"
-                        paragraphs={["This API provides a structure way to store, retrieve, and manage Olympics-related resources such as atheletes, events, and results, and provides remote computing of Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on user input."]}
-                    />
-                    <BulletList
-                        title="What it does"
-                        items={[
-                            'Creates, retrieves, updates, and deletes athletes and events',
-                            'Returns structured JSON responses',
-                            'Offers filtering and pagination',
-                            'Validates incoming data before database operations',
-                            'Handles errors gracefully with appropriate HTTP status codes',
-                            'Provides predictable REST endpoints'
+                        paragraphs={[
+                        <>
+                        The Olympics API is a RESTful web service built around the 2024 Paris Olympics (roughly...) providing structured access to access data on athletes, coaches, venues, events, countries, and results. The goal was to design and deliver a production level API with all the expected features: authentication, pagination, filtering, sorting, and proper error handling.
+                        </>,
+                        <>
+                        The API was written using <b>PHP</b> and the <b>Slim Framework</b>, backed by a (dummy-filled) MySQL database, and following the REST conventions throughout - each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.
+                        </>,
+                        <>
+                        I personally owned the venues and events endpoints, including their filtering logic — venues can be filtered by <b>name</b>, <b>capacity range</b>, and <b>construction date</b>, while events support sorting by fields like <b>sport</b>, <b>date</b>, and <b>participant count</b>.
+                        </>
                         ]}
                     />
                     <CaptionedImage
+                        caption='Screenshot of the root resource of the Olympics API'
                         image={apiSS1}
                     />
 
