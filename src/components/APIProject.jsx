@@ -23,18 +23,18 @@ const http_exception = `class HttpBadFilterException extends HttpSpecializedExce
     protected string $description = "Please make sure you provide a valid filter before submitting. Only alphanumeric characters and spaces are allowed.";
 }`;
 
-const pagination_code = ` public function __construct(int $page_number = 1, int $page_size = 15, int $total_count = 0)
-    {
-        $this->current_page = $page_number;
-        $this->records_per_page = $page_size;
-        $this->total_records = $total_count;
-        $this->total_pages = $this->getTotalPages();
-        // Set the current page to 1 if the current page is negative
-        // or the current page is greater than the total number of pages.
-        if ($this->current_page < 1 || $this->current_page > $this->total_pages) {
-            $this->current_page = 1;
-        }
-    }`;
+const pagination_code = `public function __construct(int $page_number = 1, int $page_size = 15, int $total_count = 0)
+{
+    $this->current_page = $page_number;
+    $this->records_per_page = $page_size;
+    $this->total_records = $total_count;
+    $this->total_pages = $this->getTotalPages();
+    // Set the current page to 1 if the current page is negative
+    // or the current page is greater than the total number of pages.
+    if ($this->current_page < 1 || $this->current_page > $this->total_pages) {
+        $this->current_page = 1;
+    }
+}`;
 
 function APIProjectPage() {
     return (
@@ -70,6 +70,9 @@ function APIProjectPage() {
                         ]}
                     />
 
+                    <TextSection 
+                        title="Code Snippets"
+                    />
                     <CodeSnippet title="Sorting and ordering snippet from venue_model.php" code={code} />
                     <CodeSnippet title="Brief snippet from HttpBadFilterException.php" code={http_exception} />
                     <CodeSnippet title="Snippet from PaginationHelper.php" code={pagination_code} />
