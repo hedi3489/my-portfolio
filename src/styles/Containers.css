@@ -124,7 +124,13 @@
   border-color: #e4e4e4;
 }
 
-.code-snippet {
+.code-snippet-border {
+  /* padding: 1em 0em 0em 0em; */
+  margin: 20px 0px;
+  background-color: rgb(19, 19, 19);
   border: 1px solid grey;
-  border-radius: 50%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  transition: all 0.25s ease;
 }

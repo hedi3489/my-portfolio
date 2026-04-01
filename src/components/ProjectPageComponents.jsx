@@ -100,10 +100,10 @@ function BulletList({ title, items = [] }) {
 
 function CodeSnippet({ title, code, language = "php", style = atomDark }) {
     return (
-        <div>
-            <h3>{title}</h3>
+        <div className="code-snippet-border">
+            <p style={{ margin: "0.8em 0em 0.6em 0.8em" }}>{title}</p>
             <div className=''>
-                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} className='code-snippet' >
+                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} customStyle={{ margin: 0, borderRadius: "0%" }} className='code-snippet' >
                     {code}
                 </SyntaxHighlighter>
             </div>
