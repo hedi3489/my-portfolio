@@ -1,9 +1,6 @@
 
-import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList } from './ProjectPageComponents.jsx'
+import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from './ProjectPageComponents.jsx'
 import apiSS1 from '../assets/olympics-api-ss1.png'
-
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus, nord, oneDark, atomDark, nightOwl, coldarkDark, materialDark, synthwave84, duotoneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const code = `// Sorting & Ordering
 $sort_by = $req_params['sort_by'] ?? 'venue_name';
@@ -72,30 +69,10 @@ function APIProjectPage() {
                             </>
                         ]}
                     />
-                    {/* <CaptionedImage
-                        caption='Screenshot of the root resource of the Olympics API'
-                        image={apiSS1}
-                    /> */}
 
-                    {/* oneDark, atomDark, nightOwl, coldarkDark, materialDark, synthwave84, duotoneDark   */}
-
-                    <br />
-                    <h3>Sorting and ordering snippet from venue_model.php</h3>
-                    <SyntaxHighlighter language="php" style={atomDark} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }}>
-                        {code}
-                    </SyntaxHighlighter>
-
-                    <br />
-                    <h3>Brief snippet from HttpBadFilterException.php </h3>
-                    <SyntaxHighlighter language="php" style={atomDark} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} >
-                        {http_exception}
-                    </SyntaxHighlighter>
-
-                    <br />
-                    <h3>Snippet from PaginationHelper.php</h3>
-                    <SyntaxHighlighter language="php" style={atomDark} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} >
-                        {pagination_code}
-                    </SyntaxHighlighter>
+                    <CodeSnippet title="Sorting and ordering snippet from venue_model.php" code={code} />
+                    <CodeSnippet title="Brief snippet from HttpBadFilterException.php" code={http_exception} />
+                    <CodeSnippet title="Snippet from PaginationHelper.php" code={pagination_code} />
 
                 </div>
             </div>

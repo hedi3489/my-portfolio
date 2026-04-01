@@ -123,3 +123,8 @@
 .theme-dot.selected {
   border-color: #e4e4e4;
 }
+
+.code-snippet {
+  border: 1px solid grey;
+  border-radius: 50%;
+}

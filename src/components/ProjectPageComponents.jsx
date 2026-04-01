@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function TechStackInline({ items = [] }) {
     return (
@@ -96,6 +98,19 @@ function BulletList({ title, items = [] }) {
     </div>
 }
 
+function CodeSnippet({ title, code, language = "php", style = atomDark }) {
+    return (
+        <div>
+            <h3>{title}</h3>
+            <div className=''>
+                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} className='code-snippet' >
+                    {code}
+                </SyntaxHighlighter>
+            </div>
+        </div>
+    )
+}
+
 export {
     TechStackInline,
     TextSection,
@@ -103,4 +118,5 @@ export {
     CaptionedImage,
     CaptionedImages,
     BulletList,
+    CodeSnippet
 }
