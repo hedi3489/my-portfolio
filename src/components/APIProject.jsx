@@ -43,11 +43,11 @@ function APIProjectPage() {
                 <div className='prose'>
                     <h1>2024 Paris Olympics API</h1>
                     <h4>An API providing resources and remote computing over HTTPS</h4>
-                    <TechStackInline items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC",]} />
+                    <TechStackInline items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC", "HTTP"]} />
                     <TextSection className="text-section" title="Overview"
                         paragraphs={[
                             <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to access data on athletes, coaches, venues, events, countries, and results, and supporting pagination, filtering, sorting, and proper error handling.</>,
-                            <>The API was built using <b>PHP</b> and the <b>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>
+                            <>The API was built using <b style={{color: '#bfbfff'}}>PHP</b> and the <b style={{color: '#bfbfff'}}>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>
                         ]}
                     />
                     <BulletList 
@@ -64,16 +64,13 @@ function APIProjectPage() {
                         ]}
                     />
                     
-                    {/* <h3>Request</h3> */}
-                    <p>1. User sends a request</p>
+                    <p>User sends a request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
 
-                    {/* <h3>The Route</h3> */}
-                    <p>2. The request is carried by routes.php to the controller</p>
+                    <p>The request is carried by routes.php to the controller</p>
                     <CodeSnippet subtitle="routes.php" code="$app->get('/venues', [VenueController::class, 'handleGetVenues']);" />
 
-                    {/* <h3>The Controller</h3> */}
-                    <p>3. The controller extracts the parameters and passes them off to the model</p>
+                    <p>The controller extracts the parameters and passes them off to the model</p>
                     <CodeSnippet subtitle="VenuesController.php" code="public function handleGetVenues(Request $request, Response $response): Response
 {
     $req_params = $request->getQueryParams();
@@ -89,7 +86,6 @@ function APIProjectPage() {
     return $this->renderJson($response, $venues);
 }"/>
 
-                    <p>4. The model validates the input before building the query</p>
                     <CodeSnippet subtitle="VenuesModel.php" code="if (isset($req_params['min_capacity'])) {
     (int) $cap = $req_params['min_capacity'];
     if (!ValidationHelper::isIntAndInRange($cap, 0, 100000) || $cap == NULL) {

@@ -126,13 +126,17 @@
 
 .code-snippet-border {
   margin: 5px 0px 18px 0px;
-  padding: 0.6em;
+  padding: 0.6em 1em;
   background-color: #1d1f21;
   border: 1px solid rgb(94, 94, 94);
   border-radius: var(--radius);
   overflow: hidden;
   overflow-wrap: anywhere;
   transition: all 0.25s ease;
+}
+
+.code-snippet-border:hover {
+  border-color: #b6b6ff;
 }
 
 .code-snippet-border pre span {
