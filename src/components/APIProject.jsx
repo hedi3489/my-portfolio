@@ -64,13 +64,16 @@ function APIProjectPage() {
                         ]}
                     />
                     
-                    <p>The Request</p>
+                    {/* <h3>Request</h3> */}
+                    <p>1. User sends a request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
 
-                    <p>The Route</p>
+                    {/* <h3>The Route</h3> */}
+                    <p>2. The request is carried by routes.php to the controller</p>
                     <CodeSnippet subtitle="routes.php" code="$app->get('/venues', [VenueController::class, 'handleGetVenues']);" />
 
-                    <p>The Controller</p>
+                    {/* <h3>The Controller</h3> */}
+                    <p>3. The controller extracts the parameters and passes them off to the model</p>
                     <CodeSnippet subtitle="VenuesController.php" code="public function handleGetVenues(Request $request, Response $response): Response
 {
     $req_params = $request->getQueryParams();
@@ -86,7 +89,7 @@ function APIProjectPage() {
     return $this->renderJson($response, $venues);
 }"/>
 
-                    <p>Validation & Querying</p>
+                    <p>4. The model validates the input before building the query</p>
                     <CodeSnippet subtitle="VenuesModel.php" code="if (isset($req_params['min_capacity'])) {
     (int) $cap = $req_params['min_capacity'];
     if (!ValidationHelper::isIntAndInRange($cap, 0, 100000) || $cap == NULL) {
@@ -100,7 +103,7 @@ function APIProjectPage() {
     }
 }"/>
 
-                    <p>Sorting</p>
+                    <p>5. Only whitelisted fields are allowed</p>
                     <CodeSnippet subtitle="VenuesModel.php" code="$valid_sort_fields = ['venue_id', 'venue_name', 'location', 'capacity', 'type', 'date_constructed', 'address'];
 $valid_orders = ['asc', 'desc'];
 
@@ -110,7 +113,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     throw new HttpBadRequestException($request, 'Invalid sorting or ordering parameter.');
 }"/>
 
-                    <p>The Response</p>
+                    <p>6. A paginated JSON object is served to the user</p>
                     <CodeSnippet language="json" code='{
   "pagination": {
     "current_page": 1,
