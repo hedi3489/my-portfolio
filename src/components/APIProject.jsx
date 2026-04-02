@@ -47,23 +47,34 @@ function APIProjectPage() {
                     <TextSection className="text-section" title="Overview"
                         paragraphs={[
                             <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to access data on athletes, coaches, venues, events, countries, and results, and supporting pagination, filtering, sorting, and proper error handling.</>,
-                            <>The API was built using <b style={{color: '#bfbfff'}}>PHP</b> and the <b style={{color: '#bfbfff'}}>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>
+                            <>The API was built using <b style={{ color: '#bfbfff' }}>PHP</b> and the <b style={{ color: '#bfbfff' }}>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses. </>
                         ]}
                     />
-                    <BulletList 
-                    intro='I personally owned the venues and events endpoints, including their filtering logic:'
-                    items={[
-                        <>venues can be filtered & sorted by <b>name</b>, <b>capacity</b>, and <b>construction date</b></>,
-                        <> events can be filtered & sorted by <b>sport</b>, <b>date</b>, and <b>participant count</b></>
-                    ]} />
+                    <p>I personally owned the venues and events endpoints, including their filtering logic:</p>
 
-                    <TextSection 
+                    <BulletList
+                        intro="⦿ Venues:"
+                        items={[
+                            <>Filterable by: <b>name</b>, <b>capacity range</b>, and <b>construction date range</b></>,
+                            <>Sortable by venue ID, name, location, capacity, type, date constructed, and address</>,
+                        ]}
+                    />
+                    <BulletList
+                        intro="⦿ Events:"
+                        items={[
+                            <>Filterable by: <b>event name</b>, <b>participant count range</b>, and <b>paralympic status</b></>,
+                            <>Sortable by event ID, name, sport, start/end date, participant count, and venue</>
+                        ]}
+                    />
+
+
+                    <TextSection
                         title="Request Processing"
                         paragraphs={[
                             <>To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated.</>
                         ]}
                     />
-                    
+
                     <p>User sends a request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
 
