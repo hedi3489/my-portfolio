@@ -43,39 +43,95 @@ function APIProjectPage() {
                 <div className='prose'>
                     <h1>2024 Paris Olympics API</h1>
                     <h4>An API providing resources and remote computing over HTTPS</h4>
-                    <TechStackInline
-                        items={[
-                            "REST API",
-                            "PHP",
-                            "Slim",
-                            "PDO",
-                            "MySQL",
-                            "Valitron",
-                            "MVC",
-                        ]}
-                    />
-                    <TextSection
-                        className="text-section"
-                        title="Overview"
+                    <TechStackInline items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC",]} />
+                    <TextSection className="text-section" title="Overview"
                         paragraphs={[
-                            <>
-                                The Olympics API is a RESTful web service built around the 2024 Paris Olympics (roughly...) providing structured access to access data on athletes, coaches, venues, events, countries, and results. The goal was to design and deliver a production level API with all the expected features: authentication, pagination, filtering, sorting, and proper error handling.
-                            </>,
-                            <>
-                                The API was written using <b>PHP</b> and the <b>Slim Framework</b>, backed by a (dummy-filled) MySQL database, and following the REST conventions throughout - each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.
-                            </>,
-                            <>
-                                I personally owned the venues and events endpoints, including their filtering logic — venues can be filtered by <b>name</b>, <b>capacity range</b>, and <b>construction date</b>, while events support sorting by fields like <b>sport</b>, <b>date</b>, and <b>participant count</b>.
-                            </>
+                            <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to access data on athletes, coaches, venues, events, countries, and results, and supporting pagination, filtering, sorting, and proper error handling.</>,
+                            <>The API was built using <b>PHP</b> and the <b>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>,
+                            <>I personally owned the venues and events endpoints, including their filtering logic:</>
                         ]}
                     />
+                    <BulletList items={[
+                        <>venues can be filtered & sorted by <b>name</b>, <b>capacity</b>, and <b>construction date</b></>,
+                        <> events can be filtered & sorted by <b>sport</b>, <b>date</b>, and <b>participant count</b></>
+                    ]} />
 
-                    <TextSection 
+
+                    <br />
+                    <p>The Request</p>
+                    <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
+
+                    <p>The Route</p>
+                    <CodeSnippet code="$app->get('/venues', [VenueController::class, 'handleGetVenues']);" />
+
+                    <p>The Controller</p>
+                    <CodeSnippet code="public function handleGetVenues(Request $request, Response $response): Response
+{
+    $req_params = $request->getQueryParams();
+    $current_page = $req_params['current_page'] ?? 1;
+    $page_size = $req_params['page_size'] ?? 15;
+    $this->venue_model->setPaginationOptions($current_page, $page_size);
+
+    $venues = $this->venue_model->getVenues($req_params, $request);
+
+    if (empty($venues['data'])) {
+        throw new HttpNotFoundException($request, 'No venues found.');
+    }
+    return $this->renderJson($response, $venues);
+}"/>
+
+                    <p>Validation & Querying</p>
+                    <CodeSnippet code="if (isset($req_params['min_capacity'])) {
+    (int) $cap = $req_params['min_capacity'];
+    if (!ValidationHelper::isIntAndInRange($cap, 0, 100000) || $cap == NULL) {
+        throw new HttpBadRequestException(
+            $request,
+            'Min_capacity must be a number between 0 and 100000.'
+        );
+    } else {
+        $sql .= ' AND capacity >= :min_capacity';
+        $query_args['min_capacity'] = $req_params['min_capacity'];
+    }
+}"/>
+
+                    <p>Sorting</p>
+                    <CodeSnippet code="$valid_sort_fields = ['venue_id', 'venue_name', 'location', 'capacity', 'type', 'date_constructed', 'address'];
+$valid_orders = ['asc', 'desc'];
+
+if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)) {
+    $sql .= ' ORDER BY $sort_by $order_by';
+} else {
+    throw new HttpBadRequestException($request, 'Invalid sorting or ordering parameter.');
+}"/>
+
+                    <p>Sorting</p>
+                    <CodeSnippet language="json" code='{
+  "pagination": {
+    "current_page": 1,
+    "page_size": 15,
+    "total_records": 4
+  },
+  "data": [
+    {
+      "venue_id": 3,
+      "venue_name": "Stade de France",
+      "location": "Saint-Denis",
+      "capacity": 81338,
+      "type": "Stadium",
+      "date_constructed": "1998-01-28"
+    }
+  ]
+}'/>
+
+
+
+
+                    {/* <TextSection
                         title="Code Snippets"
                     />
                     <CodeSnippet title="Sorting and ordering snippet from venue_model.php" code={code} />
                     <CodeSnippet title="Brief snippet from HttpBadFilterException.php" code={http_exception} />
-                    <CodeSnippet title="Snippet from PaginationHelper.php" code={pagination_code} />
+                    <CodeSnippet title="Snippet from PaginationHelper.php" code={pagination_code} /> */}
 
                 </div>
             </div>

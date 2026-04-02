@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { atomDark, nightOwl, nord, materialDark, duotoneDark, hopscotch} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function TechStackInline({ items = [] }) {
     return (
@@ -98,12 +98,25 @@ function BulletList({ title, items = [] }) {
     </div>
 }
 
-function CodeSnippet({ title, code, language = "php", style = atomDark }) {
+
+const customAtomDark = {
+    ...atomDark,
+    'class-name': {
+        ...atomDark['class-name'],
+        color: 'rgb(218, 208, 133)'
+    }
+};
+
+function CodeSnippet({ title = null, code, language = "php", style = customAtomDark }) {
     return (
         <div className="code-snippet-border">
-            <p style={{ margin: "0.6em 0em 0.6em 0.8em", fontSize: "1.2em", fontWeight: "250" }}>{title}</p>
+            {title ? <p style={{ margin: "0.6em 0em 0.6em 0.8em", fontSize: "1.2em", fontWeight: "250" }}>{title}</p> : null}
             <div className=''>
-                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} customStyle={{ margin: 0, borderRadius: "0%" }} className='code-snippet' >
+                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} 
+                customStyle={{ 
+                    margin: 0, 
+                    borderRadius: "0%",
+                     }} className='code-snippet' >
                     {code}
                 </SyntaxHighlighter>
             </div>

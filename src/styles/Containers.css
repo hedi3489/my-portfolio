@@ -134,3 +134,7 @@
   overflow-wrap: anywhere;
   transition: all 0.25s ease;
 }
+
+.code-snippet-border pre span {
+    text-decoration: none !important;
+}
