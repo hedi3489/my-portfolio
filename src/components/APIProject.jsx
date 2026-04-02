@@ -47,25 +47,31 @@ function APIProjectPage() {
                     <TextSection className="text-section" title="Overview"
                         paragraphs={[
                             <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to access data on athletes, coaches, venues, events, countries, and results, and supporting pagination, filtering, sorting, and proper error handling.</>,
-                            <>The API was built using <b>PHP</b> and the <b>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>,
-                            <>I personally owned the venues and events endpoints, including their filtering logic:</>
+                            <>The API was built using <b>PHP</b> and the <b>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>
                         ]}
                     />
-                    <BulletList items={[
+                    <BulletList 
+                    intro='I personally owned the venues and events endpoints, including their filtering logic:'
+                    items={[
                         <>venues can be filtered & sorted by <b>name</b>, <b>capacity</b>, and <b>construction date</b></>,
                         <> events can be filtered & sorted by <b>sport</b>, <b>date</b>, and <b>participant count</b></>
                     ]} />
 
-
-                    <br />
+                    <TextSection 
+                        title="Request Processing"
+                        paragraphs={[
+                            <>To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated.</>
+                        ]}
+                    />
+                    
                     <p>The Request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
 
                     <p>The Route</p>
-                    <CodeSnippet code="$app->get('/venues', [VenueController::class, 'handleGetVenues']);" />
+                    <CodeSnippet subtitle="routes.php" code="$app->get('/venues', [VenueController::class, 'handleGetVenues']);" />
 
                     <p>The Controller</p>
-                    <CodeSnippet code="public function handleGetVenues(Request $request, Response $response): Response
+                    <CodeSnippet subtitle="VenuesController.php" code="public function handleGetVenues(Request $request, Response $response): Response
 {
     $req_params = $request->getQueryParams();
     $current_page = $req_params['current_page'] ?? 1;
@@ -81,7 +87,7 @@ function APIProjectPage() {
 }"/>
 
                     <p>Validation & Querying</p>
-                    <CodeSnippet code="if (isset($req_params['min_capacity'])) {
+                    <CodeSnippet subtitle="VenuesModel.php" code="if (isset($req_params['min_capacity'])) {
     (int) $cap = $req_params['min_capacity'];
     if (!ValidationHelper::isIntAndInRange($cap, 0, 100000) || $cap == NULL) {
         throw new HttpBadRequestException(
@@ -95,7 +101,7 @@ function APIProjectPage() {
 }"/>
 
                     <p>Sorting</p>
-                    <CodeSnippet code="$valid_sort_fields = ['venue_id', 'venue_name', 'location', 'capacity', 'type', 'date_constructed', 'address'];
+                    <CodeSnippet subtitle="VenuesModel.php" code="$valid_sort_fields = ['venue_id', 'venue_name', 'location', 'capacity', 'type', 'date_constructed', 'address'];
 $valid_orders = ['asc', 'desc'];
 
 if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)) {
@@ -104,7 +110,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     throw new HttpBadRequestException($request, 'Invalid sorting or ordering parameter.');
 }"/>
 
-                    <p>Sorting</p>
+                    <p>The Response</p>
                     <CodeSnippet language="json" code='{
   "pagination": {
     "current_page": 1,

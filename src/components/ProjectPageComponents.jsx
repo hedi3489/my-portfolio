@@ -86,10 +86,11 @@ function ThemeButtons({ colors, selectedIndex, onSelectIndex }) {
     );
 }
 
-function BulletList({ title, items = [] }) {
+function BulletList({ header, intro, items = [] }) {
     return <div>
 
-        {title ? <h3>{title}</h3> : null}
+        {header ? <h3>{header}</h3> : null}
+        {intro ? <p style={{marginBottom: "0.3em"}}>{intro}</p> : null}
         <ul>
             {items.map((item, index) => (
                 <li key={index}>{item}</li>
@@ -107,10 +108,11 @@ const customAtomDark = {
     }
 };
 
-function CodeSnippet({ title = null, code, language = "php", style = customAtomDark }) {
+function CodeSnippet({ title = null, subtitle = null, code, language = "php", style = customAtomDark }) {
     return (
         <div className="code-snippet-border">
-            {title ? <p style={{ margin: "0.6em 0em 0.6em 0.8em", fontSize: "1.2em", fontWeight: "250" }}>{title}</p> : null}
+            {title ? <p style={{ margin: "0.5em 0em 0.6em 0.8em", fontSize: "1.2em", fontWeight: "250" }}>{title}</p> : null}
+            {subtitle ? <p style={{ margin: "0.5em 0em 0em 0.8em", fontSize: "1.2em", color: "gray" }}>{subtitle}</p> : null}
             <div className=''>
                 <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} 
                 customStyle={{ 
