@@ -1,40 +1,6 @@
 
 import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from './ProjectPageComponents.jsx'
-import apiSS1 from '../assets/olympics-api-ss1.png'
-
-const code = `// Sorting & Ordering
-$sort_by = $req_params['sort_by'] ?? 'venue_name';
-$order_by = $req_params['order_by'] ?? 'asc';
-
-$valid_sort_fields = ['venue_id', 'venue_name', 'location', 'capacity', 'type', 'date_constructed', 'address'];
-$valid_orders = ['asc', 'desc'];
-
-if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)) {
-    $sql .= " ORDER BY $sort_by $order_by";
-} else {
-    throw new HttpBadRequestException($request, "Invalid sorting or ordering parameter.");
-}`;
-
-const http_exception = `class HttpBadFilterException extends HttpSpecializedException
-{
-    protected $code = 400;
-    protected $message = "Invalid filter provided.";
-    protected string $title = "400 Bad Request";
-    protected string $description = "Please make sure you provide a valid filter before submitting. Only alphanumeric characters and spaces are allowed.";
-}`;
-
-const pagination_code = `public function __construct(int $page_number = 1, int $page_size = 15, int $total_count = 0)
-{
-    $this->current_page = $page_number;
-    $this->records_per_page = $page_size;
-    $this->total_records = $total_count;
-    $this->total_pages = $this->getTotalPages();
-    // Set the current page to 1 if the current page is negative
-    // or the current page is greater than the total number of pages.
-    if ($this->current_page < 1 || $this->current_page > $this->total_pages) {
-        $this->current_page = 1;
-    }
-}`;
+import olympicsDBDiagram from '../assets/olympicsDBDiagram.png'
 
 function APIProjectPage() {
     return (
@@ -63,6 +29,19 @@ function APIProjectPage() {
                         items={[
                             <>Filterable by: <b>event name</b>, <b>participant count range</b>, and <b>paralympic status</b></>,
                             <>Sortable by: event ID, name, sport, start/end date, participant count, and venue</>
+                        ]}
+                    />
+
+                    <TextSection
+                        title="Database Design"
+                        children={[
+                            <p>The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward.</p>,
+                            <CaptionedImage
+                                image={olympicsDBDiagram}
+                                caption='Entity Relation Diagram of the Olympics Database'
+                                alt='Database Entity Relation Diagram'
+                                imageSizeClass='larger-image'
+                            />
                         ]}
                     />
 

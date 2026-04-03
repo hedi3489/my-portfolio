@@ -45,8 +45,8 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = 'medium-image' }) {
-    const imageStyle = "image " + imageSizeClass
+function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = "medium-image" }) {
+    const imageStyle = "image " + imageSizeClass;
     return <div className='flex flex-col flex-center captioned-image'>
         <img src={image} alt={alt} className={imageStyle} />
         <h5>{caption}</h5>
@@ -56,7 +56,7 @@ function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = '
 function CaptionedImages({ imageList, imageSizeClass = 'medium-image' }) {
     const [index, setIndex] = useState(0);
     let image = imageList[index % imageList.length];
-    const imageStyle = "image " + imageSizeClass
+    const imageStyle = "image " + imageSizeClass;
 
     return <div className="flex flex-col flex-center captioned-image">
         <div className="gap flex flex-start justify-center">
