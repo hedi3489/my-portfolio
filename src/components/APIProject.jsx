@@ -46,27 +46,25 @@ function APIProjectPage() {
                     <TechStackInline items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC", "HTTP"]} />
                     <TextSection className="text-section" title="Overview"
                         paragraphs={[
-                            <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to access data on athletes, coaches, venues, events, countries, and results, and supporting pagination, filtering, sorting, and proper error handling.</>,
-                            <>The API was built using <b style={{ color: '#bfbfff' }}>PHP</b> and the <b style={{ color: '#bfbfff' }}>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout. Each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses. </>
+                            <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to data on athletes, coaches, venues, and sports events, and supporting pagination, filtering, sorting, and proper error handling.</>,
+                            <>The API was built using <b style={{ color: '#bfbfff' }}>PHP</b> and the <b style={{ color: '#bfbfff' }}>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout - each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses. </>
                         ]}
                     />
                     <p>I personally owned the venues and events endpoints, including their filtering logic:</p>
-
                     <BulletList
-                        intro="⦿ Venues:"
+                        intro={<b>⦿ Venues:</b>}
                         items={[
                             <>Filterable by: <b>name</b>, <b>capacity range</b>, and <b>construction date range</b></>,
-                            <>Sortable by venue ID, name, location, capacity, type, date constructed, and address</>,
+                            <>Sortable by: venue ID, name, location, capacity, type, date constructed, and address</>
                         ]}
                     />
                     <BulletList
-                        intro="⦿ Events:"
+                        intro={<b>⦿ Events:</b>}
                         items={[
                             <>Filterable by: <b>event name</b>, <b>participant count range</b>, and <b>paralympic status</b></>,
-                            <>Sortable by event ID, name, sport, start/end date, participant count, and venue</>
+                            <>Sortable by: event ID, name, sport, start/end date, participant count, and venue</>
                         ]}
                     />
-
 
                     <TextSection
                         title="Request Processing"
@@ -74,14 +72,13 @@ function APIProjectPage() {
                             <>To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated.</>
                         ]}
                     />
-
-                    <p>User sends a request</p>
+                    <p>1. User sends a request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
 
-                    <p>The request is carried by routes.php to the controller</p>
+                    <p>2. The request is carried by routes.php to the controller</p>
                     <CodeSnippet subtitle="routes.php" code="$app->get('/venues', [VenueController::class, 'handleGetVenues']);" />
 
-                    <p>The controller extracts the parameters and passes them off to the model</p>
+                    <p>3. The controller extracts the parameters and passes them off to the model</p>
                     <CodeSnippet subtitle="VenuesController.php" code="public function handleGetVenues(Request $request, Response $response): Response
 {
     $req_params = $request->getQueryParams();
@@ -97,6 +94,7 @@ function APIProjectPage() {
     return $this->renderJson($response, $venues);
 }"/>
 
+                    <p>4. The model validates the params before querying the database</p>
                     <CodeSnippet subtitle="VenuesModel.php" code="if (isset($req_params['min_capacity'])) {
     (int) $cap = $req_params['min_capacity'];
     if (!ValidationHelper::isIntAndInRange($cap, 0, 100000) || $cap == NULL) {
@@ -121,7 +119,8 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
 }"/>
 
                     <p>6. A paginated JSON object is served to the user</p>
-                    <CodeSnippet language="json" code='{
+                    <div className='half-width'>
+                        <CodeSnippet language="json" code='{
   "pagination": {
     "current_page": 1,
     "page_size": 15,
@@ -139,15 +138,34 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
   ]
 }'/>
 
+                    </div>
 
 
-
-                    {/* <TextSection
-                        title="Code Snippets"
+                    <TextSection
+                        title="Error Handling"
+                        paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]}
                     />
-                    <CodeSnippet title="Sorting and ordering snippet from venue_model.php" code={code} />
-                    <CodeSnippet title="Brief snippet from HttpBadFilterException.php" code={http_exception} />
-                    <CodeSnippet title="Snippet from PaginationHelper.php" code={pagination_code} /> */}
+                    <CodeSnippet
+                        code='class HttpBadFilterException extends HttpSpecializedException
+{
+    protected $code = 400;
+    protected $message = "Invalid filter provided.";
+    protected string $title = "400 Bad Request";
+    protected string $description = "Please make sure you provide a valid filter. 
+    Only alphanumeric characters and spaces are allowed.";
+}'
+                    />
+
+                    <CodeSnippet
+                        code='class HttpInternalServerErrorException extends HttpSpecializedException
+{
+    protected $code = 500;
+    protected $message = "Internal server error.";
+    protected $title = "500 Internal Server Error.";
+    protected string $description = "The server has encountered an unexpected 
+    situation preventing it from fulfilling its request.";
+}'
+                    />
 
                 </div>
             </div>

@@ -138,7 +138,3 @@
 .code-snippet-border:hover {
   border-color: #b6b6ff;
 }
-
-.code-snippet-border pre span {
-    text-decoration: none !important;
-}

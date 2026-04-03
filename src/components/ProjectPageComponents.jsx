@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark, nightOwl, nord, materialDark, duotoneDark, hopscotch} from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { atomDark} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function TechStackInline({ items = [] }) {
     return (
@@ -98,7 +98,6 @@ function BulletList({ header, intro, items = [] }) {
         </ul>
     </div>
 }
-
 
 const customAtomDark = {
     ...atomDark,
