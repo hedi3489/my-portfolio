@@ -58,7 +58,8 @@ ul {
   gap: 1rem;
 }
 
-.bio-text p b {
+.bio-text p b,
+.little-footer b {
   font-weight: 600;
   color: var(--border-card-secondary);
 }

@@ -149,7 +149,8 @@ function AboutCard() {
 
 function LittleFooter() {
   return <div className='full-width full-height  card little-footer'>
-    <p>text... text...</p>
+    <h3><b>WIP</b></h3>
+    <p>This is a work in progress. <br />Updates will be coming soon!</p>
   </div>
 }
 
