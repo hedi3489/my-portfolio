@@ -1,13 +1,7 @@
 /* ---------------------------
    DEFAULT
 ---------------------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-ul {
+h1, h2, h3, h4, h5, p, ul {
   margin: 0;
 }
 
@@ -20,7 +14,7 @@ ul {
 }
 
 .home-page-container h2 {
-  font-size: 1.7em;
+  font-size: 1.45rem;
   line-height: 1.2;
 }
 
@@ -31,7 +25,7 @@ ul {
 }
 
 .home-page-container h4 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   line-height: 1.4;
   font-weight: normal;
 }
@@ -43,7 +37,8 @@ ul {
   color: gray;
 }
 
-.home-page-container p {
+.home-page-container p,
+.home-page-container a {
   font-size: 1.22em;
   line-height: 1.5;
   font-weight: 300;

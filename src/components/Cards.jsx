@@ -16,26 +16,22 @@ function BioCard() {
 }
 
 function ContactCard() {
-  const headingStyle = (color = 'white', italic = false, margin) => ({
-    color,
-    fontStyle: italic ? 'italic' : 'normal',
-    marginTop: margin,
-    marginBottom: margin,
-  });
-
   return (
     <div>
       <div className="full-height card">
         <h3><b>Let's start working together!</b></h3><br />
-        <h4 style={headingStyle('#6d6d6d', true, '3px')}>Contact Details</h4>
-        <p><i>belhassinehedi308@gmail.com</i></p>
-        <p><i>Canada</i></p>
-        <br />
-        <h4 style={headingStyle('#6d6d6d', false, '3px')}>Socials</h4>
-        <p>LinkedIn</p>
-        <p>Github</p>
-        <p>Discord</p>
-        <p>Cara</p>
+
+        <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Contact Info</h4>
+        <p>belhassinehedi308@gmail.com</p>
+        <i style={{color:"#6d6d6d"}}>Based in Qc, CA</i>
+
+        <br /><br />
+        
+        <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Socials</h4>
+        <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br /> 
+        <a href="https://github.com/hedi3489" target="_blank">Github</a><br />
+        <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a>
+
       </div>
     </div>
   );
@@ -69,9 +65,7 @@ function LittleCard({ title, description, to }) {
   )
   if (!to) return content
   return (
-    <Link to={to} className="card-link">
-      {content}
-    </Link>
+    <Link to={to} className="card-link">{content}</Link>
   )
 }
 
@@ -94,8 +88,8 @@ function AvailabilityCard() {
     <div className="flex flex-center card full-height little-card relative-pos">
       <span className="status-dot" aria-hidden="true" />
       <div>
-        <h2 style={textStyle('1.35em')}>Now</h2>
-        <p style={textStyle('0.9em', 'gray')}>{availabilityText}</p>
+        <h2 style={textStyle('1.3em')}>Currently?</h2>
+        <p style={textStyle('1em', 'gray')}>{availabilityText}</p>
       </div>
     </div>
   );
@@ -150,7 +144,7 @@ function AboutCard() {
 function LittleFooter() {
   return <div className='full-width full-height  card little-footer'>
     <h3><b>WIP</b></h3>
-    <p>This is a work in progress. <br />Updates will be coming soon!</p>
+    <p>This is a work in progress. <br />Updates & fixes will be coming soon!</p>
   </div>
 }
 
