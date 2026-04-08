@@ -6,7 +6,7 @@ import IoTProjectPage from './components/IoTProject.jsx'
 
 function App() {
   return (
-    <div className='parallax'>
+    <div className='parallax flex justify-center align-center'>
       <Routes>
 
         <Route

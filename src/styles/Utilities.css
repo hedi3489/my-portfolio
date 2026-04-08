@@ -58,6 +58,9 @@
     justify-content: center;
 }
 
+.align-center { 
+    align-items: center;
+}
 .relative-pos {
     position: relative;
 }

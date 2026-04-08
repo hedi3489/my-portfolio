@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
+import { FaDiscord } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 function BioCard() {
   return <div className='flex full-width full-height card bio-card'>
@@ -22,7 +24,8 @@ function ContactCard() {
         <h3><b>Let's start working together!</b></h3><br />
 
         <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Contact Info</h4>
-        <p>belhassinehedi308@gmail.com</p>
+        <p style={{fontSize:"1.1em"}}><SiGmail /> belhassinehedi308@gmail.com</p>
+        <p style={{fontSize:"1.1em"}}><FaDiscord /> hedi8276</p>
         <i style={{color:"#6d6d6d"}}>Based in Qc, CA</i>
 
         <br /><br />
@@ -30,7 +33,8 @@ function ContactCard() {
         <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Socials</h4>
         <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br /> 
         <a href="https://github.com/hedi3489" target="_blank">Github</a><br />
-        <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a>
+        <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a><br />
+        {/* <a href="https://discord.com/users/690214940832694473" target="_blank">Discord</a> */}
 
       </div>
     </div>
