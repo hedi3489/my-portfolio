@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import HomePage from './components/HomePage.jsx'
-import APIProjectPage from './components/APIProject.jsx'
-import IoTProjectPage from './components/IoTProject.jsx'
+import HomePage from './pages/HomePage.jsx'
+import APIProjectPage from './pages/APIProject.jsx'
+import IoTProjectPage from './pages/IoTProject.jsx'
+import BlackBoxPenPage from './pages/BlackBoxPenProject.jsx'
 
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
         <Route
           path="/projects/iot-home-simulation"
           element={<IoTProjectPage />}
+        />
+
+        <Route
+          path="/projects/black-box-penetration"
+          element={<BlackBoxPenPage />}
         />
 
       </Routes>

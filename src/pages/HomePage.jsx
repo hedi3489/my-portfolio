@@ -1,4 +1,4 @@
-import * as Cards from './Cards.jsx'
+import * as Cards from '../components/Cards.jsx'
 
 const projectCards = [
     {
@@ -17,7 +17,7 @@ const projectCards = [
         type: 'project',
         title: 'Blackbox Pentest',
         description: 'Vuln. assessment report',
-        to: '/projects/iot-home-simulation',
+        to: '/projects/black-box-penetration',
     }
 ]
 const specialCards = [

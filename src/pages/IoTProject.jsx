@@ -6,7 +6,7 @@ import iotDashboard from '../assets/iotDashboard.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
-import { TechStackInline, TextSection, SoftList, CaptionedImage, CaptionedImages } from './ProjectPageComponents.jsx'
+import { TechStackInline, TextSection, SoftList, CaptionedImage, CaptionedImages } from '../components/ProjectPageComponents.jsx'
 
 const softlist = [
   {

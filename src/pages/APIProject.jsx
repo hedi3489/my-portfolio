@@ -1,5 +1,4 @@
-
-import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from './ProjectPageComponents.jsx'
+import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from '../components/ProjectPageComponents.jsx'
 import olympicsDBDiagram from '../assets/olympicsDBDiagram.png'
 
 function APIProjectPage() {

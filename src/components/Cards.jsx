@@ -34,8 +34,6 @@ function ContactCard() {
         <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br /> 
         <a href="https://github.com/hedi3489" target="_blank">Github</a><br />
         <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a><br />
-        {/* <a href="https://discord.com/users/690214940832694473" target="_blank">Discord</a> */}
-
       </div>
     </div>
   );
