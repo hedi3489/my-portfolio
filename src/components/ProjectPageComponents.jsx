@@ -12,10 +12,11 @@ function TechStackInline({ items = [] }) {
     );
 };
 
-function TextSection({ title, paragraphs = [], children }) {
+function TextSection({ title, subtitle, paragraphs = [], children }) {
     return (
         <section>
             {title ? <h2>{title}</h2> : null}
+            {subtitle ? <h3>{subtitle}</h3> : null}
             <div>
                 {paragraphs.map((text, i) => (
                     <p key={i}>{text}</p>
