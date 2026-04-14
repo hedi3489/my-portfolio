@@ -1,5 +1,7 @@
 import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from '../components/ProjectPageComponents.jsx'
 import olympicsDBDiagram from '../assets/olympicsDBDiagram.png'
+import waiterJson from "../assets/waiter-json.png"
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark'
 
 function APIProjectPage() {
     return (
@@ -96,9 +98,13 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     throw new HttpBadRequestException($request, 'Invalid sorting or ordering parameter.');
 }"/>
 
-                    <p>6. A paginated JSON object is served to the user</p>
-                    <div className='half-width'>
-                        <CodeSnippet language="json" code='{
+
+                    <div className='flex'>
+
+                        <div className='flex-5-6'>
+                            <p>6. A paginated JSON object is served to the user</p>
+                            <div className=''>
+                                <CodeSnippet language="json" code='{
   "pagination": {
     "current_page": 1,
     "page_size": 15,
@@ -115,10 +121,16 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     }
   ]
 }'/>
-
+                            </div>
+                        </div>
+                        <div className='flex-5'>
+                            <CaptionedImage
+                                image={waiterJson}
+                                alt='Artwork of waiter serving a JSON package'
+                                imageSizeClass='medium-image margin-0 margin-left-3em'
+                            />
+                        </div>
                     </div>
-
-
                     <TextSection
                         title="Error Handling"
                         paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]}
