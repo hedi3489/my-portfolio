@@ -6,12 +6,18 @@
     display: flex;
 }
 
+
+.flex-2-3 {
+    flex: 2.7;
+}
 .flex-5 {
     flex: 5;
 }
-
 .flex-5-6 {
     flex: 5.5;
+}
+.flex-7-8 {
+    flex: 7.5;
 }
 
 .margin-0 {
@@ -77,6 +83,11 @@
 .align-center { 
     align-items: center;
 }
+
+.text-align-center {
+    text-align: center;
+}
+
 .relative-pos {
     position: relative;
 }
@@ -84,3 +95,15 @@
 .absolute-pos {
     position: absolute;
 }
+
+.medium-image {
+    max-width: 65%;
+  }
+
+  .large-image {
+    max-width: 85%;
+  }
+
+  .larger-image {
+    max-width: 98%;
+  }

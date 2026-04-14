@@ -29,20 +29,18 @@ const specialCards = [
 
 function HomePage() {
     return <div className="gap flex home-page-container">
-        <div className='gap flex flex-col flex-center main-content'>
+        <div className='gap flex flex-col flex-center flex-7-8'>
             <Cards.BioCard />
-            <div className='gap flex full-width showcase'>
+            <div className='gap flex full-width flex-5 showcase'>
                 <Cards.ContactCard />
                 <Cards.Deck cards={projectCards} />
                 <Cards.Deck cards={specialCards} />
             </div>
         </div>
-        <div className='gap flex flex-col felx-center side-bar'>
+        <div className='gap flex flex-col flex-2-3'>
             <Cards.AboutCard />
             <Cards.LittleFooter />
         </div>
     </div>;
 }
 export default HomePage;
-
-/// 1102.13 740
