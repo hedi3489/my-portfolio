@@ -33,18 +33,16 @@ function APIProjectPage() {
                         ]}
                     />
 
-                    <TextSection
-                        title="Database Design"
-                        children={[
-                            <p>The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward.</p>,
-                            <CaptionedImage
-                                image={olympicsDBDiagram}
-                                caption='Entity Relation Diagram of the Olympics Database'
-                                alt='Database Entity Relation Diagram'
-                                imageSizeClass='larger-image'
-                            />
-                        ]}
-                    />
+                    <TextSection title="Database Design">
+
+                        <p>The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward.</p>
+                        <CaptionedImage
+                            image={olympicsDBDiagram}
+                            caption='Entity Relation Diagram of the Olympics Database'
+                            alt='Database Entity Relation Diagram'
+                            imageSizeClass='larger-image'
+                        />
+                    </TextSection>
 
                     <TextSection
                         title="Request Processing"

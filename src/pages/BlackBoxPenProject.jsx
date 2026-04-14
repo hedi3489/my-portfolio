@@ -19,25 +19,15 @@ function BlackBoxPenPage() {
                             <>The penetration test was performed over the course of 3 weeks starting on April 20, 2025, and ending on May 7, 2025. The target was a black-box virtual machine run in VirtualBox. No restrictions were established."</>
                         ]}
                     />
-                    <TextSection className="text-section" title="Penetration Phases"
-                        children={[
-                            <TextSection className="text-section" subtitle="Reconnaissance & Enumeration"
-                                paragraphs={[
-                                    <>Using Nmap, Nikto, and Gobuster, we identified three open ports: SSH, HTTP, RPC - and identified the target as a Debian Linux machine running an outdated Drupal 7 CMS. Web enumeration revealed sensitive publicly accessible files and confirmed several outdated, vulnerable software components through Wappalyzer.</>
-                                ]}
-                            />,
-                            <TextSection className="text-section" subtitle="Gaining Access"
-                                paragraphs={[
-                                    <>Leveraging critical Drupalgeddon vulnerabilities (CVE-2018-7600), we achieved remote code execution via both Metasploit and a standalone Python exploit, establishing a reverse shell on the target machine. An additional method involved exploiting a SQL injection vulnerability to create a rogue admin user on the Drupal site.</>
-                                ]}
-                            />,
-                            <TextSection className="text-section" subtitle="Post Exploitation"
-                                paragraphs={[
-                                    <>Leveraging critical Drupalgeddon vulnerabilities (CVE-2018-7600), the team achieved remote code execution via both Metasploit and a standalone Python exploit, establishing a reverse shell on the target machine. An additional method involved exploiting a SQL injection vulnerability to create a rogue admin user on the Drupal site.</>
-                                ]}
-                            />
-                        ]}
-                    />
+                    <TextSection className="text-section" title="Penetration Phases">
+
+                        <TextSection className="text-section" subtitle="Reconnaissance & Enumeration" paragraphs={[<>Using Nmap, Nikto, and Gobuster, we identified three open ports: SSH, HTTP, RPC - and identified the target as a Debian Linux machine running an outdated Drupal 7 CMS. Web enumeration revealed sensitive publicly accessible files and confirmed several outdated, vulnerable software components through Wappalyzer.</>]}/>
+
+                        <TextSection className="text-section" subtitle="Gaining Access" paragraphs={[ <>Leveraging critical Drupalgeddon vulnerabilities (CVE-2018-7600), we achieved remote code execution via both Metasploit and a standalone Python exploit, establishing a reverse shell on the target machine. An additional method involved exploiting a SQL injection vulnerability to create a rogue admin user on the Drupal site.</>]}/>
+
+                        <TextSection className="text-section" subtitle="Post Exploitation"
+                        paragraphs={[ <>Leveraging critical Drupalgeddon vulnerabilities (CVE-2018-7600), the team achieved remote code execution via both Metasploit and a standalone Python exploit, establishing a reverse shell on the target machine. An additional method involved exploiting a SQL injection vulnerability to create a rogue admin user on the Drupal site.</>]}/>
+                    </TextSection>
 
                 </div>
             </div>

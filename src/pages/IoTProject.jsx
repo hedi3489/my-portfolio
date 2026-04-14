@@ -70,40 +70,30 @@ function IoTProjectPage() {
               "Hardware automation",
             ]}
           />
-          <TextSection
-            title="Overview"
+          <TextSection title="Overview"
             paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
             ]}
             className="text-section"
           />
-          <TextSection
-            title="Hardware Setup"
-            children={<SoftList items={softlist} />}
-          />
 
-          <TextSection
-            title="Breadboard Layout Diagram"
-            children={
-              <CaptionedImage
-                image={iotDiagram1}
-                alt="Smart home simulation setup diagram 1"
-                caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
-                // imageSizeClass='large-image'
-              />
-            }
-          />
+          <TextSection title="Hardware Setup">
+            <SoftList items={softlist} />
+          </TextSection>
 
-          <TextSection
-            title="Circuit Schematic"
-            children={
-              <CaptionedImage
-                image={iotDiagram2}
-                alt="Smart home simulation setup diagram 2"
-                caption='Simplified circuit schematic illustrating the connections between the RPi, LED, DHT11, motor driver, DC motor, and 9V battery, and the ESP32, photoresistor, and RFID, in a clear and organized format.'
-                imageSizeClass='large-image'
-              />
-            }
-          />
+          <TextSection title="Breadboard Layout Diagram">
+            <CaptionedImage image={iotDiagram1} alt="Smart home simulation setup diagram 1"
+              caption='Physical breadboard implementation of the smart home prototype showing the RPi 4, motor driver module, sensors, LED indicator, DC motor, and 9V battery with actual wiring and component placement.'
+            />
+          </TextSection>
+
+          <TextSection title="Circuit Schematic">
+            <CaptionedImage
+              image={iotDiagram2}
+              alt="Smart home simulation setup diagram 2"
+              caption='Simplified circuit schematic illustrating the connections between the RPi, LED, DHT11, motor driver, DC motor, and 9V battery, and the ESP32, photoresistor, and RFID, in a clear and organized format.'
+              imageSizeClass='large-image'
+            />
+          </TextSection>
 
           <TextSection
             title="Automation & User Logic"
@@ -114,48 +104,29 @@ function IoTProjectPage() {
             className="text-section in-section-gap"
           />
 
-          <TextSection
-            title=""
-            children={
-              <CaptionedImages
-                imageList={[
-                  {
-                    src: iotFlowchart_Basic,
-                    alt: "Smart home simulation flowchart",
-                    caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
-                  },
-                  {
-                    src: iotFlowchart_Colored,
-                    alt: "Smart home simulation flowchart",
-                    caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
-                  }
-                ]}
-                imageSizeClass="large-image"
-              />
-            }
+          <CaptionedImages
+            imageList={[
+              {
+                src: iotFlowchart_Basic, alt: "Smart home simulation flowchart",
+                caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
+              },
+              {
+                src: iotFlowchart_Colored, alt: "Smart home simulation flowchart",
+                caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
+              }
+            ]}
+            imageSizeClass="large-image"
           />
 
-          <TextSection
-            title="Dashboard Interface"
-            paragraphs={[
-              "A web-based dashboard displays live sensor readings and the current state of devices. Users can manually toggle the devices and monitor environmental conditions in real time.",
-            ]}
-            children={
-              <CaptionedImage 
-                image={iotDashboard}
-                alt='Smart home dashboard'
-                caption='A quite *cough* basic smart home dashboard. Improvements have been made in HTML/CSS.'
-                imageSizeClass='larger-image'
-              />
-            }
-            className="text-section"
-          />
-          <TextSection
-            title="Takeaways"
-            paragraphs={[
-              "This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. Although a bit rough around the edges, it highlights experience with IoT concepts, asynchronous events, and building interfaces that control physical systems.",
-            ]}
-            className="text-section"
+          <TextSection title="Dashboard Interface" className="text-section"
+            paragraphs={["A web-based dashboard displays live sensor readings and the current state of devices. Users can manually toggle the devices and monitor environmental conditions in real time."]}>
+            <CaptionedImage image={iotDashboard} alt='Smart home dashboard'
+              caption='A quite *cough* basic smart home dashboard. Improvements have been made in HTML/CSS.' imageSizeClass='larger-image'
+            />
+          </TextSection>
+          
+          <TextSection title="Takeaways" className="text-section"
+            paragraphs={["This project demonstrates end-to-end system design, hardware–software integration, and user-focused automation. Although a bit rough around the edges, it highlights experience with IoT concepts, asynchronous events, and building interfaces that control physical systems."]}
           />
         </div>
       </div>
