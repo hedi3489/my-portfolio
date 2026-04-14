@@ -111,7 +111,7 @@ function ThemeCard() {
   }, [selectedColor]);
 
   return (
-    <div className="flex flex-center full-height card theme-card">
+    <div className="flex flex-center full-height card little-card theme-card">
       <div className="full-width flex flex-center theme-colors">
         {colors.map((color, i) => (
           <button

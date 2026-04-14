@@ -1,7 +1,7 @@
 import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from '../components/ProjectPageComponents.jsx'
 import olympicsDBDiagram from '../assets/olympicsDBDiagram.png'
 import waiterJson from "../assets/waiter-json.png"
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark'
+import waiterJson2 from "../assets/waiter-json-2.png"
 
 function APIProjectPage() {
     return (
@@ -123,9 +123,9 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
                         </div>
                         <div className='flex-5'>
                             <CaptionedImage
-                                image={waiterJson}
+                                image={waiterJson2}
                                 alt='Artwork of waiter serving a JSON package'
-                                imageSizeClass='medium-image margin-0 margin-left-3em'
+                                imageSizeClass='medium-image margin-0 margin-left-3em full-height'
                             />
                         </div>
                     </div>

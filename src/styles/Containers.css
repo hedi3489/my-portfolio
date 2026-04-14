@@ -16,6 +16,7 @@
 
 .project-page-container {
   min-height: 100vh;
+  width: 1020px;
   display: flex;
   justify-content: center;
   align-items: center;

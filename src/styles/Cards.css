@@ -34,6 +34,8 @@
 .little-card {
   align-content: center;
   min-height: 50px;
+  /* max-height: 80px; */
+  padding: 18px 24px ;
 }
 
 .status-dot {
@@ -78,7 +80,9 @@
 }
 
 .theme-card {
-  padding: 24px 10px;
+  padding-left: 0;
+  padding-right: 0;
+  /* max-height: 80px; */
 }
 
 .theme-colors {
