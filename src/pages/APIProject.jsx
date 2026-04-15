@@ -96,7 +96,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
 
                     <div className='flex'>
 
-                        <div className='min-width-50'>
+                        <div className='width-100'>
                             <p>6. A paginated JSON object is served to the user</p>
                             <div className=''>
                                 <CodeSnippet language="json" code='{
@@ -118,11 +118,11 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
 }'/>
                             </div>
                         </div>
-                        <div className='width-50'>
+                        <div className=''>
                             <CaptionedImage
                                 image={waiterJson2}
                                 alt='Artwork of waiter serving a JSON package'
-                                imageSizeClass='width-75 margin-0 align-self-end '
+                                imageSizeClass='width-65 margin-0 align-self-end '
                             />
                         </div>
                     </div>
