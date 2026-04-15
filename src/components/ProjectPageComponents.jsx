@@ -46,21 +46,21 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = "medium-image" }) {
+function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = "image-width-65" }) {
     const imageStyle = "image " + imageSizeClass;
-    return <div className='flex flex-col flex-center text-align-center'>
+    return <div className='flex flex-col align-items-center text-align-center'>
         <img src={image} alt={alt} className={imageStyle} />
         <h5>{caption}</h5>
     </div>
 }
 
-function CaptionedImages({ imageList, imageSizeClass = 'medium-image' }) {
+function CaptionedImages({ imageList, imageSizeClass = 'image-width-65' }) {
     const [index, setIndex] = useState(0);
     let image = imageList[index % imageList.length];
-    const imageStyle = "image " + imageSizeClass;
+    const imageStyle = "image image-theme-button-offset " + imageSizeClass;
 
-    return <div className="flex flex-col flex-center text-align-center">
-        <div className="gap flex flex-start justify-center">
+    return <div className="flex flex-col align-items-center text-align-center">
+        <div className="gap flex align-item-flex-start justify-content-center">
             <img src={image.src} alt={image.alt} className={imageStyle} />
             <ThemeButtons
                 colors={[
@@ -75,7 +75,7 @@ function CaptionedImages({ imageList, imageSizeClass = 'medium-image' }) {
 
 function ThemeButtons({ colors, selectedIndex, onSelectIndex }) {
     return (
-        <div className="flex flex-col flex-center card theme-buttons">
+        <div className="flex flex-col align-items-center card theme-buttons">
             {colors.map((color, i) => (
                 <button key={i}
                     className={`theme-dot ${selectedIndex === i ? 'selected' : ''}`}

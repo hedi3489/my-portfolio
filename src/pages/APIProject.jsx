@@ -18,15 +18,13 @@ function APIProjectPage() {
                         ]}
                     />
                     <p>I personally owned the venues and events endpoints, including their filtering logic:</p>
-                    <BulletList
-                        intro={<b>⦿ Venues:</b>}
+                    <BulletList intro={<b>⦿ Venues:</b>}
                         items={[
                             <>Filterable by: <b>name</b>, <b>capacity range</b>, and <b>construction date range</b></>,
                             <>Sortable by: venue ID, name, location, capacity, type, date constructed, and address</>
                         ]}
                     />
-                    <BulletList
-                        intro={<b>⦿ Events:</b>}
+                    <BulletList intro={<b>⦿ Events:</b>}
                         items={[
                             <>Filterable by: <b>event name</b>, <b>participant count range</b>, and <b>paralympic status</b></>,
                             <>Sortable by: event ID, name, sport, start/end date, participant count, and venue</>
@@ -34,13 +32,12 @@ function APIProjectPage() {
                     />
 
                     <TextSection title="Database Design">
-
                         <p>The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward.</p>
                         <CaptionedImage
                             image={olympicsDBDiagram}
                             caption='Entity Relation Diagram of the Olympics Database'
                             alt='Database Entity Relation Diagram'
-                            imageSizeClass='larger-image'
+                            imageSizeClass='image-width-98'
                         />
                     </TextSection>
 
@@ -99,7 +96,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
 
                     <div className='flex'>
 
-                        <div className='flex-5-6'>
+                        <div className='min-width-50'>
                             <p>6. A paginated JSON object is served to the user</p>
                             <div className=''>
                                 <CodeSnippet language="json" code='{
@@ -121,14 +118,15 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
 }'/>
                             </div>
                         </div>
-                        <div className='flex-5'>
+                        <div className='width-50'>
                             <CaptionedImage
                                 image={waiterJson2}
                                 alt='Artwork of waiter serving a JSON package'
-                                imageSizeClass='medium-image margin-0 margin-left-3em full-height'
+                                imageSizeClass='width-75 margin-0 align-self-end '
                             />
                         </div>
                     </div>
+
                     <TextSection
                         title="Error Handling"
                         paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]}

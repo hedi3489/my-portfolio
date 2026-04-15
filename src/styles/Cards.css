@@ -2,7 +2,7 @@
   GENERAL CARD
 ------------------------*/
 .card {
-  padding: 24px;
+  padding: 2em;
   background-color: var(--bg-card-primary);
   border: 1.2px solid var(--border-card-primary);
   border-radius: var(--radius);
@@ -20,10 +20,6 @@
 ---------------------------- */
 .home-page-container .card:hover {
   border-color: var(--border-card-secondary);
-}
-
-.bio-card {
-  flex: 5;
 }
 
 .bio-text {

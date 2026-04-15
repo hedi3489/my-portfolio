@@ -7,7 +7,7 @@ import BlackBoxPenPage from './pages/BlackBoxPenProject.jsx'
 
 function App() {
   return (
-    <div className='parallax flex justify-center align-center'>
+    <div className='parallax flex justify-content-center align-items-center'>
       <Routes>
 
         <Route

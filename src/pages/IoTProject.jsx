@@ -70,10 +70,9 @@ function IoTProjectPage() {
               "Hardware automation",
             ]}
           />
-          <TextSection title="Overview"
-            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.",
-            ]}
-            className="text-section"
+
+          <TextSection title="Overview" className="text-section"
+            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."]}
           />
 
           <TextSection title="Hardware Setup">
@@ -91,21 +90,16 @@ function IoTProjectPage() {
               image={iotDiagram2}
               alt="Smart home simulation setup diagram 2"
               caption='Simplified circuit schematic illustrating the connections between the RPi, LED, DHT11, motor driver, DC motor, and 9V battery, and the ESP32, photoresistor, and RFID, in a clear and organized format.'
-              imageSizeClass='large-image'
+              imageSizeClass='image-width-85'
             />
           </TextSection>
 
-          <TextSection
-            title="Automation & User Logic"
-            paragraphs={[
-              "Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.",
-              "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly. As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified.",
-            ]}
+          <TextSection title="Automation & User Logic"
+            paragraphs={[ "Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.","When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly. As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified."]}
             className="text-section in-section-gap"
           />
 
-          <CaptionedImages
-            imageList={[
+          <CaptionedImages imageList={[
               {
                 src: iotFlowchart_Basic, alt: "Smart home simulation flowchart",
                 caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
@@ -115,13 +109,13 @@ function IoTProjectPage() {
                 caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
               }
             ]}
-            imageSizeClass="large-image"
+            imageSizeClass="image-width-85"
           />
 
           <TextSection title="Dashboard Interface" className="text-section"
             paragraphs={["A web-based dashboard displays live sensor readings and the current state of devices. Users can manually toggle the devices and monitor environmental conditions in real time."]}>
             <CaptionedImage image={iotDashboard} alt='Smart home dashboard'
-              caption='A quite *cough* basic smart home dashboard. Improvements have been made in HTML/CSS.' imageSizeClass='larger-image'
+              caption='A quite *cough* basic smart home dashboard. Improvements have been made in HTML/CSS.' imageSizeClass='image-width-98'
             />
           </TextSection>
           

@@ -4,15 +4,11 @@ import { FaDiscord } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 function BioCard() {
-  return <div className='flex full-width full-height card bio-card'>
-    <div className="bio-text">
+  return <div className='flex flex-5 width-100 height-100 card'>
+    <div className="bio-text width-65">
       <p>Welcome</p>
-      <p>
-        I'm <b>Hedi</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.
-      </p>
-      <p>
-        I enjoy turning ideas into working products, whether that means designing intuitive user interfaces or building APIs and databases behind the scenes.
-      </p>
+      <p>I'm <b>Hedi</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
+      <p>I enjoy turning ideas into working products, whether that means designing intuitive user interfaces or building APIs and databases behind the scenes.</p>
     </div>
   </div>
 }
@@ -20,9 +16,8 @@ function BioCard() {
 function ContactCard() {
   return (
     <div>
-      <div className="full-height card">
+      <div className="height-100 card">
         <h3><b>Let's start working together!</b></h3><br />
-
         <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Contact Info</h4>
         <p style={{fontSize:"1.1em"}}><SiGmail /> belhassinehedi308@gmail.com</p>
         <p style={{fontSize:"1.1em"}}><FaDiscord /> hedi8276</p>
@@ -49,7 +44,7 @@ const CARD_MAP = {
 
 function Deck({ cards = [] }) {
   return (
-    <div className="gap flex flex-col full-height deck">
+    <div className="gap flex flex-col height-100 deck">
       {cards.map((item, i) => {
         const Card = CARD_MAP[item.type] || LittleCard
         return <Card key={i} {...item} />
@@ -60,7 +55,7 @@ function Deck({ cards = [] }) {
 
 function LittleCard({ title, description, to }) {
   const content = (
-    <div className="full-height card little-card">
+    <div className="height-100 card little-card">
       <h2>{title}</h2>
       <h5>{description}</h5>
     </div>
@@ -87,7 +82,7 @@ function AvailabilityCard() {
   }
   
   return (
-    <div className="flex flex-center card full-height little-card relative-pos">
+    <div className="flex align-items-center card height-100 little-card position-relative">
       <span className="status-dot" aria-hidden="true" />
       <div>
         <h2 style={textStyle('1.3em')}>Currently?</h2>
@@ -111,8 +106,8 @@ function ThemeCard() {
   }, [selectedColor]);
 
   return (
-    <div className="flex flex-center full-height card little-card theme-card">
-      <div className="full-width flex flex-center theme-colors">
+    <div className="flex align-items-center height-100 card little-card theme-card">
+      <div className="width-100 flex align-items-center theme-colors">
         {colors.map((color, i) => (
           <button
             key={i}
@@ -128,7 +123,7 @@ function ThemeCard() {
 }
 
 function AboutCard() {
-  return <div className='full-width full-height card about-card'>
+  return <div className='width-100 height-100 card about-card'>
     <h3>About me</h3>
     <p>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
     <p>My primary tools of choice include:</p>
@@ -144,7 +139,7 @@ function AboutCard() {
 }
 
 function LittleFooter() {
-  return <div className='full-width full-height  card little-footer'>
+  return <div className='width-100 height-100 card little-footer'>
     <h3><b>WIP</b></h3>
     <p>This is a work in progress. <br />Updates & fixes will be coming soon!</p>
   </div>

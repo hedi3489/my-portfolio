@@ -29,9 +29,9 @@ const specialCards = [
 
 function HomePage() {
     return <div className="gap flex home-page-container">
-        <div className='gap flex flex-col flex-center flex-7-8'>
+        <div className='gap flex flex-col align-items-center flex-7-8'>
             <Cards.BioCard />
-            <div className='gap flex full-width flex-5 showcase'>
+            <div className='gap flex width-100 flex-5 showcase'>
                 <Cards.ContactCard />
                 <Cards.Deck cards={projectCards} />
                 <Cards.Deck cards={specialCards} />
