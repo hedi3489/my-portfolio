@@ -77,7 +77,13 @@
 
 .image-theme-button-offset {
   margin: 0;
-  margin-left: auto;
+  margin-left: 5em;
+}
+
+@media (max-width: 865px) {
+  .image-theme-button-offset {
+    margin: 0;
+  }
 }
 
 .captioned-image div .image {
@@ -127,6 +133,14 @@
   border-color: #b6b6ff;
 }
 
+.waiter-image {
+  margin: 0;
+  position: absolute;
+  width: 20em;
+  margin-right: 18vw;
+  margin-top: -0.5em;
+}
+
 .project-page-container table {
   font-size: 1.35em;
   margin: 1em 0;
@@ -146,11 +160,18 @@
   background-color: rgb(9, 83, 78);
 }
 
-@media (max-width: 768px) {
-  .page-card {
+@media (max-width: 1180px) {
+  /* .page-card {
+    padding: 3.5em;
+    width: min(80vw, 1200px);
+  } */
+}
+
+@media (max-width: 868px) {
+  /* .page-card {
     padding: 3.5em;
     width: min(90vw, 1200px);
-  }
+  } */
 
   .project-page-container .theme-buttons {
     font-size: 0.6rem;

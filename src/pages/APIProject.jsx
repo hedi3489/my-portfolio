@@ -122,7 +122,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
                             <CaptionedImage
                                 image={waiterJson2}
                                 alt='Artwork of waiter serving a JSON package'
-                                imageSizeClass='width-65 margin-0 align-self-end '
+                                imageSizeClass='waiter-image '
                             />
                         </div>
                     </div>

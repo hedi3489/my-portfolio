@@ -8,13 +8,8 @@ h1, h2, h3, h4, h5, p, ul {
 /* ---------------------------
    HOME PAGE TYPOGRAPHY
 ---------------------------- */
-.home-page-container h1 {
-  font-size: 3em;
-  line-height: 1.1;
-}
-
 .home-page-container h2 {
-  font-size: 1.45rem;
+  font-size: clamp(1.2rem, 1.45rem, 1.5rem);
   line-height: 1.2;
 }
 
@@ -31,14 +26,14 @@ h1, h2, h3, h4, h5, p, ul {
 }
 
 .home-page-container h5 {
-  font-size: 1.05em;
+  font-size: clamp(0.85rem, 1.05rem, 1.1rem);
   font-weight: normal;
   color: gray;
 }
 
 .home-page-container p,
 .home-page-container a {
-  font-size: 1.22em;
+  font-size: clamp(1rem, 1.22rem, 1.25rem);
   line-height: 1.5;
   font-weight: 300;
   color: white;

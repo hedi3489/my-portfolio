@@ -12,7 +12,8 @@
 }
 
 .page-card {
-  width: min(70vw, 1200px);
+  /* width: min(70vw, 1200px); */
+  width: 90vw;
 }
 
 /* ---------------------------

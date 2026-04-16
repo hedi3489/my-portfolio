@@ -99,12 +99,6 @@
     text-align: center;
 }
 
-.align-self-end {
-    position: absolute;
-    width: 20em;
-    /* right: 20em; */
-}
-
 .position-relative {
     position: relative;
 }
