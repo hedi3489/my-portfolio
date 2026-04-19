@@ -141,7 +141,7 @@
   margin-top: -0.5em;
 }
 
-.project-page-container table {
+/* .project-page-container table {
   font-size: 1.35em;
   margin: 1em 0;
   background-color: #1b221e;
@@ -158,6 +158,25 @@
 
 .project-page-container thead tr {
   background-color: rgb(9, 83, 78);
+} */
+
+table {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.8em;
+  font-weight: 200;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+  font-weight: 400;
+  /* font-size: 1.15em; */
 }
 
 @media (max-width: 1180px) {

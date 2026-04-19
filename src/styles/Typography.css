@@ -103,11 +103,12 @@ h1, h2, h3, h4, h5, p, ul {
 .project-page-container .prose h3 {
   font-size: 1.7em;
   font-weight: 400;
+  /* margin-top: 1em; */
   color: rgba(255, 255, 255, 0.82);
 }
 
 .project-page-container .prose h4 {
-  font-size: 1.3em;
+  font-size: 1.45em;
   font-weight: 200;
   color: gray;
 }
@@ -123,9 +124,9 @@ h1, h2, h3, h4, h5, p, ul {
 
 .project-page-container .prose p,
 .project-page-container .prose li {
-  font-size: 1.5em;
+  font-size: 1.55em;
   line-height: 1.4;
-  font-weight: 150;
+  font-weight: 200;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -148,6 +149,7 @@ h1, h2, h3, h4, h5, p, ul {
 }
 
 .project-page-container .prose .tech-stack-inline {
+  font-size: 1.15em;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
