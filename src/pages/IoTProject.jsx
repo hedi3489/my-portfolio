@@ -50,29 +50,20 @@ const softlist = [
     description: 'Household member identification',
   }
 ]
-
 function IoTProjectPage() {
   return (
-    <div className="flex project-page-container">
+    <div className="flex project-page-container" style={{ "--page-accent-color": "#cb4b70" }}>
       <div className="flex flex-col card page-card">
         <div className="prose">
 
           <h1>Smart Home IoT Dashboard</h1>
           <h4>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h4>
           <TechStackInline
-            items={[
-              "Raspberry Pi",
-              "ESP32",
-              "HTML / CSS / JS",
-              "Python",
-              "DHT11",
-              "RFID",
-              "Hardware automation",
-            ]}
+            items={[ "Raspberry Pi", "ESP32", "HTML / CSS / JS", "Python", "Data capture", "RFID", "Hardware automation", ]}
           />
 
           <TextSection title="Overview" className="text-section"
-            paragraphs={["A smart home automation simulation built with a Raspberry Pi that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop."]}
+            paragraphs={[<>A smart home automation simulation built with a <b className='accented'>Raspberry Pi 400</b> that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.</>]}
           />
 
           <TextSection title="Hardware Setup">

@@ -7,7 +7,7 @@ const scans = [
 
 function BlackBoxPenPage() {
     return (
-        <div className="flex project-page-container">
+        <div className="flex project-page-container" style={{ "--page-accent-color": "rgb(110, 165, 255)" }}>
             <div className="flex flex-col card page-card">
                 <div className='prose'>
                     <h1>Black-Box Penetration</h1>
@@ -24,7 +24,7 @@ function BlackBoxPenPage() {
                         ]}
                     />
 
-                    <TextSection className="text-section" title="Reconnaissance & Enumeration" paragraphs={[<>Using Nmap, Nikto, and Gobuster, the target was fingerprinted as a Debian Linux machine running an outdated <b className='drupal-blue'>Drupal CMS</b>, revealed three open ports: <u>SSH, HTTP, and RPC</u>.</>]} />
+                    <TextSection className="text-section" title="Reconnaissance & Enumeration" paragraphs={[<>Using Nmap, Nikto, and Gobuster, the target was fingerprinted as a Debian Linux machine running an outdated <b className='accented'>Drupal CMS</b>, revealed three open ports: <u>SSH, HTTP, and RPC</u>.</>]} />
                     <Table
                         columns={["Command", "Result"]}
                         rows={[
@@ -41,7 +41,7 @@ function BlackBoxPenPage() {
                     <Table
                         columns={["Port", "Software", "Version"]}
                         rows={[
-                            [<b className="drupal-blue">-</b>, <b className="drupal-blue">Drupal</b>, <b className="drupal-blue">7</b>],
+                            [<b className="accented">-</b>, <b className="accented">Drupal</b>, <b className="accented">7</b>],
                             ["22", "OpenSSH", "6.0p1 Debian 4+debu7u7 (protocol 2.0)"],
                             ["80", "Apache httpd", "2.2.22"],
                             ["111", "rpcbind", "2-4"],
@@ -52,9 +52,9 @@ function BlackBoxPenPage() {
                     />
 
                     <TextSection className="text-section" title="Gaining Access" paragraphs={[
-                        <>Three distinct methods were used to gain access to the target. The primary method used Metasploit's <u className="drupal-blue"><b>Drupalgeddon 2 module (CVE-2018-7600)</b></u>, a critical remote code execution vulnerability affecting Drupal versions below 7.58. This required minimal configuration and immediately yielded a Meterpreter shell through which the first flag was recovered.</>,
+                        <>Three distinct methods were used to gain access to the target. The primary method used Metasploit's <u className="accented"><b>Drupalgeddon 2 module (CVE-2018-7600)</b></u>, a critical remote code execution vulnerability affecting Drupal versions below 7.58. This required minimal configuration and immediately yielded a Meterpreter shell through which the first flag was recovered.</>,
                         <>The second method used a standalone Python exploit for the same CVE sourced from GitHub, establishing a reverse shell by setting up a netcat listener and executing a remote command.</>,
-                        <>A third method exploited a <b className="drupal-blue"><u>SQL injection vulnerability (CVE-2014-3704, Drupalgeddon 1)</u></b> to inject a rogue administrator account into the Drupal database, granting full administrative access to the CMS front-end, through which a third flag was found embedded in a dashboard node.</>]} />
+                        <>A third method exploited a <b className="accented"><u>SQL injection vulnerability (CVE-2014-3704, Drupalgeddon 1)</u></b> to inject a rogue administrator account into the Drupal database, granting full administrative access to the CMS front-end, through which a third flag was found embedded in a dashboard node.</>]} />
 
                     <TextSection className="text-section" title="Privelege Escalation" paragraphs={[
                         <>Initial shell access was limited to a regular user, prompting the team to pursue privilege escalation. Several avenues were explored and ultimately failed: /etc/passwd was read-only, cron job directories lacked write permissions, and LinEnum produced script errors.</>,
