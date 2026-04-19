@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark} from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function TechStackInline({ items = [] }) {
     return (
@@ -91,7 +91,7 @@ function BulletList({ header, intro, items = [] }) {
     return <div>
 
         {header ? <h3>{header}</h3> : null}
-        {intro ? <p style={{marginBottom: "0.3em"}}>{intro}</p> : null}
+        {intro ? <p style={{ marginBottom: "0.3em" }}>{intro}</p> : null}
         <ul>
             {items.map((item, index) => (
                 <li key={index}>{item}</li>
@@ -114,11 +114,11 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
             {title ? <p style={{ margin: "0.5em 0em 0.6em 0.8em", fontSize: "1.2em", fontWeight: "250" }}>{title}</p> : null}
             {subtitle ? <p style={{ margin: "0.5em 0em 0em 0.8em", fontSize: "1.2em", color: "gray" }}>{subtitle}</p> : null}
             <div className=''>
-                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }} 
-                customStyle={{ 
-                    margin: 0, 
-                    borderRadius: "0%",
-                     }} className='code-snippet' >
+                <SyntaxHighlighter language={language} style={style} codeTagProps={{ style: { whiteSpace: 'pre-wrap' } }}
+                    customStyle={{
+                        margin: 0,
+                        borderRadius: "0%",
+                    }} className='code-snippet' >
                     {code}
                 </SyntaxHighlighter>
             </div>
@@ -126,25 +126,25 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
     )
 }
 
-const Table = ({ columns, rows }) => (
-  <table>
-    <thead>
-      <tr>
-        {columns.map((col, i) => (
-          <th key={i}>{col}</th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      {rows.map((row, i) => (
-        <tr key={i}>
-          {row.map((cell, j) => (
-            <td key={j}>{cell}</td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
+const Table = ({ columns, rows, center = null }) => (
+    <table>
+        <thead>
+            <tr>
+                {columns.map((col, i) => (
+                    <th key={i} style={center === i ? { textAlign: "center" } : {}}>{col}</th>
+                ))}
+            </tr>
+        </thead>
+        <tbody>
+            {rows.map((row, i) => (
+                <tr key={i}>
+                    {row.map((cell, j) => (
+                        <td key={j} style={center === j ? { textAlign: "center" } : {}}>{cell}</td>
+                    ))}
+                </tr>
+            ))}
+        </tbody>
+    </table>
 );
 
 export {

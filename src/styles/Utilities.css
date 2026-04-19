@@ -119,3 +119,8 @@
 .image-width-65 {
     max-width: 65%;
 }
+
+/* Text colors */
+.drupal-blue {
+    color: rgb(110, 165, 255);
+}
