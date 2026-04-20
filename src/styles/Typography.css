@@ -121,13 +121,22 @@ h1, h2, h3, h4, h5, p, ul {
   width: 85%;
 }
 
-
 .project-page-container .prose p,
 .project-page-container .prose li {
   font-size: 1.55em;
   line-height: 1.4;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.9);
+}
+
+
+.project-page-container .prose code {
+  font-size: 0.9em;
+  /* padding: 0 0.2em; */
+  /* border: px solid rgb(201, 158, 140); */
+  border-radius: 5px;
+  background-color: #232323;
+  color: rgb(201, 158, 140);
 }
 
 .project-page-container .prose p,
