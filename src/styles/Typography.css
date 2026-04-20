@@ -131,12 +131,13 @@ h1, h2, h3, h4, h5, p, ul {
 
 
 .project-page-container .prose code {
+  /* font-family: 'Fira code'; */
+  /*font-weight: 300; */
+  padding: 0.05em 0.15em;
   font-size: 0.9em;
-  /* padding: 0 0.2em; */
-  /* border: px solid rgb(201, 158, 140); */
-  border-radius: 5px;
+  color: rgb(196, 147, 127);
   background-color: #232323;
-  color: rgb(201, 158, 140);
+  border-radius: 5px;
 }
 
 .project-page-container .prose p,

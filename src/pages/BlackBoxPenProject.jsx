@@ -60,8 +60,17 @@ function BlackBoxPenPage() {
                         <>Shell access was initially limited to a regular user, prompting a pursuit of privilege escalation. Several avenues were explored and ultimately failed: /etc/passwd was read-only, cron job directories lacked write permissions, and LinEnum produced script errors.</>,
                         <>The successful method involved identifying binaries with the SUID bit set — meaning they execute with the permissions of their owner rather than the calling user. Among the SUID-enabled binaries found in <code>/usr/bin</code>, the <code>find</code> command had a documented exploitation path on <b>GTFOBins</b>. By executing a shell through <code>find</code> using the <code>-exec</code> flag, we obtained a root shell without privilege dropping, a key nuance on Debian systems where the <code>-p</code> flag must be omitted.</>, <>From root, the final flag was recovered.</>]} />
 
-                    <TextSection className="text-section" title="Post Exploitation" paragraphs={[
-                        <>With root access confirmed, we demonstrated several post-exploitation scenarios. For persistence, a backdoor user was manually added to /etc/passwd, /etc/shadow, /etc/group, and the sudoers file, with SSH access confirmed. A boot-time reverse shell was also configured by modifying /etc/rc.local to execute an msfvenom-generated ELF payload on startup, maintaining access across reboots. For credential harvesting, /etc/passwd and /etc/shadow were unshadowed and cracked using John the Ripper with the rockyou.txt wordlist — successfully cracking the flag4 user's password (SHA-512 hash), though the root password resisted two hours of cracking attempts. For pivoting, we placed the target on a bridged network adapter alongside a third machine (Metasploitable2), used Metasploit's autoroute module to route traffic through the compromised host, conducted a port scan of the new subnet, and accessed the third machine via a Samba vulnerability. Finally, tracks were cleared by wiping Apache access and error logs, removing the backdoor user from all relevant system files, and deleting injected database users from the Drupal MySQL database.</>]} />
+                    <TextSection className="text-section" title="Post-Exploitation" paragraphs={[
+                        <>With root access, we demonstrated some post-exploitation scenarios.</>,
+
+                        <>For persistence, a backdoor user was manually added to /etc/passwd, /etc/shadow, /etc/group, and the sudoers file, with SSH access confirmed. A boot-time reverse shell was also configured by modifying /etc/rc.local to execute an <b className='accented'>msfvenom-generated</b> ELF payload on startup, maintaining access across reboots.</>,
+
+                        <>For credential harvesting, /etc/passwd and /etc/shadow were unshadowed and cracked using <b className='accented'>John the Ripper</b>, successfully cracking the aforementioned regular user's password. The root password, however, resisted two hours of cracking attempts.</>,
+
+                        <>For pivoting, we placed the target on a bridged network adapter alongside a third machine (Metasploitable2), used <b className='accented'>Metasploit's autoroute module</b>  to route traffic through the compromised host, conducted a port scan of the new subnet, and accessed the third machine via a <b className='accented'>Samba vulnerability</b>.</>,
+
+                        <>Finally, tracks were cleared by wiping Apache access and error logs, removing the backdoor user from all relevant system files, and deleting injected database users from the Drupal MySQL database.</>
+                    ]} />
                 </div>
             </div>
         </div>
