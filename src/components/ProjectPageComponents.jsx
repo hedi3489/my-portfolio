@@ -140,7 +140,7 @@ const getScaleColor = (value) => {
 };
 
 const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => (
-    <table style={{ tableLayout: "fixed", width: "auto" }}>
+    <table style={{ tableLayout: "fixed", width: "100%" }}>
         <thead>
             <tr>
                 {columns.map((col, i) => (

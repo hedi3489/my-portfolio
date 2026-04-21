@@ -26,6 +26,7 @@ function BlackBoxPenPage() {
 
                     <TextSection className="text-section" title="Reconnaissance & Enumeration" paragraphs={[<>Using Nmap, Nikto, and Gobuster, the target was fingerprinted as a Debian Linux machine running an outdated <b className='accented'>Drupal CMS</b>, revealed three open ports: <u>SSH, HTTP, and RPC</u>.</>]} />
                     <Table
+                        widths={["40%"]}
                         columns={["Command", "Result"]}
                         rows={[
                             ["nmap -sT, -sF, -sX, -sn", "Revealed the ports 20, 80, and 111"],
@@ -39,6 +40,8 @@ function BlackBoxPenPage() {
                     <TextSection paragraphs={[<>Web enumeration further revealed sensitive directories and files, and Wappalyzer confirmed the full software stack - every component of which was outdated and carrying known vulnerabilities:</>]} />
 
                     <Table
+                        center={[0,]}
+                        widths={["20%", "30%", "60%"]}
                         columns={["Port", "Software", "Version"]}
                         rows={[
                             [<b className="accented">-</b>, <b className="accented">Drupal</b>, <b className="accented">7</b>],
@@ -48,7 +51,6 @@ function BlackBoxPenPage() {
                             ["-", "PHP", "5.4.45"],
                             ["-", "jQuery", "1.4.4"],
                         ]}
-                        center={[0]}
                     />
 
                     <TextSection className="text-section" title="Gaining Access" paragraphs={[
@@ -75,13 +77,13 @@ function BlackBoxPenPage() {
                     <TextSection title="Common Vulnerability Exploits">
                         <Table
                             colorScale={[0]}
-                            center={[0, 1, 2,]}
-                            widths={["18%", "18%", "22%"]}
+                            center={[0, 1, 2,3]}
+                            widths={["18%", "20%", "22%"]}
                             columns={["Severity", "Type", "Platform", "Name"]}
                             rows={[
                                 ["9.8", "RCE", "Drupal 7", "Drupalgeddon 2 CVE-2018-7600"],
                                 ["9.8", "RCE", "Drupal 7", "Drupal Core RCE CVE: 2018-7602"],
-                                ["7.5", "SQL Injec.", "Drupal 7", "Drupageddon 1 CVE-2014-3704"],
+                                ["7.5", "SQL Injectionz", "Drupal 7", "Drupageddon 1 CVE-2014-3704"],
                                 ["7.5", "Data Leak", "Apache 2.2-2.4", "Use After Free CVE: 2017-9798"],
                                 ["7.5", "DoS", "PHP 5-5.6", "CVE: 2016-7478"],
                                 ["6.1", "XSS", "Drupal < 7.57, jQuery 1.4.4", "Improper Neutralization of Input CVE: 2017-6929"],
@@ -90,7 +92,7 @@ function BlackBoxPenPage() {
                             ]}
                         />
                     </TextSection>
-                    <TextSection title="Common Vulnerability Exploits" >
+                    <TextSection title="Recommentations" >
                         <Table
                             colorScale={[0]}
                             center={[0, 1, 3]}
