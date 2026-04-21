@@ -129,18 +129,18 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
 
 
 const getScaleColor = (value) => {
-    const num = parseFloat(value);
-    var customStyle = {color: "white", fontSize: "1.2em", fontWeight: "300"} 
-    if (isNaN(num)) return {};
-    if (num >= 9) return { ...customStyle, backgroundColor: "#101010",};
-    if (num >= 7) return { ...customStyle, backgroundColor: "#790000" };
-    if (num >= 5) return { ...customStyle, backgroundColor: "#ab5602" };
-    if (num >= 5) return { ...customStyle, backgroundColor: "#997a00" };
+    const num = parseFloat(value); 
+    // if (isNaN(num)) return {};
+    console.log(num);
+    if (num >= 9 || value === "Most Urgent") return { fontWeight: "400", backgroundColor: "#111111",};
+    if (num >= 7 || value === "Very Urgent") return { fontWeight: "400", backgroundColor: "#6c0101" };
+    if (num >= 5 || value === "Urgent") return { fontWeight: "400", backgroundColor: "#8a4601" };
+    if (num >= 4 || value === "Less Urgent") return { fontWeight: "400", backgroundColor: "#997a00" };
     return { backgroundColor: "#2e6b2e", color: "white" };
 };
 
 const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => (
-    <table style={{ tableLayout: "fixed", width: "100%" }}>
+    <table style={{ tableLayout: "fixed", width: "auto" }}>
         <thead>
             <tr>
                 {columns.map((col, i) => (
