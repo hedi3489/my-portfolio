@@ -63,7 +63,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .showcase,
   .showcase> :last-child {
     display: grid;
@@ -81,7 +81,6 @@
     width: 4em;
   }
 }
-
 /*-----------------------
   PROJ PAGE CONTAINERS
 ------------------------*/
