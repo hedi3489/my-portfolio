@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function TechStackInline({ items = [] }) {
@@ -126,12 +127,27 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
     )
 }
 
-const Table = ({ columns, rows, center = null }) => (
-    <table>
+
+const getScaleColor = (value) => {
+    const num = parseFloat(value);
+    var customStyle = {color: "white", fontSize: "1.2em", fontWeight: "300"} 
+    if (isNaN(num)) return {};
+    if (num >= 9) return { ...customStyle, backgroundColor: "#101010",};
+    if (num >= 7) return { ...customStyle, backgroundColor: "#790000" };
+    if (num >= 5) return { ...customStyle, backgroundColor: "#ab5602" };
+    if (num >= 5) return { ...customStyle, backgroundColor: "#997a00" };
+    return { backgroundColor: "#2e6b2e", color: "white" };
+};
+
+const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => (
+    <table style={{ tableLayout: "fixed", width: "100%" }}>
         <thead>
             <tr>
                 {columns.map((col, i) => (
-                    <th key={i} style={center === i ? { textAlign: "center" } : {}}>{col}</th>
+                    <th key={i} style={{
+                        textAlign: center.includes(i) ? "center" : "left",
+                        width: widths[i] ?? "auto"
+                    }}>{col}</th>
                 ))}
             </tr>
         </thead>
@@ -139,7 +155,10 @@ const Table = ({ columns, rows, center = null }) => (
             {rows.map((row, i) => (
                 <tr key={i}>
                     {row.map((cell, j) => (
-                        <td key={j} style={center === j ? { textAlign: "center" } : {}}>{cell}</td>
+                        <td key={j} style={{
+                            textAlign: center.includes(j) ? "center" : "left",
+                            ...(colorScale.includes(j) ? getScaleColor(cell) : {})
+                        }}>{cell}</td>
                     ))}
                 </tr>
             ))}

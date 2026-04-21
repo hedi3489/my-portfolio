@@ -48,7 +48,7 @@ function BlackBoxPenPage() {
                             ["-", "PHP", "5.4.45"],
                             ["-", "jQuery", "1.4.4"],
                         ]}
-                        center={0}
+                        center={[0]}
                     />
 
                     <TextSection className="text-section" title="Gaining Access" paragraphs={[
@@ -71,6 +71,24 @@ function BlackBoxPenPage() {
 
                         <>Finally, tracks were cleared by wiping Apache access and error logs, removing the backdoor user from all relevant system files, and deleting injected database users from the Drupal MySQL database.</>
                     ]} />
+
+                    <TextSection title="Common Vulnerability Exploits"/>
+                    <Table
+                        colorScale={[0]}
+                        center={[0, 1, 2,]}
+                        widths={["16%", "16%", "22%"]}
+                        columns={["Severity", "Type", "Platform", "Name"]}
+                        rows={[
+                            ["9.8", "RCE", "Drupal 7", "Drupalgeddon 2 CVE-2018-7600"],
+                            ["9.8", "RCE", "Drupal 7", "Drupal Core RCE CVE: 2018-7602"],
+                            ["7.5", "SQL Injec.", "Drupal 7", "Drupageddon 1 CVE-2014-3704"],
+                            ["7.5", "Data Leak", "Apache 2.2-2.4", "Use After Free CVE: 2017-9798"],
+                            ["7.5", "DoS", "PHP 5-5.6", "CVE: 2016-7478"],
+                            ["6.1", "XSS", "Drupal < 7.57, jQuery 1.4.4", "Improper Neutralization of Input CVE: 2017-6929"],
+                            ["5.8", "Remote", "Apache 2-2.3", "CVE: 2013-2248"],
+                            ["5.4", "XSS", "Drupal 7", "CVE: 2019-6341"],
+                        ]}
+                    />
                 </div>
             </div>
         </div>
