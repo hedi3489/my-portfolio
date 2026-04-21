@@ -63,6 +63,25 @@
   }
 }
 
+@media (max-width: 500px) {
+  .showcase,
+  .showcase> :last-child {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+  }
+
+  .deck > * {
+    min-height: 91px;
+  }
+  .contact-card {
+    min-height: 200px;
+  }
+  .theme-dot {
+    width: 4em;
+  }
+}
+
 /*-----------------------
   PROJ PAGE CONTAINERS
 ------------------------*/
@@ -74,6 +93,13 @@
 
 .page-card {
   padding: 4rem 6rem;
+}
+
+@media (max-width: 480px) {
+  .page-card {
+    padding: 0 2em;
+    font-size: 0.8em;
+  }
 }
 
 .project-page-container .prose>div {

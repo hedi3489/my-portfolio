@@ -93,7 +93,31 @@ ul {
 
 @media (max-width: 768px) {
   .home-page-container h2 {
-    font-size: clamp(1.4rem, 1.6rem, 1.8rem);
+    font-size: clamp(1rem, 1.5rem, 1.8rem);
+  }
+
+  .home-page-container p,
+  .home-page-container a {
+    line-height: 1.5;
+    font-weight: 300;
+    color: white;
+  }
+
+  .home-page-container .contact-card p, 
+  .home-page-container .contact-card a {
+    font-size: 1.5em;
+  }
+  .home-page-container .contact-card h3 {
+    font-size: 1.8em;
+  }
+  .home-page-container .contact-card h4 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 180) {
+  .home-page-container h2 {
+    font-size: clamp(1rem, 1.5rem, 1.8rem);
   }
 
   .home-page-container p,
