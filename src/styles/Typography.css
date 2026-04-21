@@ -1,7 +1,13 @@
 /* ---------------------------
    DEFAULT
 ---------------------------- */
-h1, h2, h3, h4, h5, p, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
   margin: 0;
 }
 
@@ -39,14 +45,16 @@ h1, h2, h3, h4, h5, p, ul {
   color: white;
 }
 
+.home-page-container .contact-card p {
+  font-size: 1.1em;
+}
+
 /* ----------- 
    BIO CARD
 ------------ */
 .bio-text p {
-  margin: 5px 0px;
-  padding: 3px 0px;
-  font-size: 1.3em;
-  gap: 1rem;
+  margin: 0.3em 0;
+  padding: 0.2em 0;
 }
 
 .bio-text p b,
@@ -81,6 +89,30 @@ h1, h2, h3, h4, h5, p, ul {
   padding-top: 5px;
   font-size: 1.2rem;
   color: var(--border-card-secondary);
+}
+
+@media (max-width: 768px) {
+  .home-page-container h2 {
+    font-size: clamp(1.4rem, 1.6rem, 1.8rem);
+  }
+
+  .home-page-container p,
+  .home-page-container a {
+    line-height: 1.5;
+    font-weight: 300;
+    color: white;
+  }
+
+  .home-page-container .contact-card p, 
+  .home-page-container .contact-card a {
+    font-size: 1.5em;
+  }
+  .home-page-container .contact-card h3 {
+    font-size: 1.8em;
+  }
+  .home-page-container .contact-card h4 {
+    font-size: 1.5em;
+  }
 }
 
 /* ---------------------------
@@ -130,7 +162,7 @@ h1, h2, h3, h4, h5, p, ul {
 }
 
 
-.project-page-container .prose code {
+.project-page-container .prose p code {
   /* font-family: 'Fira code'; */
   /*font-weight: 300; */
   padding: 0.05em 0.15em;
@@ -179,12 +211,14 @@ h1, h2, h3, h4, h5, p, ul {
   transition: all 0.25s ease;
   cursor: default;
 }
+
 .accented {
   color: var(--page-accent-color);
 }
+
 .code-snippet-border pre span {
-    text-decoration: none !important;
-    font-size: 1.05em;
+  text-decoration: none !important;
+  font-size: 1.05em;
 }
 
 /* ---------------------------
@@ -215,7 +249,9 @@ h1, h2, h3, h4, h5, p, ul {
   width: 115%;
 }
 
-dt, dd, .soft-list-icon {
+dt,
+dd,
+.soft-list-icon {
   font-size: clamp(0.9em, 1.2em, 1.3em);
 }
 

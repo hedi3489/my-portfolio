@@ -13,7 +13,7 @@
 
 .page-card {
   /* width: min(70vw, 1200px); */
-  width: 90vw;
+  width: 95vw;
 }
 
 /* ---------------------------
@@ -23,29 +23,20 @@
   border-color: var(--border-card-secondary);
 }
 
-.bio-text {
-  width: 65%;
-  height: 50%;
-}
-
 .little-card {
-  align-content: center;
   min-height: 50px;
   padding: 18px 24px ;
 }
 
 .status-dot {
-  position: absolute;
   top: 20px;
   right: 20px;
-
   width: 10px;
   height: 10px;
   border-radius: 999px;
 
   background: var(--status-available, var(--border-card-secondary));
   box-shadow: 0 0 0 0 var(--border-card-secondary);
-
   animation: statusPulse 1.8s ease-in-out infinite;
 }
 
@@ -78,13 +69,11 @@
 .theme-card {
   padding-left: 0;
   padding-right: 0;
-  /* max-height: 80px; */
 }
 
 .theme-colors {
   gap: 0.5rem;
   overflow-y: hidden;
-  justify-content: center;
   scrollbar-width: none;
 }
 

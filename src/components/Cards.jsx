@@ -5,7 +5,7 @@ import { SiGmail } from "react-icons/si";
 
 function BioCard() {
   return <div className='flex flex-5 width-100 height-100 card'>
-    <div className="bio-text width-65">
+    <div className="bio-text width-65 height-50">
       <p>Welcome</p>
       <p>I'm <b>Hedi</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
       <p>I enjoy turning ideas into working products, whether that means designing intuitive user interfaces or building APIs and databases behind the scenes.</p>
@@ -16,14 +16,14 @@ function BioCard() {
 function ContactCard() {
   return (
     <div>
-      <div className="height-100 card">
+      <div className="height-100 card contact-card">
         <h3><b>Let's start working together!</b></h3><br />
         <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Contact Info</h4>
-        <p style={{fontSize:"1.1em"}}><SiGmail /> belhassinehedi308@gmail.com</p>
-        <p style={{fontSize:"1.1em"}}><FaDiscord /> hedi8276</p>
-        <i style={{color:"#6d6d6d"}}>Based in Qc, CA</i>
+        <p style={{fontSize:""}}><SiGmail /> belhassinehedi308@gmail.com</p>
+        <p style={{fontSize:""}}><FaDiscord /> hedi8276</p>
+        <p style={{color:"#6d6d6d"}}>Based in Qc, CA</p>
 
-        <br /><br />
+        <br />
         
         <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Socials</h4>
         <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br /> 
@@ -55,7 +55,7 @@ function Deck({ cards = [] }) {
 
 function LittleCard({ title, description, to }) {
   const content = (
-    <div className="height-100 card little-card">
+    <div className="flex flex-col height-100 align-content-center justify-content-center card little-card">
       <h2>{title}</h2>
       <h5>{description}</h5>
     </div>
@@ -71,7 +71,6 @@ function AvailabilityCard() {
   var availabilityText = "";
   const textStyle = (fontSize, color = 'white') => ({
     margin : "1px 0px",
-    fontSize,
     color
   });
 
@@ -83,10 +82,10 @@ function AvailabilityCard() {
   
   return (
     <div className="flex align-items-center card height-100 little-card position-relative">
-      <span className="status-dot" aria-hidden="true" />
+      <span className="position-absolute status-dot" aria-hidden="true" />
       <div>
-        <h2 style={textStyle('1.3em')}>Currently?</h2>
-        <p style={textStyle('1em', 'gray')}>{availabilityText}</p>
+        <h2>Currently?</h2>
+        <p style={textStyle('gray')}>{availabilityText}</p>
       </div>
     </div>
   );
@@ -107,7 +106,7 @@ function ThemeCard() {
 
   return (
     <div className="flex align-items-center height-100 card little-card theme-card">
-      <div className="width-100 flex align-items-center theme-colors">
+      <div className="flex width-100 align-items-center justify-content-center theme-colors">
         {colors.map((color, i) => (
           <button
             key={i}

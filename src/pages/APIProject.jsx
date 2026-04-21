@@ -5,48 +5,40 @@ import waiterJson2 from "../assets/waiter-json-2.png"
 
 function APIProjectPage() {
     return (
-        <div className="flex project-page-container" style={{ "--page-accent-color": "#8b98e7"}}>
+        <div className="flex project-page-container" style={{ "--page-accent-color": "#99a4f1" }}>
             <div className="flex flex-col card page-card">
                 <div className='prose'>
                     <h1>2024 Paris Olympics API</h1>
                     <h4>An API providing resources and remote computing over HTTPS</h4>
                     <TechStackInline items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC", "HTTP"]} />
-                    <TextSection className="text-section" title="Overview"
-                        paragraphs={[
-                            <>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to data on athletes, coaches, venues, and sports events, and supporting pagination, filtering, sorting, and proper error handling.</>,
-                            <>The API was built using <b className='accented'>PHP</b> and the <b className='accented'>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout - each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses. </>
-                        ]}
-                    />
+
+                    <TextSection title="Overview" paragraphs={[<>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to data on athletes, coaches, venues, and sports events, and supporting pagination, filtering, sorting, and proper error handling.</>, <>The API was built using <b className='accented'>PHP</b> and the <b className='accented'>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout - each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>]} />
                     <p>I personally owned the venues and events endpoints, including their filtering logic:</p>
+
                     <BulletList intro={<b>⦿ Venues:</b>}
                         items={[
-                            <>Filterable by: <b>name</b>, <b>capacity range</b>, and <b>construction date range</b></>,
+                            <>Filterable by: <b className='accented'>name</b>, <b className='accented'>capacity range</b>, and <b className='accented'>construction date range</b></>,
                             <>Sortable by: venue ID, name, location, capacity, type, date constructed, and address</>
                         ]}
                     />
+
                     <BulletList intro={<b>⦿ Events:</b>}
                         items={[
-                            <>Filterable by: <b>event name</b>, <b>participant count range</b>, and <b>paralympic status</b></>,
+                            <>Filterable by: <b className='accented'>event name</b>, <b className='accented'>participant count range</b>, and <b className='accented'>paralympic status</b></>,
                             <>Sortable by: event ID, name, sport, start/end date, participant count, and venue</>
                         ]}
                     />
 
-                    <TextSection title="Database Design">
-                        <p>The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward.</p>
-                        <CaptionedImage
-                            image={olympicsDBDiagram}
-                            caption='Entity Relation Diagram of the Olympics Database'
-                            alt='Database Entity Relation Diagram'
-                            imageSizeClass='image-width-98'
-                        />
-                    </TextSection>
-
-                    <TextSection
-                        title="Request Processing"
-                        paragraphs={[
-                            <>To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated.</>
-                        ]}
+                    <TextSection title="Database Design" paragraphs={["The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward."]} />
+                    
+                    <CaptionedImage
+                        image={olympicsDBDiagram}
+                        caption='Entity Relation Diagram of the Olympics Database'
+                        alt='Database Entity Relation Diagram' imageSizeClass='image-width-98'
                     />
+
+                    <TextSection title="Request Processing" paragraphs={["To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated."]}/>
+
                     <p>1. User sends a request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
 
@@ -93,9 +85,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     throw new HttpBadRequestException($request, 'Invalid sorting or ordering parameter.');
 }"/>
 
-
                     <div className='flex'>
-
                         <div className='width-100'>
                             <p>6. A paginated JSON object is served to the user</p>
                             <div className=''>
@@ -119,20 +109,14 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
                             </div>
                         </div>
                         <div className=''>
-                            <CaptionedImage
-                                image={waiterJson2}
-                                alt='Artwork of waiter serving a JSON package'
-                                imageSizeClass='waiter-image '
-                            />
+                            <CaptionedImage image={waiterJson2} imageSizeClass='waiter-image '
+                            alt='Artwork of waiter serving a JSON package' />
                         </div>
                     </div>
 
-                    <TextSection
-                        title="Error Handling"
-                        paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]}
-                    />
-                    <CodeSnippet
-                        code='class HttpBadFilterException extends HttpSpecializedException
+                    <TextSection title="Error Handling" paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]}/>
+
+                    <CodeSnippet code='class HttpBadFilterException extends HttpSpecializedException
 {
     protected $code = 400;
     protected $message = "Invalid filter provided.";
@@ -142,8 +126,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
 }'
                     />
 
-                    <CodeSnippet
-                        code='class HttpInternalServerErrorException extends HttpSpecializedException
+                    <CodeSnippet code='class HttpInternalServerErrorException extends HttpSpecializedException
 {
     protected $code = 500;
     protected $message = "Internal server error.";
@@ -152,7 +135,6 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     situation preventing it from fulfilling its request.";
 }'
                     />
-
                 </div>
             </div>
         </div>
