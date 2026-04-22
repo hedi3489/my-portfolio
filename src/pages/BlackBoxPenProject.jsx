@@ -17,7 +17,7 @@ function BlackBoxPenPage() {
                     <TextSection title="Overview" paragraphs={["This report documents the methodologies and operations involved in conducting a black-box penetration test on a vulnerable Linux virtual machine. The target was a black-box virtual machine run in VirtualBox. No restrictions were established."]} />
                     <TextSection subtitle="Test Period" paragraphs={["The penetration test was performed over 3 weeks starting on April 20, 2025, and ending on May 7, 2025."]} />
 
-                    <TextSection title="Reconnaissance & Enumeration" paragraphs={[<>Using Nmap, Nikto, and Gobuster, the target was fingerprinted as a Debian Linux machine running an outdated <b className='accented'>Drupal CMS</b>, revealed three open ports: <u>SSH, HTTP, and RPC</u>.</>]} />
+                    <TextSection title="Reconnaissance & Enumeration" paragraphs={[<>Using Nmap, Nikto, and Gobuster, the target was fingerprinted as a Debian Linux machine running an outdated version of <b className='accented'>Drupal CMS</b>, revealed three open ports: <u>SSH, HTTP, and RPC</u>.</>]} />
                     <Table
                         widths={["40%"]}
                         columns={["Command", "Result"]}

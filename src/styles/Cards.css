@@ -12,8 +12,7 @@
 }
 
 .page-card {
-  /* width: min(70vw, 1200px); */
-  width: 95vw;
+  min-width: 70vw;
 }
 
 /* ---------------------------
@@ -101,9 +100,9 @@
 }
 
 .about-card {
-  flex: 7;
+  flex: 9;
 }
 
 .little-footer {
-  flex: 3.05;
+  flex: 2;
 }

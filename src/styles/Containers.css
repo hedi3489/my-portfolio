@@ -132,8 +132,6 @@
 }
 
 .project-page-container .theme-buttons {
-  /* margin-top: 0.7rem;
-  margin-left: -1rem; */
   padding: 1rem 0.6rem;
   gap: 0.5rem;
   background-color: #19191c;
@@ -199,14 +197,10 @@ td {
 
 th {
   font-weight: 400;
-  /* font-size: 1.15em; */
 }
 
 @media (max-width: 1180px) {
-  /* .page-card {
-    padding: 3.5em;
-    width: min(80vw, 1200px);
-  } */
+
 }
 
 @media (max-width: 868px) {

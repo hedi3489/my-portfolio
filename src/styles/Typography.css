@@ -15,7 +15,7 @@ ul {
    HOME PAGE TYPOGRAPHY
 ---------------------------- */
 .home-page-container h2 {
-  font-size: clamp(1.2rem, 1.45rem, 1.5rem);
+  font-size: clamp(1.1rem, 1.3rem, 1.5rem);
   line-height: 1.2;
 }
 
@@ -32,14 +32,14 @@ ul {
 }
 
 .home-page-container h5 {
-  font-size: clamp(0.85rem, 1.05rem, 1.1rem);
+  font-size: clamp(0.85rem, 1rem, 1.1rem);
   font-weight: normal;
   color: gray;
 }
 
 .home-page-container p,
 .home-page-container a {
-  font-size: clamp(1rem, 1.22rem, 1.25rem);
+  font-size: clamp(0.8rem,1.05rem,1.05rem);
   line-height: 1.5;
   font-weight: 300;
   color: white;
@@ -49,9 +49,6 @@ ul {
   font-size: 1.1em;
 }
 
-/* ----------- 
-   BIO CARD
------------- */
 .bio-text p {
   margin: 0.3em 0;
   padding: 0.2em 0;
@@ -63,9 +60,6 @@ ul {
   color: var(--border-card-secondary);
 }
 
-/* ------------ 
-   ABOUT CARD
-------------- */
 .about-card h3 {
   margin-top: 5px;
   font-weight: 600;
@@ -146,7 +140,7 @@ ul {
   font-size: 3.5em;
   line-height: 1.2;
   font-weight: 650;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .project-page-container .prose h2 {
@@ -159,7 +153,6 @@ ul {
 .project-page-container .prose h3 {
   font-size: 1.7em;
   font-weight: 400;
-  /* margin-top: 1em; */
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -179,16 +172,18 @@ ul {
 
 .project-page-container .prose p,
 .project-page-container .prose li {
-  font-size: 1.55em;
+  font-size: 1.2rem;
   line-height: 1.4;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.9);
 }
 
 
+.project-page-container .prose code {
+  font-size: 0.8rem;
+}
+
 .project-page-container .prose p code {
-  /* font-family: 'Fira code'; */
-  /*font-weight: 300; */
   padding: 0.05em 0.15em;
   font-size: 0.9em;
   color: rgb(196, 147, 127);
@@ -215,7 +210,6 @@ ul {
 }
 
 .project-page-container .prose .tech-stack-inline {
-  font-size: 1.15em;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;

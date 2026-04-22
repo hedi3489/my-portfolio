@@ -70,7 +70,8 @@ function AvailabilityCard() {
   const available = true;
   var availabilityText = "";
   const textStyle = (fontSize, color = 'white') => ({
-    margin : "1px 0px",
+    // margin : "1px 0px",
+    fontSize,
     color
   });
 
@@ -85,7 +86,7 @@ function AvailabilityCard() {
       <span className="position-absolute status-dot" aria-hidden="true" />
       <div>
         <h2>Currently?</h2>
-        <p style={textStyle('gray')}>{availabilityText}</p>
+        <p style={textStyle('1em','gray')}>{availabilityText}</p>
       </div>
     </div>
   );
