@@ -79,9 +79,24 @@ ul {
   font-weight: 300;
 }
 
-.home-page-container svg {
+.home-page-container .tiny-socials-icon {
   padding-top: 5px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--border-card-secondary);
+}
+
+.home-page-container .socials-icon {
+  font-size: 1.3rem;
+  padding: 0.55rem 1.3rem 0.15rem;
+  margin: 0.2rem;
+  /* color: white; */
+  border: 1px solid var(--border-card-secondary);
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: 2px 2px 0px 0px var(--border-card-secondary);
+}
+
+.home-page-container .socials-icon:hover {
   color: var(--border-card-secondary);
 }
 

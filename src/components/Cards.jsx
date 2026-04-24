@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import { FaDiscord } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
+import { FaLinkedin as Linkedin } from "react-icons/fa"; //<Linkedin />
+import { FaGithub as Github } from "react-icons/fa"; // <Github />
+import { TbCircleLetterCFilled as Cara } from "react-icons/tb"; // <Cara />
+
 function BioCard() {
   return <div className='flex flex-5 width-100 height-100 card'>
     <div className="bio-text width-65 height-50">
@@ -18,17 +22,25 @@ function ContactCard() {
     <div>
       <div className="height-100 card contact-card">
         <h3><b>Let's start working together!</b></h3><br />
-        <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Contact Info</h4>
-        <p style={{fontSize:""}}><SiGmail /> belhassinehedi308@gmail.com</p>
-        <p style={{fontSize:""}}><FaDiscord /> hedi8276</p>
-        <p style={{color:"#6d6d6d"}}>Based in Qc, CA</p>
+        <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Contact Info</h4>
+        <p><SiGmail className="tiny-socials-icon" /> belhassinehedi308@gmail.com</p>
+        <p><FaDiscord className="tiny-socials-icon" /> hedi8276</p>
+        <p style={{ color: "#6d6d6d" }}>Based in Qc, CA</p>
 
         <br />
-        
-        <h4 style={{color:'#6d6d6d', marginBottom:"0.2em"}}>Socials</h4>
-        <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br /> 
-        <a href="https://github.com/hedi3489" target="_blank">Github</a><br />
-        <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a><br />
+
+        <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Socials</h4>
+
+        <div className="width-100 flex justify-content-space-evenly">
+          <a href="" className="socials-icon"><Linkedin /></a>
+          <a href="" className="socials-icon"><Github /></a>
+          <a href="" className="socials-icon"><Cara /></a>
+        </div>
+
+
+        {/* <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br />  */}
+        {/* <a href="https://github.com/hedi3489" target="_blank">Github</a><br />
+        <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a><br /> */}
       </div>
     </div>
   );
@@ -75,18 +87,18 @@ function AvailabilityCard() {
     color
   });
 
-  if(available==true){
+  if (available == true) {
     availabilityText = "Open to collaborate";
-  }else{
+  } else {
     availabilityText = "Currently working full-time";
   }
-  
+
   return (
     <div className="flex align-items-center card height-100 little-card position-relative">
       <span className="position-absolute status-dot" aria-hidden="true" />
       <div>
         <h2>Currently?</h2>
-        <p style={textStyle('1em','gray')}>{availabilityText}</p>
+        <p style={textStyle('1em', 'gray')}>{availabilityText}</p>
       </div>
     </div>
   );
@@ -94,11 +106,11 @@ function AvailabilityCard() {
 
 function ThemeCard() {
   const colors = [
-    '#e6627c', 
-    '#efd1c2', 
-    '#70d3c4', 
-    '#0d8d84', 
-    '#8e59c0' 
+    '#e6627c',
+    '#efd1c2',
+    '#70d3c4',
+    '#0d8d84',
+    '#8e59c0'
   ]
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   useEffect(() => {
