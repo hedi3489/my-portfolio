@@ -39,7 +39,7 @@ ul {
 
 .home-page-container p,
 .home-page-container a {
-  font-size: clamp(0.8rem,1.05rem,1.05rem);
+  font-size: clamp(0.8rem, 1.05rem, 1.05rem);
   line-height: 1.5;
   font-weight: 300;
   color: white;
@@ -100,6 +100,18 @@ ul {
   color: var(--border-card-secondary);
 }
 
+
+.home-page-container .socials-icon img {
+  width: 1.3rem;
+  background-color: white;
+  border-radius: 15px;
+
+}
+
+.home-page-container .socials-icon:hover img {
+  background-color: var(--border-card-secondary);
+}
+
 @media (max-width: 768px) {
   .home-page-container h2 {
     font-size: clamp(1rem, 1.5rem, 1.8rem);
@@ -112,13 +124,15 @@ ul {
     color: white;
   }
 
-  .home-page-container .contact-card p, 
+  .home-page-container .contact-card p,
   .home-page-container .contact-card a {
     font-size: 1.5em;
   }
+
   .home-page-container .contact-card h3 {
     font-size: 1.8em;
   }
+
   .home-page-container .contact-card h4 {
     font-size: 1.5em;
   }
@@ -136,13 +150,15 @@ ul {
     color: white;
   }
 
-  .home-page-container .contact-card p, 
+  .home-page-container .contact-card p,
   .home-page-container .contact-card a {
     font-size: 1.5em;
   }
+
   .home-page-container .contact-card h3 {
     font-size: 1.8em;
   }
+
   .home-page-container .contact-card h4 {
     font-size: 1.5em;
   }

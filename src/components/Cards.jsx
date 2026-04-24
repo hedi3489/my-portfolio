@@ -6,6 +6,7 @@ import { SiGmail } from "react-icons/si";
 import { FaLinkedin as Linkedin } from "react-icons/fa"; //<Linkedin />
 import { FaGithub as Github } from "react-icons/fa"; // <Github />
 import { TbCircleLetterCFilled as Cara } from "react-icons/tb"; // <Cara />
+import CaraPNG from "../assets/cara-logo-1.png"
 
 function BioCard() {
   return <div className='flex flex-5 width-100 height-100 card'>
@@ -32,15 +33,11 @@ function ContactCard() {
         <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Socials</h4>
 
         <div className="width-100 flex justify-content-space-evenly">
-          <a href="" className="socials-icon"><Linkedin /></a>
-          <a href="" className="socials-icon"><Github /></a>
-          <a href="" className="socials-icon"><Cara /></a>
+          <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
+          <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
+          <a href="https://cara.app/hedibelhassine" target="_blank" className="socials-icon"><img src={CaraPNG}/></a>
         </div>
 
-
-        {/* <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank">LinkedIn</a><br />  */}
-        {/* <a href="https://github.com/hedi3489" target="_blank">Github</a><br />
-        <a href="https://cara.app/hedibelhassine" target="_blank">Cara</a><br /> */}
       </div>
     </div>
   );
