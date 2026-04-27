@@ -55,11 +55,16 @@ function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = "
     </div>
 }
 
-function CaptionedImages({ imageList, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize}) {
+function CaptionedImages({ imageList, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize, controlsAccent = false }) {
     const [index, setIndex] = useState(0);
     let image = imageList[index % imageList.length];
     const imageStyle = "image image-theme-button-offset " + imageSizeClass;
 
+    useEffect(() => {
+        if (controlsAccent && colorList && colorList[index]) {
+            document.documentElement.style.setProperty('--border-card-secondary', colorList[index].primary);
+        }
+    }, [index]);
     return <div className="flex flex-col align-items-center text-align-center">
         <div className="gap flex align-item-flex-start justify-content-center">
             <img src={image.src} alt={image.alt} className={imageStyle}

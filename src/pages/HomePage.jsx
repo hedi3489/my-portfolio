@@ -24,7 +24,7 @@ const specialCards = [
     { type: 'sketches', title: 'Sketches' },
     { type: 'artworks', title: 'Artworks' },
     { type: 'availability', title: 'Availability' },
-    { type: 'theme', title: 'Theme' }
+    // { type: 'theme', title: 'Theme' }
 ]
 
 function HomePage() {

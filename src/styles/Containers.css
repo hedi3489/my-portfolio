@@ -10,8 +10,8 @@
 }
 
 .home-page-container {
-  width: 1102px;
-  height: 680px;
+  width: 1145px;
+  height: 685px;
 }
 
 .project-page-container {
@@ -139,7 +139,7 @@
 
 .theme-buttons .theme-dot {
   position: relative;
-  font-size: 0.5rem;
+  /* font-size: 0.5rem; */
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: 2px solid #6b7280;

@@ -30,9 +30,11 @@ function BioCard() {
       }} /> */}
 
     <CaptionedImages
+      controlsAccent
       imageSizeClass="image-width-85"
       colorList={[
         { primary: "#e6627c" },
+        { primary: '#efd1c2' },
         { primary: "#70d3c4" },
         { primary: '#0d8d84' },
         { primary: '#8e59c0' }
