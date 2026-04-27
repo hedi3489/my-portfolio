@@ -1,20 +1,32 @@
+import { CaptionedImage } from "./ProjectPageComponents";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import { FaDiscord } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-import { FaLinkedin as Linkedin } from "react-icons/fa"; //<Linkedin />
-import { FaGithub as Github } from "react-icons/fa"; // <Github />
-import { TbCircleLetterCFilled as Cara } from "react-icons/tb"; // <Cara />
-import CaraPNG from "../assets/cara-logo-1.png"
+import Hero from "../assets/hero.png";
+
+import { FaLinkedin as Linkedin } from "react-icons/fa";
+import { FaGithub as Github } from "react-icons/fa";
+import CaraPNG from "../assets/cara-logo.png"
 
 function BioCard() {
-  return <div className='flex flex-5 width-100 height-100 card'>
+  return <div className='flex flex-5 width-100 height-100 card position-relative'>
     <div className="bio-text width-65 height-50">
       <p>Welcome</p>
-      <p>I'm <b>Hedi</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
-      <p>I enjoy turning ideas into working products, whether that means designing intuitive user interfaces or building APIs and databases behind the scenes.</p>
+      <p>I'm <b>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
+      <p>Feel free to reach out to me if you have any project in mind, want to collaborate, or just want to say hello. </p>
     </div>
+    <img
+      src={Hero}
+      style={{
+        position: "absolute",
+        bottom: "0",
+        right: "2em",
+        maxWidth: "60%",
+        maxHeight: "100%",
+        width: "auto"
+      }} />
   </div>
 }
 
@@ -35,7 +47,7 @@ function ContactCard() {
         <div className="width-100 flex justify-content-space-evenly">
           <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
           <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
-          <a href="https://cara.app/hedibelhassine" target="_blank" className="socials-icon"><img src={CaraPNG}/></a>
+          <a href="https://cara.app/hedibelhassine" target="_blank" className="socials-icon"><img src={CaraPNG} /></a>
         </div>
 
       </div>
@@ -79,7 +91,6 @@ function AvailabilityCard() {
   const available = true;
   var availabilityText = "";
   const textStyle = (fontSize, color = 'white') => ({
-    // margin : "1px 0px",
     fontSize,
     color
   });

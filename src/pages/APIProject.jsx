@@ -1,7 +1,6 @@
 import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from '../components/ProjectPageComponents.jsx'
 import olympicsDBDiagram from '../assets/olympicsDBDiagram.png'
 import waiterJson from "../assets/waiter-json.png"
-import waiterJson2 from "../assets/waiter-json-2.png"
 
 function APIProjectPage() {
     return (
@@ -109,7 +108,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
                             </div>
                         </div>
                         <div className=''>
-                            <CaptionedImage image={waiterJson2} imageSizeClass='waiter-image '
+                            <CaptionedImage image={waiterJson} imageSizeClass='waiter-image '
                             alt='Artwork of waiter serving a JSON package' />
                         </div>
                     </div>
@@ -122,7 +121,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     protected $message = "Invalid filter provided.";
     protected string $title = "400 Bad Request";
     protected string $description = "Please make sure you provide a valid filter. 
-    Only alphanumeric characters and spaces are allowed.";
+                Only alphanumeric characters and spaces are allowed.";
 }'
                     />
 
@@ -132,7 +131,7 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     protected $message = "Internal server error.";
     protected $title = "500 Internal Server Error.";
     protected string $description = "The server has encountered an unexpected 
-    situation preventing it from fulfilling its request.";
+                situation preventing it from fulfilling its request.";
 }'
                     />
                 </div>
