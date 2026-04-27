@@ -55,32 +55,37 @@ function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = "
     </div>
 }
 
-function CaptionedImages({ imageList, imageSizeClass = 'image-width-65' }) {
+function CaptionedImages({ imageList, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize}) {
     const [index, setIndex] = useState(0);
     let image = imageList[index % imageList.length];
     const imageStyle = "image image-theme-button-offset " + imageSizeClass;
 
     return <div className="flex flex-col align-items-center text-align-center">
         <div className="gap flex align-item-flex-start justify-content-center">
-            <img src={image.src} alt={image.alt} className={imageStyle} />
+            <img src={image.src} alt={image.alt} className={imageStyle}
+                style={imageDetails} />
             <ThemeButtons
-                colors={[
-                    { primary: "white", secondary: "#2b2b2b" },
-                    { primary: "#ec8e81", secondary: "#53a8cd" }
-                ]} selectedIndex={index} onSelectIndex={setIndex}
+                colors={colorList}
+                selectedIndex={index} onSelectIndex={setIndex}
+                buttonStyle={buttonStyle}
+                dotSize={dotSize}
             />
         </div>
         <h5>{image.caption}</h5>
     </div>
 }
 
-function ThemeButtons({ colors, selectedIndex, onSelectIndex }) {
+function ThemeButtons({ colors, selectedIndex, onSelectIndex, buttonStyle = null, dotSize = "0.5rem" }) {
     return (
-        <div className="flex flex-col align-items-center card theme-buttons">
+        <div className="flex flex-col align-items-center card theme-buttons"
+            style={buttonStyle}>
             {colors.map((color, i) => (
                 <button key={i}
                     className={`theme-dot ${selectedIndex === i ? 'selected' : ''}`}
-                    style={{ '--dot-bg': color.secondary ? `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)` : color.primary }}
+                    style={{  fontSize: dotSize,
+                        '--dot-bg': color.secondary ? 
+                        `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)` : 
+                        color.primary }}
                     onClick={() => onSelectIndex(i)}
                 />
             ))}
@@ -129,10 +134,10 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
 
 
 const getScaleColor = (value) => {
-    const num = parseFloat(value); 
+    const num = parseFloat(value);
     // if (isNaN(num)) return {};
     console.log(num);
-    if (num >= 9 || value === "Most Urgent") return { fontWeight: "400", backgroundColor: "#111111",};
+    if (num >= 9 || value === "Most Urgent") return { fontWeight: "400", backgroundColor: "#111111", };
     if (num >= 7 || value === "Very Urgent") return { fontWeight: "400", backgroundColor: "#6c0101" };
     if (num >= 5 || value === "Urgent") return { fontWeight: "400", backgroundColor: "#8a4601" };
     if (num >= 4 || value === "Less Urgent") return { fontWeight: "400", backgroundColor: "#997a00" };
@@ -174,5 +179,6 @@ export {
     CaptionedImages,
     BulletList,
     CodeSnippet,
+    ThemeButtons,
     Table
 }
