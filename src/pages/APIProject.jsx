@@ -29,14 +29,14 @@ function APIProjectPage() {
                     />
 
                     <TextSection title="Database Design" paragraphs={["The schema was designed around the core entities of the 2024 Paris Olympics. Events are tied to a Venue through a foreign key, and results are stored in a junction table linking Athletes to Events. Coaches are connected to Athletes through a separate junction table. Each table was kept focused and normalized to avoid redundancy while keeping queries straightforward."]} />
-                    
+
                     <CaptionedImage
                         image={olympicsDBDiagram}
                         caption='Entity Relation Diagram of the Olympics Database'
                         alt='Database Entity Relation Diagram' imageSizeClass='image-width-98'
                     />
 
-                    <TextSection title="Request Processing" paragraphs={["To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated."]}/>
+                    <TextSection title="Request Processing" paragraphs={["To give a sense of how the API is structured, here's what happens under the hood when a client requests a filtered and sorted list of venues. Each step shows how the request is routed through the system, validated, and finally paginated."]} />
 
                     <p>1. User sends a request</p>
                     <CodeSnippet language="http" code="GET /venues?min_capacity=50000&sort_by=capacity&order_by=desc" />
@@ -87,7 +87,8 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
                     <div className='flex'>
                         <div className='width-100'>
                             <p>6. A paginated JSON object is served to the user</p>
-                            <div className=''>
+
+                            <div className='position-relative'>
                                 <CodeSnippet language="json" code='{
   "pagination": {
     "current_page": 1,
@@ -105,15 +106,22 @@ if (in_array($sort_by, $valid_sort_fields) && in_array($order_by, $valid_orders)
     }
   ]
 }'/>
+                                <CaptionedImage image={waiterJson} imageSizeClass=''
+                                    alt='Artwork of waiter serving a JSON package'
+                                    imageDetails={{
+                                        position: "absolute",
+                                        maxWidth: "31%",
+                                        maxHeight: "120%",
+                                        width: "auto",
+                                        right: "3rem",
+                                        bottom: "0",
+                                        margin: "0"
+                                    }} />
                             </div>
-                        </div>
-                        <div className=''>
-                            <CaptionedImage image={waiterJson} imageSizeClass='waiter-image '
-                            alt='Artwork of waiter serving a JSON package' />
                         </div>
                     </div>
 
-                    <TextSection title="Error Handling" paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]}/>
+                    <TextSection title="Error Handling" paragraphs={["Rather than relying on generic HTTP errors, the API uses a set of custom exception classes that extend a base HttpSpecializedException. Each exception carries a status code, a short message, and a human-readable description — making it easy for users to understand exactly what went wrong."]} />
 
                     <CodeSnippet code='class HttpBadFilterException extends HttpSpecializedException
 {

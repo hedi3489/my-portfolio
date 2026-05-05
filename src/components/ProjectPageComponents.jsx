@@ -47,37 +47,37 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ image = '', alt = '', caption = '', imageSizeClass = "image-width-65" }) {
-    const imageStyle = "image " + imageSizeClass;
-    return <div className='flex flex-col align-items-center text-align-center'>
-        <img src={image} alt={alt} className={imageStyle} />
-        <h5>{caption}</h5>
-    </div>
-}
-
-function CaptionedImages({ imageList, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize, controlsAccent = false }) {
+function CaptionedImage({ imageList, image, alt, caption, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize, controlsAccent = false }) {
+    const isSingle = !imageList || imageList.length === 1;
+    const list = imageList ?? [{ src: image, alt, caption }];
+    
     const [index, setIndex] = useState(0);
-    let image = imageList[index % imageList.length];
-    const imageStyle = "image image-theme-button-offset " + imageSizeClass;
+    const current = list[index % list.length];
+    const imageStyle = "image " + imageSizeClass + (isSingle ? '' : ' image-theme-button-offset');
 
     useEffect(() => {
-        if (controlsAccent && colorList && colorList[index]) {
+        if (controlsAccent && colorList?.[index]) {
             document.documentElement.style.setProperty('--border-card-secondary', colorList[index].primary);
         }
     }, [index]);
-    return <div className="flex flex-col align-items-center text-align-center">
-        <div className="gap flex align-item-flex-start justify-content-center">
-            <img src={image.src} alt={image.alt} className={imageStyle}
-                style={imageDetails} />
-            <ThemeButtons
-                colors={colorList}
-                selectedIndex={index} onSelectIndex={setIndex}
-                buttonStyle={buttonStyle}
-                dotSize={dotSize}
-            />
+
+    return (
+        <div className="flex flex-col align-items-center text-align-center">
+            <div className="gap flex align-item-flex-start justify-content-center">
+                <img src={current.src} alt={current.alt} className={imageStyle} style={imageDetails} />
+                {!isSingle && colorList &&
+                    <ThemeButtons
+                        colors={colorList}
+                        selectedIndex={index}
+                        onSelectIndex={setIndex}
+                        buttonStyle={buttonStyle}
+                        dotSize={dotSize}
+                    />
+                }
+            </div>
+            <h5>{current.caption}</h5>
         </div>
-        <h5>{image.caption}</h5>
-    </div>
+    );
 }
 
 function ThemeButtons({ colors, selectedIndex, onSelectIndex, buttonStyle = null, dotSize = "0.5rem" }) {
@@ -181,7 +181,7 @@ export {
     TextSection,
     SoftList,
     CaptionedImage,
-    CaptionedImages,
+    // CaptionedImages,
     BulletList,
     CodeSnippet,
     ThemeButtons,

@@ -1,15 +1,18 @@
-import { CaptionedImages } from "./ProjectPageComponents";
+import { CaptionedImage } from "./ProjectPageComponents";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import { FaDiscord } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-import Hero from "../assets/hero.png";
+import HeroRed from "../assets/hero-red.png";
+import HeroPeach from "../assets/hero-peach.png";
+import HeroTeal from "../assets/hero-teal.png";
+import HeroBlue from "../assets/hero-blue.png";
+import HeroPurple from "../assets/hero-purple.png";
 
 import { FaLinkedin as Linkedin } from "react-icons/fa";
 import { FaGithub as Github } from "react-icons/fa";
 import CaraPNG from "../assets/cara-logo.png"
-import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function BioCard() {
   return <div className='flex flex-5 width-100 height-100 card position-relative'>
@@ -18,30 +21,23 @@ function BioCard() {
       <p>I'm <b>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
       <p>Feel free to reach out to me if you have any project in mind, want to collaborate, or just want to say hello. </p>
     </div>
-    {/* <img
-      src={Hero}
-      style={{
-        position: "absolute",
-        bottom: "0",
-        right: "2em",
-        maxWidth: "60%",
-        maxHeight: "100%",
-        width: "auto"
-      }} /> */}
 
-    <CaptionedImages
+    <CaptionedImage
       controlsAccent
       imageSizeClass="image-width-85"
       colorList={[
-        { primary: "#e6627c" },
-        { primary: '#efd1c2' },
-        { primary: "#70d3c4" },
-        { primary: '#0d8d84' },
-        { primary: '#8e59c0' }
+        { primary: "#e6475f" },
+        { primary: '#e99c75' },
+        { primary: "#3ed297" },
+        { primary: '#02838a' },
+        { primary: '#7724c4' }
       ]}
       imageList={[
-        { src: Hero },
-        { src: Hero }]
+        { src: HeroRed },
+        { src: HeroPeach },
+        { src: HeroTeal },
+        { src: HeroBlue },
+        { src: HeroPurple }]
       }
       imageDetails={{
         position: "absolute",

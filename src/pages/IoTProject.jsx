@@ -6,7 +6,7 @@ import iotDashboard from '../assets/iotDashboard.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
-import { TechStackInline, TextSection, SoftList, CaptionedImage, CaptionedImages } from '../components/ProjectPageComponents.jsx'
+import { TechStackInline, TextSection, SoftList, CaptionedImage } from '../components/ProjectPageComponents.jsx'
 
 function IoTProjectPage() {
   return (
@@ -68,7 +68,7 @@ function IoTProjectPage() {
           <TextSection title="Automation & User Logic" className="text-section in-section-gap"
             paragraphs={["Each user has pre-defined thresholds for temperature and ambient light, and upon scanning his or her RFID card, the user-defined preferences are loaded in the main process.", "When temperature readings exceed the loaded limit, the system notifies the user via email and asks if the fan should be turned on. It the awaits a response from the user, either a Yes or No, and adjusts the fan state accordingly. As for ambient light, when it falls below the threshold, the LED is turned on automatically and the user is simply notified. When brightness rises again, the LED is turned off the user is again notified."]} />
 
-          <CaptionedImages imageSizeClass="image-width-85"
+          <CaptionedImage imageSizeClass="image-width-85"
             colorList={
               [{ primary: "white", secondary: "#2b2b2b" },
               { primary: "#ec8e81", secondary: "#53a8cd" }]
@@ -83,7 +83,7 @@ function IoTProjectPage() {
                 caption: 'Flowchart illustrating the algorithm and the communication between Raspberry Pi and ESP32, dotted lines representing wireless communication.'
               },
             ]}
-            dotSize={"0.6rem"} />
+            dotSize={"0.5rem"} />
 
           <TextSection title="Dashboard Interface" paragraphs={["A web-based dashboard displays live sensor readings and the current state of devices. Users can manually toggle the devices and monitor environmental conditions in real time."]}>
             <CaptionedImage image={iotDashboard} alt='Smart home dashboard' imageSizeClass='image-width-98'
