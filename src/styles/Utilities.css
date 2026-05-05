@@ -35,6 +35,13 @@
     flex: 7.5;
 }
 
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
 /* Widths */
 .width-fit-content {
     width: fit-content;

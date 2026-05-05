@@ -67,16 +67,17 @@ function ContactCard() {
   return (
     <div>
       <div className="height-100 card contact-card">
-        <h3><b>Let's start working together!</b></h3><br />
-        <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Contact Info</h4>
-        <p><SiGmail className="tiny-socials-icon" /> belhassinehedi308@gmail.com</p>
-        <p><FaDiscord className="tiny-socials-icon" /> hedi8276</p>
-        <p style={{ color: "#6d6d6d" }}>Based in Qc, CA</p>
 
+        <h3><b>Let's start working together!</b></h3>
         <br />
 
+        <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Contact Info</h4>
+        <p><FaDiscord className="tiny-socials-icon" /> hedi8276</p>
+        <p><SiGmail className="tiny-socials-icon" /> belhassinehedi308@gmail.com</p>
+        <p style={{ color: "#6d6d6d" }}>Based in Qc, CA</p>
+        <br />
+        
         <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Socials</h4>
-
         <div className="width-100 flex justify-content-space-evenly">
           <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
           <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
@@ -88,23 +89,25 @@ function ContactCard() {
   );
 }
 
-const CARD_MAP = {
-  project: LittleCard,
-  sketches: LittleCard,
-  artworks: LittleCard,
-  availability: AvailabilityCard,
-  theme: ThemeCard,
+function Deck({ cards = [], availability = false }) {
+    return (
+        <div className="gap flex flex-col height-100 deck">
+            {cards.map((item, i) => (
+                <LittleCard key={i} {...item} />
+            ))}
+            {availability && <AvailabilityCard />}
+        </div>
+    );
 }
 
-function Deck({ cards = [] }) {
-  return (
-    <div className="gap flex flex-col height-100 deck">
-      {cards.map((item, i) => {
-        const Card = CARD_MAP[item.type] || LittleCard
-        return <Card key={i} {...item} />
-      })}
-    </div>
-  )
+function ProjectsDeck({ cards = [] }) {
+    return (
+        <div className="gap flex flex-col height-100 projects-deck">
+            {cards.map((item, i) => (
+                <LittleCard key={i} {...item} />
+            ))}
+        </div>
+    );
 }
 
 function LittleCard({ title, description, to }) {
@@ -145,36 +148,6 @@ function AvailabilityCard() {
   );
 }
 
-function ThemeCard() {
-  const colors = [
-    '#e6627c',
-    '#efd1c2',
-    '#70d3c4',
-    '#0d8d84',
-    '#8e59c0'
-  ]
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
-  useEffect(() => {
-    document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
-  }, [selectedColor]);
-
-  return (
-    <div className="flex align-items-center height-100 card little-card theme-card">
-      <div className="flex width-100 align-items-center justify-content-center theme-colors">
-        {colors.map((color, i) => (
-          <button
-            key={i}
-            className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
-            style={{ backgroundColor: color }}
-            aria-label={`Select theme color ${i + 1}`}
-            onClick={() => setSelectedColor(color)}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function AboutCard() {
   return <div className='width-100 height-100 card about-card'>
     <h3>About me</h3>
@@ -201,6 +174,6 @@ function LittleFooter() {
 export {
   BioCard,
   ContactCard,
-  Deck, LittleCard, AvailabilityCard, ThemeCard,
+  Deck, ProjectsDeck, LittleCard, AvailabilityCard,
   AboutCard, LittleFooter,
 };
