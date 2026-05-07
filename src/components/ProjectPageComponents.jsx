@@ -50,7 +50,7 @@ function SoftList({ items }) {
 function CaptionedImage({ imageList, image, alt, caption, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize, controlsAccent = false }) {
     const isSingle = !imageList || imageList.length === 1;
     const list = imageList ?? [{ src: image, alt, caption }];
-    
+
     const [index, setIndex] = useState(0);
     const current = list[index % list.length];
     const imageStyle = "image " + imageSizeClass + (isSingle ? '' : ' image-theme-button-offset');
@@ -87,10 +87,12 @@ function ThemeButtons({ colors, selectedIndex, onSelectIndex, buttonStyle = null
             {colors.map((color, i) => (
                 <button key={i}
                     className={`theme-dot ${selectedIndex === i ? 'selected' : ''}`}
-                    style={{  fontSize: dotSize,
-                        '--dot-bg': color.secondary ? 
-                        `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)` : 
-                        color.primary }}
+                    style={{
+                        fontSize: dotSize,
+                        '--dot-bg': color.secondary ?
+                            `linear-gradient(135deg, ${color.primary} 50%, ${color.secondary} 50%)` :
+                            color.primary
+                    }}
                     onClick={() => onSelectIndex(i)}
                 />
             ))}
@@ -140,8 +142,6 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
 
 const getScaleColor = (value) => {
     const num = parseFloat(value);
-    // if (isNaN(num)) return {};
-    console.log(num);
     if (num >= 9 || value === "Most Urgent") return { fontWeight: "400", backgroundColor: "#111111", };
     if (num >= 7 || value === "Very Urgent") return { fontWeight: "400", backgroundColor: "#6c0101" };
     if (num >= 5 || value === "Urgent") return { fontWeight: "400", backgroundColor: "#8a4601" };
@@ -176,14 +176,34 @@ const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => 
     </table>
 );
 
+function JourneySection({ logo, place, program, date, body }) {
+    return <div className='journey-section test-border'>
+
+        <div className='gap flex test-border'>
+
+            <img src={logo} className='journey-logo' />
+
+            <div className='test-border width-100'>
+                <h3>{place}</h3>
+                <p>{program}</p>
+                <p>{date}</p>
+            </div>
+
+        </div>
+
+        <p>{body}</p>
+
+    </div>
+}
+
 export {
     TechStackInline,
     TextSection,
     SoftList,
     CaptionedImage,
-    // CaptionedImages,
     BulletList,
     CodeSnippet,
     ThemeButtons,
-    Table
+    Table,
+    JourneySection
 }

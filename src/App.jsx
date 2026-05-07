@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage.jsx'
 import APIProjectPage from './pages/APIProject.jsx'
 import IoTProjectPage from './pages/IoTProject.jsx'
 import BlackBoxPenPage from './pages/BlackBoxPenProject.jsx'
+import JourneyPage from './pages/Journey.jsx'
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
 
         <Route
           path="/journey"
-          element={<BlackBoxPenPage />}
+          element={<JourneyPage />}
         />
 
         <Route
