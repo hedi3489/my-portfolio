@@ -1,5 +1,8 @@
 import { TechStackInline, TextSection, CaptionedImage, BulletList, JourneySection } from '../components/ProjectPageComponents.jsx'
 import VanierLogo from '../assets/vanier.jpg'
+import JavaLogo from '../assets/java-logo2.png'
+import StackLogo from '../assets/stack-logo.png'
+import IoTLogo from '../assets/cap-logo.jpg'
 
 function JourneyPage() {
     return (
@@ -7,7 +10,7 @@ function JourneyPage() {
             <div className="flex flex-col card page-card ">
                 <div className='prose flex flex-col gap'>
                     <h1>Journey</h1>
-                    <br /><br />
+                    <br />
                     <JourneySection
                         logo={VanierLogo}
                         place="Vanier College"
@@ -18,26 +21,25 @@ function JourneyPage() {
 
                     <div className='flex flex-col' style={{marginLeft: "3rem"}}>
                         <JourneySection
-                            logo={VanierLogo}
-                            // place="Vanier College"
-                            program="Year 1 — Building the Foundation"
+                            logo={JavaLogo}
+                            program="1st Year — Foundation"
                             date="01/2022 - 01/2023"
                             body="The first year established the pillars of computer science — OOP principles in Java, algorithms, discrete mathematics, databases, and an understanding of hardware and operating systems. By the end of the year I could think algorithmically and write structured, functional code."
-                        />
+                        /> <br />
                         <JourneySection
-                            logo={VanierLogo}
-                            // place="Vanier College"
-                            program="Year 2 — Expanding the Toolkit"
+                            logo={StackLogo}
+                            program="2nd Year — Full-Stack Dev"
                             date="01/2023 - 01/2024"
                             body="The second year broadened the scope, introducing data structures, networks, Linux OS, and both application and web development. Working across C#, Flutter, and HTML/CSS/JS/PHP, I began building more substantial projects that demanded teamwork and creative problem solving."
                         />
+                        <br />
                         <JourneySection
-                            logo={VanierLogo}
-                            // place="Vanier College"
-                            program="Year 3 — Thinking Like a Developer"
+                            logo={IoTLogo}
+                            program="3rd Year — Expanding Horizons"
                             date="01/2024 - 01/2025"
                             body="The final year was the most exciting. Spanning web services, game programming, IoT, and ethical hacking, and wrapped up with an internship. The focus shifted toward building meaningful, deployable applications and thinking with the standards and expectations of the industry in mind."
                         />
+                        <br />
                     </div>
                 </div>
             </div>
