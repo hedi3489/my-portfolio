@@ -177,21 +177,24 @@ const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => 
 );
 
 function JourneySection({ logo, place, program, date, body }) {
-    return <div className='journey-section test-border'>
+    return <div className='flex flex-col journey-section ' >
 
-        <div className='gap flex test-border'>
+        <div className='gap flex ' 
+        style={{
+            height: "5.5rem",
+            }}>
 
             <img src={logo} className='journey-logo' />
 
-            <div className='test-border width-100'>
-                <h3>{place}</h3>
+            <div className=' width-100'>
+                <h2>{place}</h2>
                 <p>{program}</p>
                 <p>{date}</p>
             </div>
 
         </div>
 
-        <p>{body}</p>
+        <p style={{lineHeight: '1.6'}}>{body}</p>
 
     </div>
 }
