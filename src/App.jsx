@@ -30,6 +30,16 @@ function App() {
           element={<BlackBoxPenPage />}
         />
 
+        <Route
+          path="/journey"
+          element={<BlackBoxPenPage />}
+        />
+
+        <Route
+          path="/artworks"
+          element={<BlackBoxPenPage />}
+        />
+
       </Routes>
     </div>
   )

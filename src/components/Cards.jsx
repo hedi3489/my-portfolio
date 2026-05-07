@@ -88,45 +88,33 @@ function ContactCard() {
   );
 }
 
-const CARD_MAP = {
-  project: LittleCard,
-  sketches: LittleCard,
-  artworks: LittleCard,
-  availability: AvailabilityCard,
-  theme: ThemeCard,
-}
-
 function Deck({ cards = [] }) {
   return (
     <div className="gap flex flex-col height-100 deck">
-      {cards.map((item, i) => {
-        const Card = CARD_MAP[item.type] || LittleCard
-        return <Card key={i} {...item} />
-      })}
+      {cards.map((item, i) =>
+        item.type === "availability"
+          ? <AvailabilityCard key={i} {...item} />
+          : <LittleCard key={i} {...item} />
+      )}
     </div>
-  )
+  );
 }
 
 function LittleCard({ title, description, to }) {
-  const content = (
-    <div className="flex flex-col height-100 align-content-center justify-content-center card little-card">
-      <h2>{title}</h2>
-      <h5>{description}</h5>
-    </div>
-  )
-  if (!to) return content
+
   return (
-    <Link to={to} className="card-link">{content}</Link>
+    <Link to={to}>
+      <div className="flex flex-col height-100 align-content-center justify-content-center card little-card">
+        <h2>{title}</h2>
+        {description ? <h5>{description}</h5> : null}
+      </div>
+    </Link>
   )
 }
 
-function AvailabilityCard() {
-  const available = true;
+function AvailabilityCard({ state = true }) {
+  const available = state;
   var availabilityText = "";
-  const textStyle = (fontSize, color = 'white') => ({
-    fontSize,
-    color
-  });
 
   if (available == true) {
     availabilityText = "Open to collaborate";
@@ -135,13 +123,13 @@ function AvailabilityCard() {
   }
 
   return (
-    <div className="flex align-items-center card height-100 little-card position-relative">
-      <span className="position-absolute status-dot" aria-hidden="true" />
-      <div>
+    <Link>
+      <div className="flex flex-col height-100 align-content-center justify-content-center card little-card position-relative">
+        <span className="position-absolute status-dot" aria-hidden="true" />
         <h2>Currently?</h2>
-        <p style={textStyle('1em', 'gray')}>{availabilityText}</p>
+        <h5>{availabilityText}</h5>
       </div>
-    </div>
+    </Link>
   );
 }
 
