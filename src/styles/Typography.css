@@ -316,12 +316,3 @@ dt {
   opacity: 0.75;
   margin: 0.25em 0.5em;
 }
-
-.project-page-container .prose .journey-section div div h2 {
-  margin: 0;
-  line-height: 1.2;
-}
-
-.project-page-container .prose .journey-section div div p {
-  margin: 0;
-}

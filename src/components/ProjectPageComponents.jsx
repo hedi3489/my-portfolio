@@ -177,21 +177,21 @@ const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => 
 );
 
 function JourneySection({ logo, place, program, date, body }) {
+    var headerHeight = '5.3rem';
+    if (place==null || program==null || date==null) { headerHeight = '3.1rem'}  
+
     return <div className='flex flex-col journey-section ' >
 
-        <div className='gap flex ' 
-        style={{
-            height: "5.5rem",
-            }}>
+        <div className='gap flex ' style={{height: headerHeight}}>
 
-            <img src={logo} className='journey-logo' />
+            {logo ? <img src={logo} style={{borderRadius: '10px'}} /> : null}
 
-            <div className=' width-100'>
-                <h2>{place}</h2>
-                <p>{program}</p>
-                <p>{date}</p>
+            <div className='width-100'>
+                {place ? <h2 style={{margin: '0', lineHeight: '1.2', fontWeight: '600'}}>{place}</h2> : null }
+                {program ? <p style={{margin: '0', fontWeight: '400'}}>{program}</p> : null }
+                {date ? <p style={{margin: '0', color: '#989898', fontSize: "1.1rem"}}>{date}</p> : null }
             </div>
-
+        
         </div>
 
         <p style={{lineHeight: '1.6'}}>{body}</p>
