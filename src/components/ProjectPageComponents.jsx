@@ -178,28 +178,18 @@ const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => 
 
 function JourneySection({ logo, place, program, date, body }) {
     var headerHeight = '5rem';
-    
-    if (place==null || program==null || date==null) { headerHeight = '3.1rem'; }  
+    if (place == null) { headerHeight = '3.1rem'; }
 
-    return <div className='flex flex-col journey-section' 
-    style={{gap: '0.7em'}}
-    >
-
-        <div className='gap flex' style={{height: headerHeight}}>
-
-            {logo ? <img src={logo} style={{borderRadius: '10px'}} /> : null}
-
+    return <div className='flex flex-col journey-section' style={{ gap: '0.7em' }}>
+        <div className='gap flex' style={{ height: headerHeight }}>
+            {logo ? <img src={logo} style={{ borderRadius: '10px' }} /> : null}
             <div className='width-100'>
-                {place ? <h2 style={{margin: '0', lineHeight: '1', fontWeight: '600'}}>{place}</h2> : null }
-                {program ? <p style={{margin: '0', fontWeight: '400'}}>{program}</p> : null }
-                {date ? <p style={{margin: '0', color: '#989898', fontSize: "1.1rem"}}>{date}</p> : null }
-                
+                {place ? <h2 style={{ margin: '0', lineHeight: '1', fontWeight: '600' }}>{place}</h2> : null}
+                <p style={{ margin: '0', fontWeight: '400' }}>{program}</p>
+                <p style={{ margin: '0', color: '#989898', fontSize: "1.1rem" }}>{date}</p>
             </div>
-        
         </div>
-
-        <p style={{lineHeight: '1.6'}}>{body}</p>
-
+        <p style={{ lineHeight: '1.6' }}>{body}</p>
     </div>
 }
 
