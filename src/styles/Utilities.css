@@ -1,6 +1,9 @@
 .gap {
     gap: var(--gap);
 }
+.gap-07 {
+    gap: 0.7rem;
+}
 
 .flex {
     display: flex;
