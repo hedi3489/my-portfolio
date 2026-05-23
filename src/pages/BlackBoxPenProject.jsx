@@ -1,4 +1,4 @@
-import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet, Table } from '../components/ProjectPageComponents.jsx'
+import { TechStack, TextSection, Table } from '../components/ProjectPageComponents.jsx'
 
 const scans = [
     { scan: "Full port scan", command: "nmap -p-", result: "Revealed 3 open ports" },
@@ -12,7 +12,7 @@ function BlackBoxPenPage() {
                 <div className='prose'>
                     <h1>Black-Box Penetration</h1>
                     <h4>An ethical hacking report — from reconnaissance to root. </h4>
-                    <TechStackInline items={["Kali Linux", "MSF6", "VirtualBox", "Recon", "Privelege Escalation", "Cryptography", "Shell Scripting"]} />
+                    <TechStack items={["Kali Linux", "MSF6", "VirtualBox", "Recon", "Privelege Escalation", "Cryptography", "Shell Scripting"]} />
 
                     <TextSection title="Overview" paragraphs={["This report documents the methodologies and operations involved in conducting a black-box penetration test on a vulnerable Linux virtual machine. The target was a black-box virtual machine run in VirtualBox. No restrictions were established."]} />
                     <TextSection subtitle="Test Period" paragraphs={["The penetration test was performed over 3 weeks starting on April 20, 2025, and ending on May 7, 2025."]} />

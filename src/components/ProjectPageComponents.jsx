@@ -3,17 +3,17 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-function TechStackInline({ items = [] }) {
+export function TechStack({ items = [] }) {
     return (
         <div className="tech-stack-inline flex">
             {items.map((item, index) => (
-                <span key={index}>{item}</span>
+                <span className='tech-stack-label' key={index}>{item}</span>
             ))}
         </div>
     );
 };
 
-function TextSection({ title, subtitle, paragraphs = [], children }) {
+export function TextSection({ title, subtitle, paragraphs = [], children }) {
     return (
         <section>
             {title ? <h2>{title}</h2> : null}
@@ -28,7 +28,7 @@ function TextSection({ title, subtitle, paragraphs = [], children }) {
     );
 }
 
-function SoftList({ items }) {
+export function SoftList({ items }) {
     return (
         <dl className="full-width">
             {items.map((item, index) => {
@@ -47,7 +47,7 @@ function SoftList({ items }) {
     )
 }
 
-function CaptionedImage({ imageList, image, alt, caption, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize, controlsAccent = false }) {
+export function CaptionedImage({ imageList, image, alt, caption, imageSizeClass = 'image-width-65', colorList = null, imageDetails = null, buttonStyle = null, dotSize, controlsAccent = false }) {
     const isSingle = !imageList || imageList.length === 1;
     const list = imageList ?? [{ src: image, alt, caption }];
 
@@ -80,7 +80,7 @@ function CaptionedImage({ imageList, image, alt, caption, imageSizeClass = 'imag
     );
 }
 
-function ThemeButtons({ colors, selectedIndex, onSelectIndex, buttonStyle = null, dotSize = "0.5rem" }) {
+export function ThemeButtons({ colors, selectedIndex, onSelectIndex, buttonStyle = null, dotSize = "0.5rem" }) {
     return (
         <div className="flex flex-col align-items-center card theme-buttons"
             style={buttonStyle}>
@@ -100,7 +100,7 @@ function ThemeButtons({ colors, selectedIndex, onSelectIndex, buttonStyle = null
     );
 }
 
-function BulletList({ header, intro, items = [] }) {
+export function BulletList({ header, intro, items = [] }) {
     return <div>
 
         {header ? <h3>{header}</h3> : null}
@@ -121,7 +121,7 @@ const customAtomDark = {
     }
 };
 
-function CodeSnippet({ title = null, subtitle = null, code, language = "php", style = customAtomDark }) {
+export function CodeSnippet({ title = null, subtitle = null, code, language = "php", style = customAtomDark }) {
     return (
         <div className="code-snippet-border">
             {title ? <p style={{ margin: "0.5em 0em 0.6em 0.8em", fontSize: "1.2em", fontWeight: "250" }}>{title}</p> : null}
@@ -140,7 +140,7 @@ function CodeSnippet({ title = null, subtitle = null, code, language = "php", st
 }
 
 
-const getScaleColor = (value) => {
+export const getScaleColor = (value) => {
     const num = parseFloat(value);
     if (num >= 9 || value === "Most Urgent") return { fontWeight: "400", backgroundColor: "#111111", };
     if (num >= 7 || value === "Very Urgent") return { fontWeight: "400", backgroundColor: "#6c0101" };
@@ -149,7 +149,7 @@ const getScaleColor = (value) => {
     return { backgroundColor: "#2e6b2e", color: "white" };
 };
 
-const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => (
+export const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => (
     <table style={{ tableLayout: "fixed", width: "100%" }}>
         <thead>
             <tr>
@@ -176,7 +176,7 @@ const Table = ({ columns, rows, center = [], widths = [], colorScale = [] }) => 
     </table>
 );
 
-function JourneySection({ logo, place, program, date, body }) {
+export function JourneySection({ logo, place, program, date, body }) {
     var headerHeight = '4.7rem';
     if (place == null) { headerHeight = '3rem'; }
 
@@ -191,16 +191,4 @@ function JourneySection({ logo, place, program, date, body }) {
         </div>
         <p style={{ lineHeight: '1.6' }}>{body}</p>
     </div>
-}
-
-export {
-    TechStackInline,
-    TextSection,
-    SoftList,
-    CaptionedImage,
-    BulletList,
-    CodeSnippet,
-    ThemeButtons,
-    Table,
-    JourneySection
 }

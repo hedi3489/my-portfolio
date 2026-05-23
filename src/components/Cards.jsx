@@ -1,4 +1,4 @@
-import { CaptionedImage } from "./ProjectPageComponents";
+import { CaptionedImage, TechStack } from "./ProjectPageComponents";
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import { FaDiscord } from "react-icons/fa";
@@ -167,14 +167,18 @@ function AboutCard() {
   return <div className='width-100 height-100 card about-card'>
     <h3>About me</h3>
     <p>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
-    <p>My primary tools of choice include:</p>
-    <ul>
+    <p>TECH STACK</p>
+    {/* <ul>
       <li>Javascript</li>
       <li>React</li>
       <li>Node.js</li>
       <li>PHP</li>
       <li>Slim</li>
-    </ul>
+    </ul> */}
+    {/* <div className="width-65"> */}
+      <TechStack
+        items={['Javascript', 'Typescript', 'React', 'GSAP', 'PHP', 'Slim', 'Python', 'Flask', 'Java', 'C#', 'MySQL']} />
+    {/* </div> */}
     <p>Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).</p>
   </div>
 }

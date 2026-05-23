@@ -6,7 +6,7 @@ import iotDashboard from '../assets/iotDashboard.png'
 import { FaMicrochip, FaLightbulb, FaFan, FaIdCard } from 'react-icons/fa'
 import { MdSensors, MdMemory } from 'react-icons/md'
 import { BsCpu } from 'react-icons/bs'
-import { TechStackInline, TextSection, SoftList, CaptionedImage } from '../components/ProjectPageComponents.jsx'
+import { TechStack, TextSection, SoftList, CaptionedImage } from '../components/ProjectPageComponents.jsx'
 
 function IoTProjectPage() {
   return (
@@ -16,7 +16,7 @@ function IoTProjectPage() {
 
           <h1>Smart Home IoT Dashboard</h1>
           <h4>Automation system using Raspberry Pi, sensors, user profiles, and a web dashboard</h4>
-          <TechStackInline items={["Raspberry Pi", "ESP32", "HTML / CSS / JS", "Python", "Data capture", "RFID", "Hardware automation",]} />
+          <TechStack items={["Raspberry Pi", "ESP32", "HTML / CSS / JS", "Python", "Data capture", "RFID", "Hardware automation",]} />
 
           <TextSection title="Overview" paragraphs={[<>A smart home automation simulation built with a <b className='accented'>Raspberry Pi 400</b> that integrates sensors, actuators, user identification, and a web dashboard. The project models how real-world smart home systems monitor environments, apply automation rules, and keep users in the loop.</>]}
           />

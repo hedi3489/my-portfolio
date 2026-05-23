@@ -1,4 +1,4 @@
-import { TechStackInline, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from '../components/ProjectPageComponents.jsx'
+import { TechStack, TextSection, SoftList, CaptionedImage, BulletList, CodeSnippet } from '../components/ProjectPageComponents.jsx'
 import olympicsDBDiagram from '../assets/olympicsDBDiagram.png'
 import waiterJson from "../assets/waiter-json.png"
 
@@ -9,7 +9,7 @@ function APIProjectPage() {
                 <div className='prose'>
                     <h1>2024 Paris Olympics API</h1>
                     <h4>An API providing resources and remote computing over HTTPS</h4>
-                    <TechStackInline items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC", "HTTP"]} />
+                    <TechStack items={["REST API", "PHP", "Slim Framework", "PDO", "MySQL", "Valitron", "MVC", "HTTP"]} />
 
                     <TextSection title="Overview" paragraphs={[<>The Olympics API is a RESTful web service built around the 2024 Paris Olympics providing structured access to data on athletes, coaches, venues, and sports events, and supporting pagination, filtering, sorting, and proper error handling.</>, <>The API was built using <b className='accented'>PHP</b> and the <b className='accented'>Slim Framework</b>, backed by a MySQL database, and following the REST conventions throughout - each resource has its own collection and singleton endpoints supporting full CRUD operations. All inputs go through Valitron validation with custom HTTP exceptions for clean, descriptive error responses.</>]} />
                     <p>I personally owned the venues and events endpoints, including their filtering logic:</p>
