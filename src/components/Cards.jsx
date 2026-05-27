@@ -15,11 +15,14 @@ import { FaGithub as Github } from "react-icons/fa";
 import CaraPNG from "../assets/cara-logo.png"
 
 function BioCard() {
+  const pStyle = { margin: '0.3em 0', padding: '0.2em 0', fontSize: 'clamp(0.8rem, 1.06rem, 1.1rem)' }
+  const bStyle = { fontWeight: '600', color: 'var(--border-card-secondary)' }
+
   return <div className='flex flex-5 width-100 height-100 card position-relative'>
     <div className="bio-text width-65 height-50">
-      <p>Welcome</p>
-      <p>I'm <b>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
-      <p>Feel free to reach out to me if you have any project in mind, want to collaborate, or just want to say hello. </p>
+      <p style={pStyle}>Welcome</p>
+      <p style={pStyle}>I'm <b style={bStyle}>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
+      <p style={pStyle}>Feel free to reach out to me if you have any project in mind, want to collaborate, or just want to say hello. </p>
     </div>
 
     <CaptionedImage
@@ -64,13 +67,14 @@ function BioCard() {
 }
 
 function ContactCard() {
+  const littleIcon = { paddingTop: '5px', fontSize: '1.1rem', color: 'var(--border-card-secondary)' }
   return (
     <div>
       <div className="height-100 card contact-card">
         <h3><b>Let's start working together!</b></h3><br />
         <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Contact Info</h4>
-        <p><SiGmail className="tiny-socials-icon" /> belhassinehedi308@gmail.com</p>
-        <p><FaDiscord className="tiny-socials-icon" /> hedi8276</p>
+        <p><SiGmail style={littleIcon} /> belhassinehedi308@gmail.com</p>
+        <p><FaDiscord style={littleIcon} /> hedi8276</p>
         <p style={{ color: "#6d6d6d" }}>Based in Qc, CA</p>
 
         <br />
@@ -164,28 +168,21 @@ function ThemeCard() {
 }
 
 function AboutCard() {
+  const pStyle = { padding: '5px 0px', fontWeight: '200', lineHeight: '1.6' }
   return <div className='width-100 height-100 card about-card'>
     <h3>About me</h3>
-    <p>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
-    <p>TECH STACK</p>
-    {/* <ul>
-      <li>Javascript</li>
-      <li>React</li>
-      <li>Node.js</li>
-      <li>PHP</li>
-      <li>Slim</li>
-    </ul> */}
-    {/* <div className="width-65"> */}
-      <TechStack
-        items={['Javascript', 'Typescript', 'React', 'GSAP', 'PHP', 'Slim', 'Python', 'Flask', 'Java', 'C#', 'MySQL']} />
-    {/* </div> */}
-    <p>Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).</p>
+    <p style={pStyle}>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
+    <p style={pStyle}>TECH STACK</p>
+    <TechStack
+      items={['Javascript', 'Typescript', 'React', 'GSAP', 'PHP', 'Slim', 'Python', 'Flask', 'Java', 'C#', 'MySQL']} />
+    <p style={pStyle}>Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).</p>
   </div>
 }
 
 function LittleFooter() {
+  const bStyle = { fontWeight: '600', color: 'var(--border-card-secondary)' }
   return <div className='width-100 height-100 card little-footer'>
-    <h3><b>WIP</b></h3>
+    <h3><b style={bStyle}>WIP</b></h3>
     <p>This is a work in progress. <br />Updates & fixes will be coming soon!</p>
   </div>
 }

@@ -9,6 +9,7 @@ h5,
 p,
 ul {
   margin: 0;
+  color: white;
 }
 
 /* ---------------------------
@@ -47,43 +48,6 @@ ul {
 
 .home-page-container .contact-card p {
   font-size: 1.1em;
-}
-
-.bio-text p {
-  margin: 0.3em 0;
-  padding: 0.2em 0;
-  font-size: clamp(0.8rem, 1.06rem, 1.1rem);
-}
-
-.bio-text p b,
-.little-footer b {
-  font-weight: 600;
-  color: var(--border-card-secondary);
-}
-
-.about-card h3 {
-  margin-top: 5px;
-  font-weight: 600;
-}
-
-.about-card p {
-  padding: 5px 0px;
-  font-weight: 200;
-  line-height: 1.6;
-}
-
-.about-card ul {
-  padding-left: 15px;
-  margin-bottom: 20px;
-  font-size: 1.15em;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-.home-page-container .tiny-socials-icon {
-  padding-top: 5px;
-  font-size: 1.1rem;
-  color: var(--border-card-secondary);
 }
 
 .home-page-container .socials-icon {
