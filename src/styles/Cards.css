@@ -19,7 +19,7 @@
    HOME PAGE CONTAINERS
 ---------------------------- */
 .home-page-container .card:hover {
-  border-color: var(--border-card-secondary);
+  border-color: var(--page-accent-color);
 }
 
 .little-card {
@@ -34,15 +34,15 @@
   height: 10px;
   border-radius: 999px;
 
-  background: var(--status-available, var(--border-card-secondary));
-  box-shadow: 0 0 0 0 var(--border-card-secondary);
+  background: var(--status-available, var(--page-accent-color));
+  box-shadow: 0 0 0 0 var(--page-accent-color);
   animation: statusPulse 1.8s ease-in-out infinite;
 }
 
 @keyframes statusPulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 var(--border-card-secondary);
+    box-shadow: 0 0 0 0 var(--page-accent-color);
     opacity: 0.8;
   }
 
@@ -96,7 +96,7 @@
 }
 
 .theme-dot.selected {
-  border-color: var(--border-card-secondary);
+  border-color: var(--page-accent-color);
 }
 
 .about-card {

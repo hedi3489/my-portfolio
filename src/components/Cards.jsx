@@ -15,14 +15,14 @@ import { FaGithub as Github } from "react-icons/fa";
 import CaraPNG from "../assets/cara-logo.png"
 
 function BioCard() {
-  const pStyle = { margin: '0.3em 0', padding: '0.2em 0', fontSize: 'clamp(0.8rem, 1.06rem, 1.1rem)' }
-  const bStyle = { fontWeight: '600', color: 'var(--border-card-secondary)' }
+  const pStyle = { margin: '0.3em 0', padding: '0.2em 0', fontSize: '1.09rem' }
+  const bStyle = { fontWeight: '600', color: 'var(--page-accent-color)' }
 
   return <div className='flex flex-5 width-100 height-100 card position-relative'>
     <div className="bio-text width-65 height-50">
-      <p style={pStyle}>Welcome</p>
+      <h1>Welcome</h1>
       <p style={pStyle}>I'm <b style={bStyle}>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
-      <p style={pStyle}>Feel free to reach out to me if you have any project in mind, want to collaborate, or just want to say hello. </p>
+      <p style={pStyle}>You're welcome to look around and check the links.<br /> If have ideas to share, or just want to connect, <br />don't hesitate to reach out.</p>
     </div>
 
     <CaptionedImage
@@ -66,32 +66,6 @@ function BioCard() {
   </div>
 }
 
-function ContactCard() {
-  const littleIcon = { paddingTop: '5px', fontSize: '1.1rem', color: 'var(--border-card-secondary)' }
-  return (
-    <div>
-      <div className="height-100 card contact-card">
-        <h3><b>Let's start working together!</b></h3><br />
-        <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Contact Info</h4>
-        <p><SiGmail style={littleIcon} /> belhassinehedi308@gmail.com</p>
-        <p><FaDiscord style={littleIcon} /> hedi8276</p>
-        <p style={{ color: "#6d6d6d" }}>Based in Qc, CA</p>
-
-        <br />
-
-        <h4 style={{ color: '#6d6d6d', marginBottom: "0.2em" }}>Socials</h4>
-
-        <div className="width-100 flex justify-content-space-evenly">
-          <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
-          <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
-          <a href="https://cara.app/hedibelhassine" target="_blank" className="socials-icon"><img src={CaraPNG} /></a>
-        </div>
-
-      </div>
-    </div>
-  );
-}
-
 function Deck({ cards = [] }) {
   return (
     <div className="gap flex flex-col height-100 deck">
@@ -109,8 +83,11 @@ function LittleCard({ title, description, to }) {
   return (
     <Link to={to}>
       <div className="flex flex-col height-100 align-content-center justify-content-center card little-card">
-        <h2>{title}</h2>
-        {description ? <h5>{description}</h5> : null}
+        {description ?
+          <h2 style={{ fontSize: '1.3rem' }}>{title}</h2> :
+          <h2 style={{ fontSize: '1.45rem' }}>{title}</h2>
+        }
+        {description ? <h4>{description}</h4> : null}
       </div>
     </Link>
   )
@@ -130,38 +107,41 @@ function AvailabilityCard({ state = true }) {
     <Link>
       <div className="flex flex-col height-100 align-content-center justify-content-center card little-card position-relative">
         <span className="position-absolute status-dot" aria-hidden="true" />
-        <h2>Currently?</h2>
-        <h5>{availabilityText}</h5>
+        <h2 style={{ fontSize: '1.3rem' }}>Currently?</h2>
+        <h4>{availabilityText}</h4>
       </div>
     </Link>
   );
 }
 
-function ThemeCard() {
-  const colors = [
-    '#e6627c',
-    '#efd1c2',
-    '#70d3c4',
-    '#0d8d84',
-    '#8e59c0'
-  ]
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
-  useEffect(() => {
-    document.documentElement.style.setProperty('--border-card-secondary', selectedColor);
-  }, [selectedColor]);
-
+function ContactCard() {
+  const littleIcon = { paddingTop: '5px', fontSize: '1.1rem', color: 'var(--page-accent-color)' }
+  const h3Style = {
+    fontSize: '1.4em',
+    lineHeight: '1.4',
+    fontWeight: 'normal',
+    color: '#6d6d6d',
+    marginBottom: "0.2em"
+  }
   return (
-    <div className="flex align-items-center height-100 card little-card theme-card">
-      <div className="flex width-100 align-items-center justify-content-center theme-colors">
-        {colors.map((color, i) => (
-          <button
-            key={i}
-            className={`theme-dot ${selectedColor === color ? 'selected' : ''}`}
-            style={{ backgroundColor: color }}
-            aria-label={`Select theme color ${i + 1}`}
-            onClick={() => setSelectedColor(color)}
-          />
-        ))}
+    <div>
+      <div className="height-100 card contact-card">
+        <h2>Let's start working together!</h2><br />
+        <h3 style={h3Style}>Contact Info</h3>
+        <p><SiGmail style={littleIcon} /> belhassinehedi308@gmail.com</p>
+        <p><FaDiscord style={littleIcon} /> hedi8276</p>
+        <p style={{ color: "#7e7e7e" }}>Based in Qc, CA</p>
+
+        <br />
+
+        <h3 style={h3Style}>Socials</h3>
+
+        <div className="width-100 flex justify-content-space-evenly">
+          <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
+          <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
+          <a href="https://cara.app/hedibelhassine" target="_blank" className="socials-icon"><img src={CaraPNG} /></a>
+        </div>
+
       </div>
     </div>
   );
@@ -170,7 +150,7 @@ function ThemeCard() {
 function AboutCard() {
   const pStyle = { padding: '5px 0px', fontWeight: '200', lineHeight: '1.6' }
   return <div className='width-100 height-100 card about-card'>
-    <h3>About me</h3>
+    <h2>About me</h2>
     <p style={pStyle}>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
     <p style={pStyle}>TECH STACK</p>
     <TechStack
@@ -180,9 +160,9 @@ function AboutCard() {
 }
 
 function LittleFooter() {
-  const bStyle = { fontWeight: '600', color: 'var(--border-card-secondary)' }
+  const bStyle = { fontWeight: '600', color: 'var(--page-accent-color)' }
   return <div className='width-100 height-100 card little-footer'>
-    <h3><b style={bStyle}>WIP</b></h3>
+    <h2><b style={bStyle}>WIP</b></h2>
     <p>This is a work in progress. <br />Updates & fixes will be coming soon!</p>
   </div>
 }
@@ -190,6 +170,6 @@ function LittleFooter() {
 export {
   BioCard,
   ContactCard,
-  Deck, LittleCard, AvailabilityCard, ThemeCard,
+  Deck, LittleCard, AvailabilityCard,
   AboutCard, LittleFooter,
 };

@@ -57,7 +57,7 @@ export function CaptionedImage({ imageList, image, alt, caption, imageSizeClass 
 
     useEffect(() => {
         if (controlsAccent && colorList?.[index]) {
-            document.documentElement.style.setProperty('--border-card-secondary', colorList[index].primary);
+            document.documentElement.style.setProperty('--page-accent-color', colorList[index].primary);
         }
     }, [index]);
 

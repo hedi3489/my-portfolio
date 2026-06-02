@@ -7,9 +7,9 @@ function HomePage() {
             <div className='gap width-100 flex-5 showcase'>
                 <Cards.ContactCard />
                 <Cards.Deck cards={[
-                    { title: 'Olympics API', description: 'REST-based API', to: '/projects/olympics-api' },
-                    { title: 'IoT Smart Home', description: 'RPi smart home simulation', to: '/projects/iot-home-simulation' },
-                    { title: 'Blackbox Pentest', description: 'Vuln. assessment report', to: '/projects/black-box-penetration' }
+                    { title: 'Olympics API', description: 'A REST-based API', to: '/projects/olympics-api' },
+                    { title: 'IoT Smart Home', description: 'A RPi smart home simulation', to: '/projects/iot-home-simulation' },
+                    { title: 'Blackbox Pentest', description: 'A vuln. assessment report', to: '/projects/black-box-penetration' }
                 ]} />
                 <Cards.Deck cards={[
                     { title: 'Journey', to: "/journey" },

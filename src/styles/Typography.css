@@ -15,24 +15,8 @@ ul {
 /* ---------------------------
    HOME PAGE TYPOGRAPHY
 ---------------------------- */
-.home-page-container h2 {
-  font-size: clamp(1.1rem, 1.3rem, 1.5rem);
-  line-height: 1.2;
-}
-
-.home-page-container h3 {
-  font-size: 1.55em;
-  line-height: 1.3;
-  font-weight: normal;
-}
 
 .home-page-container h4 {
-  font-size: 1.4em;
-  line-height: 1.4;
-  font-weight: normal;
-}
-
-.home-page-container h5 {
   font-size: clamp(0.85rem, 1rem, 1.1rem);
   font-weight: normal;
   color: gray;
@@ -56,14 +40,14 @@ ul {
   font-size: 1.3rem;
   padding: 0.55rem 0 0.15rem;
   margin: 0.2rem;
-  border: 1px solid var(--border-card-secondary);
+  border: 1px solid var(--page-accent-color);
   border-radius: 5px;
   background-color: black;
-  box-shadow: 2px 2px 0px 0px var(--border-card-secondary);
+  box-shadow: 2px 2px 0px 0px var(--page-accent-color);
 }
 
 .home-page-container .socials-icon:hover {
-  color: var(--border-card-secondary);
+  color: var(--page-accent-color);
 }
 
 .home-page-container .socials-icon img {
@@ -74,7 +58,7 @@ ul {
 }
 
 .home-page-container .socials-icon:hover img {
-  background-color: var(--border-card-secondary);
+  background-color: var(--page-accent-color);
 }
 
 @media (max-width: 768px) {
@@ -204,7 +188,7 @@ ul {
   margin-bottom: 0.2rem;
   font-weight: 250;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .project-page-container .prose .tech-stack-inline {
@@ -219,6 +203,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
+  margin-bottom: 0.2em;
 }
 
 .home-page-container .tech-stack-inline span {
@@ -235,7 +220,7 @@ ul {
 }
 
 .tech-stack-inline span:hover {
-  color: var(--page-accent-color);
+  border-color: var(--page-accent-color);
   transition: all 0.25s ease;
   cursor: default;
 }
