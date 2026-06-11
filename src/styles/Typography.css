@@ -22,8 +22,7 @@ ul {
   color: gray;
 }
 
-.home-page-container p,
-.home-page-container a {
+.home-page-container p {
   font-size: clamp(0.8rem, 1.05rem, 1.05rem);
   line-height: 1.5;
   font-weight: 300;
@@ -37,9 +36,9 @@ ul {
 .home-page-container .socials-icon {
   flex: 1;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   padding: 0.55rem 0 0.15rem;
-  margin: 0.2rem;
+  margin: 0 0.3rem;
   border: 1px solid var(--page-accent-color);
   border-radius: 5px;
   background-color: black;

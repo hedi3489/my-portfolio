@@ -19,11 +19,28 @@ function BioCard() {
   const bStyle = { fontWeight: '600', color: 'var(--page-accent-color)' }
 
   return <div className='flex flex-5 width-100 height-100 card position-relative'>
-    <div className="bio-text width-65 height-50">
-      <h1>Welcome</h1>
-      <p style={pStyle}>I'm <b style={bStyle}>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
-      <p style={pStyle}>You're welcome to look around and check the links.<br /> If have ideas to share, or just want to connect, <br />don't hesitate to reach out.</p>
+    <div className="flex flex-col">
+      <div className="bio-text width-65">
+        <h1>Welcome</h1>
+        <p style={pStyle}>I'm <b style={bStyle}>Hedi Belhassine</b>, software developer who builds full-stack applications, from clean & interactive frontends to well-structured backends.</p>
+        <p style={pStyle}>You're welcome to look around and check the links.<br /> If have ideas to share, or just want to connect, <br />don't hesitate to reach out.</p>
+        <br /><br /><br />
+      </div>
+
+      <h2>Socials</h2>
+      <div className="flex justify-content-space-evenly"
+        style={{ zIndex: "10", width: "43%" }}>
+        <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><SiGmail /></a>
+        <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
+        <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
+
+        <a href="https://github.com/hedi3489" target="_blank" className="socials-icon" style={{ fontSize: "1.8rem" }}><FaDiscord /></a>
+      </div>
     </div>
+
+
+
+
 
     <CaptionedImage
       controlsAccent
@@ -82,11 +99,8 @@ function LittleCard({ title, description, to }) {
 
   return (
     <Link to={to}>
-      <div className="flex flex-col height-100 align-content-center justify-content-center card little-card">
-        {description ?
-          <h2 style={{ fontSize: '1.3rem' }}>{title}</h2> :
-          <h2 style={{ fontSize: '1.45rem' }}>{title}</h2>
-        }
+      <div className="flex flex-col height-100 card">
+        <h1>{title}</h1>
         {description ? <h4>{description}</h4> : null}
       </div>
     </Link>
@@ -105,71 +119,38 @@ function AvailabilityCard({ state = true }) {
 
   return (
     <Link>
-      <div className="flex flex-col height-100 align-content-center justify-content-center card little-card position-relative">
+      <div className="flex flex-col height-100 card position-relative">
         <span className="position-absolute status-dot" aria-hidden="true" />
-        <h2 style={{ fontSize: '1.3rem' }}>Currently?</h2>
+        <h1>Currently?</h1>
         <h4>{availabilityText}</h4>
       </div>
     </Link>
   );
 }
 
-function ContactCard() {
-  const littleIcon = { paddingTop: '5px', fontSize: '1.1rem', color: 'var(--page-accent-color)' }
-  const h3Style = {
-    fontSize: '1.4em',
-    lineHeight: '1.4',
-    fontWeight: 'normal',
-    color: '#6d6d6d',
-    marginBottom: "0.2em"
-  }
-  return (
-    <div>
-      <div className="height-100 card contact-card">
-        <h2>Let's start working together!</h2><br />
-        <h3 style={h3Style}>Contact Info</h3>
-        <p><SiGmail style={littleIcon} /> belhassinehedi308@gmail.com</p>
-        <p><FaDiscord style={littleIcon} /> hedi8276</p>
-        <p style={{ color: "#7e7e7e" }}>Based in Qc, CA</p>
-
-        <br />
-
-        <h3 style={h3Style}>Socials</h3>
-
-        <div className="width-100 flex justify-content-space-evenly">
-          <a href="https://www.linkedin.com/in/hedi-belhassine-8399ab266/" target="_blank" className="socials-icon"><Linkedin /></a>
-          <a href="https://github.com/hedi3489" target="_blank" className="socials-icon"><Github /></a>
-          <a href="https://cara.app/hedibelhassine" target="_blank" className="socials-icon"><img src={CaraPNG} /></a>
-        </div>
-
-      </div>
-    </div>
-  );
-}
-
 function AboutCard() {
-  const pStyle = { padding: '5px 0px', fontWeight: '200', lineHeight: '1.6' }
-  return <div className='width-100 height-100 card about-card'>
-    <h2>About me</h2>
-    <p style={pStyle}>Junior dev interested in frontend & backend, Internet of Things, & passion projects.</p>
-    <p style={pStyle}>TECH STACK</p>
-    <TechStack
-      items={['Javascript', 'Typescript', 'React', 'GSAP', 'PHP', 'Slim', 'Python', 'Flask', 'Java', 'C#', 'MySQL']} />
-    <p style={pStyle}>Beyond coding, I'm passionate about design, illustration, and animation (hence my inclination to frontend).</p>
-  </div>
+  return <>
+    <div className='width-100 height-100 card about-card'>
+      <h1>About me</h1>
+      <div style={{ height: "80%" }}>
+        <p>
+          I'm passionate about arts and games as mediums of communication and
+
+          Thanks to my passion for illustration and design, building frontends feels akin to drawing manga panels.</p><br />
+      {/* </div> */}
+    </div>
+
+    {/* <div className='width-100 card little-footer '> */}
+      <h2><b className="accented">WIP</b></h2>
+      <p>This is a work in progress. <br />Updates & fixes will be coming soon!</p>
+    </div>
+  </>
 }
 
-function LittleFooter() {
-  const bStyle = { fontWeight: '600', color: 'var(--page-accent-color)' }
-  return <div className='width-100 height-100 card little-footer'>
-    <h2><b style={bStyle}>WIP</b></h2>
-    <p>This is a work in progress. <br />Updates & fixes will be coming soon!</p>
-  </div>
-}
+
 
 export {
   BioCard,
-  ContactCard,
   Deck, LittleCard, AvailabilityCard,
-  AboutCard, LittleFooter,
+  AboutCard,
 };
