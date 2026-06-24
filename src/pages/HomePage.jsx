@@ -10,7 +10,7 @@ function HomePage() {
                 />
                 <Cards.Deck 
                     cards={[
-                        { title: "Projects" },
+                        { title: "Projects", to: "/projects" },
                         // { title: "Tech Stack"}
                     ]}
                 />
@@ -22,7 +22,6 @@ function HomePage() {
         </div>
         <div className='gap flex flex-col flex-2-3'>
             <Cards.AboutCard />
-            {/* <Cards.LittleFooter /> */}
         </div>
     </div>;
 }

@@ -39,9 +39,6 @@ function BioCard() {
     </div>
 
 
-
-
-
     <CaptionedImage
       controlsAccent
       imageSizeClass="image-width-85"
@@ -72,10 +69,8 @@ function BioCard() {
         padding: "0.8em",
         fontSize: "0.5rem",
         position: "absolute",
-        // top: "0.8rem",
         bottom: "0.8rem",
         right: "0.8rem",
-        // left: "1rem",
         flexDirection: "row",
       }}
       dotSize={"0.35rem"}

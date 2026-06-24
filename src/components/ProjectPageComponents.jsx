@@ -192,3 +192,4 @@ export function JourneySection({ logo, place, program, date, body }) {
         <p style={{ lineHeight: '1.6' }}>{body}</p>
     </div>
 }
+

@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 import HomePage from './pages/HomePage.jsx'
+import ProjectPage from './pages/ProjectsPage.jsx'
 import APIProjectPage from './pages/APIProject.jsx'
 import IoTProjectPage from './pages/IoTProject.jsx'
 import BlackBoxPenPage from './pages/BlackBoxPenProject.jsx'
@@ -73,6 +74,11 @@ export default function App() {
         <Route
           path="/"
           element={<HomePage />}
+        />
+
+        <Route 
+          path='/projects'
+          element={<ProjectPage />}
         />
 
         <Route

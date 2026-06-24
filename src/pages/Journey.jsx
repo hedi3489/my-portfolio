@@ -1,4 +1,4 @@
-import { TextSection, CaptionedImage, BulletList, JourneySection } from '../components/ProjectPageComponents.jsx'
+import { JourneySection } from '../components/ProjectPageComponents.jsx'
 import VanierLogo from '../assets/vanier.jpg'
 import JavaLogo from '../assets/java-logo2.png'
 import StackLogo from '../assets/stack-logo.png'

@@ -6,7 +6,8 @@
   background-color: var(--bg-card-primary);
   border: 1.2px solid var(--border-card-primary);
   border-radius: var(--radius);
-  overflow: visible;
+  overflow: hidden;
+  /* overflow: visible; */
   overflow-wrap: anywhere;
   transition: all 0.25s ease;
 }
@@ -18,7 +19,8 @@
 /* ---------------------------
    HOME PAGE CONTAINERS
 ---------------------------- */
-.home-page-container .card:hover {
+.home-page-container .card:hover,
+.project-card:hover {
   border-color: var(--page-accent-color);
 }
 
@@ -105,4 +107,12 @@
 
 .little-footer {
   flex: 1.8;
+}
+
+/* ----------------------------- */
+/*         Project Cards         */
+/* ----------------------------- */
+
+.projects-page {
+  font-size: 1rem;
 }
