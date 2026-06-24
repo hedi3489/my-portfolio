@@ -6,7 +6,7 @@ function HomePage() {
             <Cards.BioCard />
             <div className='gap width-100 flex-5 showcase'>
                 <Cards.LittleCard 
-                    title="Journey"
+                    title="Journey" to='/journey'
                 />
                 <Cards.Deck 
                     cards={[

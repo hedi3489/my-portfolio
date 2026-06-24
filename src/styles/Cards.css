@@ -116,3 +116,7 @@
 .projects-page {
   font-size: 1rem;
 }
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

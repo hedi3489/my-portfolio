@@ -107,7 +107,7 @@ function AvailabilityCard({ state = true }) {
   var availabilityText = "";
 
   if (available == true) {
-    availabilityText = "Open to collaborate";
+    availabilityText = "Currently open to collaborate";
   } else {
     availabilityText = "Currently working full-time";
   }
@@ -116,7 +116,7 @@ function AvailabilityCard({ state = true }) {
     <Link>
       <div className="flex flex-col height-100 card position-relative">
         <span className="position-absolute status-dot" aria-hidden="true" />
-        <h1>Currently?</h1>
+        <h1>Work Status</h1>
         <h4>{availabilityText}</h4>
       </div>
     </Link>
